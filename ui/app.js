@@ -242,6 +242,10 @@
         fetch("/neopress/diarios/" + FECHA + ".extra.json"),
         fetch("/neopress/diarios/" + FECHA + ".clima.json"),
       ]);
+      if (rMd.status === 404) {
+        contenedor.innerHTML = "<div class=\"error\"><h2 class=\"error-fecha\">" + fechaLarga(FECHA) + "</h2><p>El diario de hoy todavía no se generó — llega a las 9 AM.</p></div>";
+        return;
+      }
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { const raw = await rExtra.json(); EXTRA = {}; for (const u in raw) { EXTRA[u] = Object.assign({}, raw[u], { url: u }); } } catch (e) {} }
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
