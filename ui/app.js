@@ -66,8 +66,9 @@
     const datos = EXTRA[t.url] || {};
     const img = datos.imagen ? "<img class=\"tarjeta-img\" src=\"" + esc(datos.imagen) + "\" alt=\"\" loading=\"lazy\">" : "";
     const leible = datos.texto ? " tarjeta--leible" : "";
+    const sinFoto = datos.imagen ? "" : " tarjeta--sin-foto";
     const ext = datos.texto ? "" : " target=\"_blank\" rel=\"noopener\"";
-    return "<a class=\"tarjeta" + leible + "\" href=\"" + esc(t.url) + "\" data-link=\"" + esc(t.url) + "\"" + ext + ">" +
+    return "<a class=\"tarjeta" + leible + sinFoto + "\" href=\"" + esc(t.url) + "\" data-link=\"" + esc(t.url) + "\"" + ext + ">" +
       img +
       bookmarkHTML(t) +
       "<span class=\"tarjeta-titulo\">" + esc(t.titulo) + "</span>" +
