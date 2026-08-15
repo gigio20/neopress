@@ -74,3 +74,5 @@ a { color: var(--tinta); }
 .tarjeta-bookmark--on { color: #000; }
 
 .tarjeta--sin-foto .tarjeta-titulo { font-size: 16px; line-height: 1.35; }
+
+.cierre { text-align: center; font-size: 17px; line-height: 1.6; color: #222; max-width: 40em; margin: 0 auto 16px; }

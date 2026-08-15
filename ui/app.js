@@ -33,11 +33,16 @@
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "<a href=\"$2\" target=\"_blank\" rel=\"noopener\">$1</a>");
   }
   function parseTarjeta(s) {
-    const full = s.match(/^(.*?)\s*—\s*\[([^\]]+)\]\(([^)]+)\)$/);
-    if (full) return { titulo: full[1].trim().replace(/^\[|\]$/g,""), medio: full[2], url: full[3] };
-    const single = s.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (single) return { titulo: single[1], medio: "", url: single[2] };
-    return { titulo: s.replace(/^\[|\]$/g,""), medio: "", url: "" };
+    const um = s.match(/\((https?:\/\/[^)]+)\)/);
+    const url = um ? um[1] : "";
+    let texto = s;
+    if (um) texto = (s.slice(0, um.index) + " " + s.slice(um.index + um[0].length)).trim();
+    let titulo = texto, medio = "";
+    const sep = texto.indexOf("—");
+    if (sep >= 0) { titulo = texto.slice(0, sep).trim(); medio = texto.slice(sep + 1).trim(); }
+    titulo = titulo.replace(/^\[|\]$/g, "").trim();
+    medio = medio.replace(/^\[|\]$/g, "").trim();
+    return { titulo, medio, url };
   }
 
   function climaDesc(code) {
@@ -86,7 +91,7 @@
     md = md.replace(/^---[\s\S]*?---\s*/, "");
 
     const html = [];
-    let carruselOpen = false, enPanorama = false, heroAbierto = true;
+    let carruselOpen = false, enPanorama = false, enCierre = false, heroAbierto = true;
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
@@ -102,14 +107,15 @@
       else if (line.startsWith("## ")) {
         cerrar();
         const t = line.slice(3).trim();
-        if (t.toLowerCase() === "panorama") enPanorama = true;
-        else { cerrarHero(); enPanorama = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
+        if (t.toLowerCase() === "panorama") { enPanorama = true; enCierre = false; }
+        else if (t.toLowerCase() === "cierre") { cerrarHero(); enPanorama = false; enCierre = true; }
+        else { cerrarHero(); enPanorama = false; enCierre = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
       } else if (line.startsWith("### ")) { cerrar(); html.push("<h3>" + inline(line.slice(4)) + "</h3>"); }
       else if (line.startsWith("> ")) { cerrar(); html.push("<blockquote class=\"cita\">" + inline(line.slice(2)) + "</blockquote>"); }
       else if (line.startsWith("- ")) {
         if (!carruselOpen) { html.push("<div class=\"carrusel\">"); carruselOpen = true; }
         html.push(tarjetaHTML(parseTarjeta(line.slice(2))));
-      } else { cerrar(); html.push("<p class=\"" + (enPanorama ? "panorama" : "parrafo") + "\">" + inline(line) + "</p>"); }
+      } else { cerrar(); const clase = enPanorama ? "panorama" : (enCierre ? "cierre" : "parrafo"); html.push("<p class=\"" + clase + "\">" + inline(line) + "</p>"); }
     }
     cerrar(); cerrarHero();
     return html.join("\n");
