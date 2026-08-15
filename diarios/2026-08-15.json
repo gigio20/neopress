@@ -1,0 +1,1201 @@
+{
+  "fecha": "2026-08-15",
+  "fuentes": [
+    {
+      "nombre": "El País",
+      "categoria": "espana",
+      "items": [
+        {
+          "titulo": "Marruecos frustra el intento de cientos de migrantes subsaharianos de alcanzar Ceuta",
+          "link": "https://elpais.com/espana/2026-08-15/marruecos-frustra-el-intento-de-cientos-de-migrantes-subsaharianos-de-alcanzar-ceuta.html",
+          "fecha": "Sat, 15 Aug 2026 16:51:14 GMT",
+          "resumen": "Las fuerzas de seguridad marroquíes han detenido a 61 personas por incitar a la migración ilegal en un dispositivo que mantiene blindadas las fronteras de Ceuta y Melilla con el país magrebí"
+        },
+        {
+          "titulo": "Última hora de la entrada de inmigrantes a Ceuta, en directo | Rabat expulsa a los periodistas de Efe y TVE de Castillejos",
+          "link": "https://elpais.com/espana/2026-08-15/ultima-hora-de-la-entrada-de-inmigrantes-a-ceuta-en-directo.html",
+          "fecha": "Sat, 15 Aug 2026 16:55:01 GMT",
+          "resumen": "Marruecos detiene a casi 300 personas por intentar cruzar de forma irregular a Ceuta | Los agentes interceptan a los centenares de subsaharianos que se habían acercado a la frontera con la ciudad autónoma"
+        },
+        {
+          "titulo": "En el Gurugú ya solo quedan los monos",
+          "link": "https://elpais.com/espana/2026-08-15/en-el-gurugu-ya-solo-quedan-los-monos.html",
+          "fecha": "Sat, 15 Aug 2026 16:28:01 GMT",
+          "resumen": "El monte marroquí que preside el paisaje de Melilla, albergue durante años de migrantes subsaharianos antes de intentar el salto a España, ya no acoge ningún campamento"
+        },
+        {
+          "titulo": "Despliegue policial inédito en Ceuta ante el temor a una nueva entrada masiva: claves de la crisis fronteriza",
+          "link": "https://elpais.com/espana/2026-08-14/cuatro-claves-del-presente-fronterizo-de-ceuta.html",
+          "fecha": "Sat, 15 Aug 2026 03:45:01 GMT",
+          "resumen": "El dispositivo sin precedentes en la ciudad autónoma no asegura la impermeabilidad de la valla; la postura de Marruecos sigue siendo fundamental"
+        },
+        {
+          "titulo": "Escuadras fascistas contra la inseguridad en Valencia",
+          "link": "https://elpais.com/espana/comunidad-valenciana/2026-08-15/escuadras-fascistas-contra-la-inseguridad-en-valencia.html",
+          "fecha": "Sat, 15 Aug 2026 03:30:01 GMT",
+          "resumen": "El partido de extrema derecha España 2000 se camufla tras una ONG para patrullar por los barrios con más inmigrantes de la ciudad"
+        },
+        {
+          "titulo": "Un terremoto de magnitud 5 sacude Granada: “Sentimos miedo, mucho miedo”",
+          "link": "https://elpais.com/espana/2026-08-15/la-junta-de-anadalucia-activa-la-fase-de-emergencia-por-un-seismo-de-magnitud-cinco-en-granada.html",
+          "fecha": "Sat, 15 Aug 2026 13:36:38 GMT",
+          "resumen": "El temblor, que solo ha dejado daños materiales y no ha causado víctimas, ocurrió a la una de la madrugada y ha estado seguido de casi medio centenar de réplicas"
+        },
+        {
+          "titulo": "Reyerta cayetana en Marbella",
+          "link": "https://elpais.com/opinion/2026-08-15/reyerta-cayetana-en-marbella.html",
+          "fecha": "Sat, 15 Aug 2026 03:30:01 GMT",
+          "resumen": "La sangre caliente, como el eclipse, es un gran igualador social, sobre todo en España"
+        },
+        {
+          "titulo": "Por qué ya no enseñamos las tetas",
+          "link": "https://elpais.com/opinion/2026-08-15/por-que-ya-no-ensenamos-las-tetas.html",
+          "fecha": "Sat, 15 Aug 2026 03:30:01 GMT",
+          "resumen": "Lo que debería alarmarnos no es el auge de un presunto puritanismo, sino la sexualización voraz que ha impuesto el nuevo capitalismo hedonista"
+        }
+      ]
+    },
+    {
+      "nombre": "El Mundo",
+      "categoria": "espana",
+      "items": [
+        {
+          "titulo": "De la paranoia marroquí a la pachorra española en sólo 7.199 pasos: así se vive la \"amenaza\" del 15-A a ambos lados de la frontera de Ceuta",
+          "link": "https://www.elmundo.es/espana/2026/08/15/6a805b46e9cf4ad3148b4588.html",
+          "fecha": "Sat, 15 Aug 2026 15:55:07 +0200",
+          "resumen": "La frontera refleja dos respuestas opuestas ante una jornada marcada por la incertidumbre del 15-A&nbsp; Leer"
+        },
+        {
+          "titulo": "Calma tensa en Ceuta mientras Marruecos anuncia haber frustrado un intento de entrar de cientos de migrantes",
+          "link": "https://www.elmundo.es/espana/2026/08/15/6a802564e85ece610b8b457f.html",
+          "fecha": "Sat, 15 Aug 2026 11:40:20 +0200",
+          "resumen": "La frontera está absolutamente blindada a ambos lados tanto por tierra como por mar&nbsp; Leer"
+        },
+        {
+          "titulo": "La Guardia Civil confirma 15 violaciones en Ceuta desde la entrada masiva y un detenido con delitos por terrorismo",
+          "link": "https://www.elmundo.es/espana/2026/08/15/6a808603e4d4d8ca7b8b4578.html",
+          "fecha": "Sat, 15 Aug 2026 17:32:42 +0200",
+          "resumen": "La última de esas violaciones se produjo el viernes por la noche, cuando tres personas intentaron abusar sexualmente de una niña de 10 años.&nbsp; Leer"
+        },
+        {
+          "titulo": "Granada se echa a temblar: \"Bramó primero el suelo y luego el cielo\"",
+          "link": "https://www.elmundo.es/andalucia/2026/08/15/6a809674e85ece5c478b4586.html",
+          "fecha": "Sat, 15 Aug 2026 18:40:40 +0200",
+          "resumen": "La provincia sufre un terremoto de magnitud 4,8 que provoca daños materiales leves&nbsp; Leer"
+        },
+        {
+          "titulo": "Junts recrudece la batalla con Aliança ante la crisis de inmigrantes en Ceuta",
+          "link": "https://www.elmundo.es/cataluna/2026/08/15/6a7f61afe9cf4a5d2a8b4593.html",
+          "fecha": "Sat, 15 Aug 2026 00:07:35 +0200",
+          "resumen": "Endurece sus posturas y vuelve a situar en el centro del debate exigencias como la delegación de competencias o que Cataluña quede excluida del reparto de menores&nbsp; Leer"
+        },
+        {
+          "titulo": "Deserción masiva en el PSOE de Huelva, el feudo socialista que parecía inexpugnable",
+          "link": "https://www.elmundo.es/andalucia/2026/08/14/6a78943421efa04b648b45b7.html",
+          "fecha": "Fri, 14 Aug 2026 22:44:46 +0200",
+          "resumen": "Cerca de 70 concejales han abandonado desde las municipales de 2023, nueve de ellos en la capital&nbsp; Leer"
+        },
+        {
+          "titulo": "Tabarca, la diminuta isla española que pide la independencia para sobrevivir: \"Antes tenía encanto, hoy está todo masificado\"",
+          "link": "https://www.elmundo.es/papel/historias/2026/08/14/6a7de0e6e9cf4af85c8b45be.html",
+          "fecha": "Fri, 14 Aug 2026 22:44:03 +0200",
+          "resumen": "El islote habitado más pequeño de nuestro país, desbordado por el turismo, desafía al Ayuntamiento de Alicante para ganar autonomía y poder gestionar sus recursos&nbsp; Leer"
+        },
+        {
+          "titulo": "\"Lo vas a conseguir\": las cuatro palabras que cambiaron mi manera de mirar el futuro",
+          "link": "https://www.elmundo.es/salud/2026/08/15/6a707cf2fdddfff1288b45ac.html",
+          "fecha": "Sat, 15 Aug 2026 08:38:47 +0200",
+          "resumen": "Tres semanas después de empezar a entrenar sigo sin perder peso, pero he recuperado algo mucho más importante: la ilusión de volver a subir una montaña, hacer el Camino de Santiago y creer, por primera vez en muchos años, que todavía estoy a tiempo&nbsp; Leer"
+        }
+      ]
+    },
+    {
+      "nombre": "La Vanguardia",
+      "categoria": "espana",
+      "items": [
+        {
+          "titulo": "Marruecos exhibe control en la frontera ceutí con el bloqueo de cientos de inmigrantes subsaharianos",
+          "link": "https://www.lavanguardia.com/politica/20260815/11614366/marruecos-exhibe-control-frontera-ceuta-bloqueo-cientos-inmigrantes-subsaharianos.html",
+          "fecha": "15 Aug 2026 13:14:22 +0200",
+          "resumen": "La policía marroquí intercepta a 128 subsaharianos y una veintena de marroquíes y detiene a&nbsp;61 sospechosos de incitación y promoción de llamadas a la migración irregular a través de las redes sociales"
+        },
+        {
+          "titulo": "Última hora de la crisis migratoria en Ceuta, en directo: Marruecos expulsa a los periodistas de Efe y TVE de Castillejos",
+          "link": "https://www.lavanguardia.com/politica/20260815/11614298/marroquies-salto-frontera-ceuta-crisis-migratoria-ultima-hora-hoy-en-directo.html",
+          "fecha": "15 Aug 2026 06:00:01 +0200",
+          "resumen": "La policía marroquí expulsa de Castillejos a los centenares de subsaharianos que se habían acercado a la frontera con la ciudad autónoma"
+        },
+        {
+          "titulo": "Marruecos expulsa de Fnideq a los periodistas de EFE y TVE sin explicar los motivos",
+          "link": "https://www.lavanguardia.com/politica/20260815/11614398/marruecos-expulsa-fnideq-periodistas-efe-tve-sin-explicaciones.html",
+          "fecha": "15 Aug 2026 16:46:19 +0200",
+          "resumen": "La decisión se ha producido tras el intento de entrada de centenares de migrantes abortado por Rabat"
+        },
+        {
+          "titulo": "Un techo de plástico creado por vecinos para proteger a niñas migrantes desatendidas en Ceuta",
+          "link": "https://www.lavanguardia.com/politica/20260815/11614054/techo-plastico-mas-vulnerables.html",
+          "fecha": "15 Aug 2026 06:00:00 +0200",
+          "resumen": "Los vecinos de El Príncipe improvisan un campamento para las más vulnerables"
+        },
+        {
+          "titulo": "Ceuta y el antídoto de la solidaridad europea",
+          "link": "https://www.lavanguardia.com/internacional/20260815/11613959/ceuta-antidoto-solidaridad-europea.html",
+          "fecha": "15 Aug 2026 06:00:00 +0200",
+          "resumen": ""
+        },
+        {
+          "titulo": "Un terremoto de 5 grados con epicentro en Granada deja daños materiales y activa la emergencia",
+          "link": "https://www.lavanguardia.com/vida/20260815/11614300/activada-fase-emergencia-terremoto-5-grados-epicentro-alhendin-granada.html",
+          "fecha": "15 Aug 2026 06:42:13 +0200",
+          "resumen": "Se han registrado hasta 50 temblores de diferente intensidad tras el primer seísmo, que ha provocado más de 200 llamadas a emergencias"
+        },
+        {
+          "titulo": "El Meteocat emite un aviso por tiempo violento este sábado en parte de Catalunya",
+          "link": "https://www.lavanguardia.com/local/catalunya/20260815/11614392/meteocat-emite-aviso-violento-sabado-tarde-parte-catalunya.html",
+          "fecha": "15 Aug 2026 16:35:43 +0200",
+          "resumen": "Cinco comarcas están afectadas&nbsp; ante la previsión de tormentas con piedra, rachas de viento superiores a 90 km/h y reventones"
+        },
+        {
+          "titulo": "Hallado muerto el exprofesor de Cambridge acusado de plagio en un contexto de racismo",
+          "link": "https://www.lavanguardia.com/vida/20260815/11614313/hallado-muerto-exprofesor-cambridge-acusado-plagio-contexto-racismo.html",
+          "fecha": "15 Aug 2026 09:56:01 +0200",
+          "resumen": "El ciudadano británico de 41 años dimitió el 5 de agosto de su plaza en universidad, donde había hecho historia en 2023 al convertirse en el profesor negro más joven del centro"
+        }
+      ]
+    },
+    {
+      "nombre": "ElDiario.es",
+      "categoria": "espana",
+      "items": [
+        {
+          "titulo": "Marruecos eleva a 294 los migrantes interceptados por la fuerza para frenar un intento de entrada a Ceuta",
+          "link": "https://www.eldiario.es/internacional/marruecos-asegura-frenado-cientos-migrantes-alcanzar-ceuta_1_13448944.html",
+          "fecha": "Sat, 15 Aug 2026 08:56:48 +0000",
+          "resumen": "Se han producido retenciones y cargas en una zona montañosa de las inmediaciones de Castillejos. Además, las fuerzas marroquíes dicen que han detenido a 61 personas sospechosas de incitación a la migración irregular El Gobierno endurece el discurso sobre la inmigración asediado por la crisis de Ceuta Nueva jornada de tensi&oacute;n en la frontera de Ceuta. Las fuerzas marroqu&iacute;es han asegura"
+        },
+        {
+          "titulo": "Ceuta, dos semanas desbordada: cientos de personas aún duermen en la calle con la sensación de que va para largo",
+          "link": "https://www.eldiario.es/internacional/ceuta-semanas-desbordada-cientos-personas-duermen-calle-sensacion_1_13447024.html",
+          "fecha": "Fri, 14 Aug 2026 20:04:37 +0000",
+          "resumen": "Una parte de quienes permanecen en la ciudad tras entrar el 30 de julio todavía pasan las noches al raso y no han sido identificadas ni atendidas mientras el Ejecutivo intenta avanzar en espacios de acogida Meloni, criticada por la oposición por su choque con España: “Se ha marcado un gol en propia puerta” Han pasado dos semanas desde que m&aacute;s de 80.000 personas entraran a Ceuta procedentes "
+        },
+        {
+          "titulo": "El Gobierno endurece el discurso sobre la inmigración asediado por la crisis de Ceuta",
+          "link": "https://www.eldiario.es/politica/gobierno-endurece-discurso-inmigracion-asediado-crisis-ceuta_1_13447409.html",
+          "fecha": "Fri, 14 Aug 2026 20:04:36 +0000",
+          "resumen": "Con los servicios de atención de la ciudad aún desbordados y el señalamiento de varios socios europeos, varios ministros del PSOE elevan el tono y prometen expulsar a todas las personas que entren irregularmente, algo que impide la ley Qué dice la ley sobre las entradas irregulares a España y por qué no se puede devolver a “todos” quienes llegan Devoluciones para que no quede en Espa&ntilde;a ni u"
+        },
+        {
+          "titulo": "Ayuso tacha a Sánchez de \"irresponsable\" y \"traidor\": \"Ha dejado que España sea invadida por terroristas\"",
+          "link": "https://www.eldiario.es/madrid/ayuso-tacha-sanchez-irresponsable-traidor-dejado-espana-sea-invadida-terroristas_1_13449114.html",
+          "fecha": "Sat, 15 Aug 2026 11:36:57 +0000",
+          "resumen": "Ayuso también se ha preguntado \"cuántos ministros viven a costa de los españoles\" para esquivar que los medios le cuestionaran sobre su polémico ático de lujo comprado por la Comunidad de Madrid La semana de Ayuso: muchos mensajes en X y ninguna pregunta sobre el ático de Chamberí La presidenta de la Comunidad de Madrid, Isabel D&iacute;az Ayuso, ha vuelto a la carga contra el l&iacute;der del Eje"
+        },
+        {
+          "titulo": "Las autoridades marroquíes expulsan a los periodistas de EFE y TVE de Castillejos",
+          "link": "https://www.eldiario.es/internacional/autoridades-marroquies-exigen-efe-tve-abandonen-castillejos_1_13449227.html",
+          "fecha": "Sat, 15 Aug 2026 14:13:18 +0000",
+          "resumen": "Los hoteles donde se encontraban alojados los reporteros les comunicaron que habían recibido órdenes de las autoridades locales para que abandonaran de inmediato los establecimientos El Gobierno confía en que Marruecos impida nuevas entradas este fin de semana pero refuerza la seguridad de Ceuta y Melilla Marruecos expuls&oacute; hoy a los equipos de la Agencia EFE y TVE que se encontraban en la c"
+        },
+        {
+          "titulo": "Trump dice que declarará el estrecho de Ormuz \"territorio de EEUU\" tras \"derrotar a Irán\"",
+          "link": "https://www.eldiario.es/internacional/trump-dice-declarara-estrecho-ormuz-territorio-eeuu-derrotar-iran_1_13448895.html",
+          "fecha": "Sat, 15 Aug 2026 08:42:24 +0000",
+          "resumen": "El presidente estadounidense habló de la reciente crisis humanitaria en Ceuta para criticar la política de \"frontera abierta\" de España y señalar a Joe Biden asegurando que bajo su mandato Estados Unidos vivió a diario episodios como este Tucker Carlson: ¿Hay vida después de Trump? El presidente estadounidense, Donald Trump, dijo este viernes que planea declarar el estrecho de Ormuz un &ldquo;terr"
+        },
+        {
+          "titulo": "¿Qué fue del espíritu de Anchorage? La relación Putin-Trump, en su peor momento un año después de la cumbre de Alaska",
+          "link": "https://www.eldiario.es/internacional/espiritu-anchorage-relacion-putin-trump-peor-momento-ano-despues-cumbre-alaska_1_13445815.html",
+          "fecha": "Fri, 14 Aug 2026 20:04:39 +0000",
+          "resumen": "Rusia ya no confía en que Estados Unidos logre arrancar a Ucrania un acuerdo de paz favorable a sus intereses, pero intenta mantener el diálogo con la Casa Blanca Ucrania corta el acceso por tierra a Crimea y la deja sin gasolina, sin turistas y con estantes vacíos: “Quiero irme” Nadie puede asegurar exactamente c&oacute;mo surgi&oacute; en Rusia el concepto de &ldquo;el esp&iacute;ritu de Anchora"
+        },
+        {
+          "titulo": "La semana de Ayuso: muchos mensajes en X y ninguna pregunta sobre el ático de Chamberí",
+          "link": "https://www.eldiario.es/madrid/semana-ayuso-mensajes-x-pregunta-atico-chamberi_1_13447514.html",
+          "fecha": "Fri, 14 Aug 2026 20:04:37 +0000",
+          "resumen": "La dirigente madrileña usa las redes para atacar al Gobierno y no se somete a preguntas de los medios desde la semana pasada, cuando llegó a expresar su hartazgo por tener que responder sobre el inmueble Ayuso redobla los ataques contra el Gobierno para enterrar la polémica del ático La presidenta de la Comunidad de Madrid, Isabel D&iacute;az Ayuso, ha impuesto un manto de silencio durante toda la"
+        }
+      ]
+    },
+    {
+      "nombre": "Levante-EMV",
+      "categoria": "espana",
+      "items": [
+        {
+          "titulo": "Aemet amplía el aviso naranja por lluvia y tormentas a varias zonas de Valencia y el interior sur de Castellón",
+          "link": "https://www.levante-emv.com/comunitat-valenciana/2026/08/15/tiempo-valencia-aemet-amplia-aviso-naranja-lluvia-tormentas-varias-zonas-valencia-castellon-133392247.html",
+          "fecha": "Sat, 15 Aug 2026 16:56:55 +0000",
+          "resumen": "La Agencia Estatal de Meteorología (Aemet) ha actualizado este sábado por la tarde los avisos activos ante el episodio de lluvias y tormentas. El aviso naranja, previsto inicialmente para el interior norte de Castellón, se amplía también al interior sur de esta provincia y al interior norte y litoral sur de Valencia."
+        },
+        {
+          "titulo": "España se proclama campeona del mundo de gimnasia rítmica tras una histórica actuación",
+          "link": "https://www.levante-emv.com/deportes/2026/08/15/espana-campeona-mundo-gimnasia-ritmica-133392734.html",
+          "fecha": "Sat, 15 Aug 2026 16:55:30 +0000",
+          "resumen": "El conjunto sénior de España de gimnasia rítmica, formado por Inés Bergua, Salma Solaun, Andrea Corral, Andrea Fernández, Lucía Muñoz y Marina Cortelles, ha conquistado este sábado la medalla de oro en el All-Around del 42º Campeonato del Mundo, que se está disputando en Fráncfort (Alemania), y con ello ha logrado una plaza directa para los Juegos Olímpicos de Los Ángeles 2028. Es el segundo oro d"
+        },
+        {
+          "titulo": "Pirotecnia Valenciana vuelve a ganar el Concurso Internacional de Fuegos Artificiales de San Sebastián",
+          "link": "https://www.levante-emv.com/fallas/2026/08/15/donostia-pirotecnia-valenciana-133391759.html",
+          "fecha": "Sat, 15 Aug 2026 16:38:50 +0000",
+          "resumen": "La Pirotecnia Valenciana ha conseguido un hecho sin precedentes en el Concurso Internacional de Fuegos Artificiales de San Sebastián, el que está considerado como la meca de las pirotecnias a concurso. Tras haber conseguido el triunfo en 2023, 2024 y 2025, la edición de este año vuelve a caer en las vitrinas de la empresa de Llanera de Ranes en la que es edición número 61 del concurso."
+        },
+        {
+          "titulo": "Los bomberos de Madrid cumplen con la tradición al bajar el cuadro de la Virgen de la Paloma",
+          "link": "https://www.levante-emv.com/videos/sociedad/2026/08/15/bomberos-madrid-cumplen-tradicion-bajar-133392313.html",
+          "fecha": "Sat, 15 Aug 2026 16:38:26 +0000",
+          "resumen": "Estas son las imágenes del descenso del cuadro de la Virgen de la Paloma en Madrid. Durante todo el año se puede visitar en la Parroquia de la Virgen de la Paloma y San Pedro el Real, en el barrio de La Latina, donde luce en el Altar Mayor."
+        },
+        {
+          "titulo": "Rodolfo Sancho, detenido en México tras una redada policial en mitad de una fiesta en un yate: le han expulsado del país",
+          "link": "https://www.levante-emv.com/vida-y-estilo/gente/2026/08/15/rodolfo-sancho-detenido-mexico-redada-policial-fiesta-yate-133392274.html",
+          "fecha": "Sat, 15 Aug 2026 16:37:14 +0000",
+          "resumen": "Los problemas vuelven a la vida de Rodolfo Sancho, cuando se cumplen tres años de la detención y encarcelamiento de su hijo, Daniel Sancho, tras asesinar y descuartizar al cirujano Edwin Arrieta."
+        },
+        {
+          "titulo": "El Manchester City abre una nueva era contra el Arsenal: en juego la Supercopa inglesa",
+          "link": "https://www.levante-emv.com/deportes/2026/08/15/manchester-city-abre-nueva-arsenal-133392137.html",
+          "fecha": "Sat, 15 Aug 2026 16:32:10 +0000",
+          "resumen": "El reencuentro entre el Arsenal y el Manchester City para inaugurar la temporada oficial abre una nueva era en el fútbol inglés con la ausencia de Pep Guardiola después de una década en Inglaterra. La marcha del laureadísimo entrenador de los celestes abre un interrogante sobre cuál será el nivel del equipo sin su gurú (20 títulos conquistados). Su sucesor, el italiano Enzo Maresca, ha asumido la "
+        },
+        {
+          "titulo": "Así ha sido la fuerte tormenta en la playa de Cullera: lluvias y rachas de viento frente al mar",
+          "link": "https://www.levante-emv.com/videos/la-ribera/2026/08/15/sido-fuerte-tormenta-playa-cullera-133391779.html",
+          "fecha": "Sat, 15 Aug 2026 16:19:10 +0000",
+          "resumen": "Así ha sido la fuerte tormenta en la playa de Cullera: lluvias y rachas de viento frente al mar. La última hora del temporal."
+        },
+        {
+          "titulo": "Sigue en directo la dana que está afectando la Comunitat Valenciana: lluvias, granizo y viento",
+          "link": "https://www.levante-emv.com/comunitat-valenciana/2026/08/15/directo-dana-valencia-lluvias-tormentas-granizo-133391644.html",
+          "fecha": "Sat, 15 Aug 2026 16:16:11 +0000",
+          "resumen": "Las previsiones se han cumplido. Desde primera hora de la tarde, un frente de tormentas está descargando con fuera en algunos puntos del interior de las provincias de Valencia y Castellón. Una vaguada está favoreciendo la creación de células de gran actividad con gran aparato eléctrico y fuertes rachas de viento, de hasta 100 kilómetros por hora en Torás (Castellón) y 71 en Calles."
+        }
+      ]
+    },
+    {
+      "nombre": "Clarín",
+      "categoria": "argentina",
+      "items": [
+        {
+          "titulo": "Murió Bonnie Tyler: así fue el emotivo cortejo fúnebre en Gales al ritmo de “Total Eclipse of the Heart”",
+          "link": "https://www.clarin.com/internacional/murio-bonnie-tyler-emotivo-cortejo-funebre-gales-ritmo-total-eclipse-of-the-heart_0_6dyQOEcAAA.html",
+          "fecha": "Sat, 15 Aug 2026 15:51:08 +0000",
+          "resumen": "La cantante fue despedida en las calles de Gales con un emotivo cortejo fúnebre. Cientos de fanáticos homenajearon a Bonnie Tyler al ritmo de “Total Eclipse of the Heart”."
+        },
+        {
+          "titulo": "Acompañar e incluir socialmente a quienes más lo necesitan",
+          "link": "https://www.clarin.com/informacion-general/acompanar-incluir-socialmente-necesitan_0_zJRPJPLHdb.html",
+          "fecha": "Sat, 15 Aug 2026 15:30:50 +0000",
+          "resumen": "Fundación Sí desarrolla programas de inclusión social en todo el país mediante el trabajo voluntario y al acompañamiento de personas en situación de calle."
+        },
+        {
+          "titulo": "Independiente tiene nuevo DT: Jadson Viera es la enorme apuesta del Rojo para dejar atrás la crisis con Quinteros",
+          "link": "https://www.clarin.com/deportes/independiente-nuevo-dt-jadson-viera-enorme-apuesta-rojo-dejar-crisis-quinteros_0_upJzPgOmIk.html",
+          "fecha": "Sat, 15 Aug 2026 15:30:46 +0000",
+          "resumen": "Tiene 45 años, jugó en Lanús y fue asistente del Cacique Medina. Es brasileño pero se crio uruguayo y dirigió a Boston River y Nacional."
+        },
+        {
+          "titulo": "El poder y la vanidad: el ministro Fouquet y el Rey Sol",
+          "link": "https://www.clarin.com/opinion/poder-vanidad-ministro-fouquet-rey-sol_0_eDDMF4CfBk.html",
+          "fecha": "Sat, 15 Aug 2026 15:27:47 +0000",
+          "resumen": "El poder da una falsa sensación de impunidad porque los corruptos creen que todo tiene un precio en este mundo."
+        },
+        {
+          "titulo": "\"Me ataron cadenas en el estómago y los pies\": el dramático testimonio de la niñera argentina detenida en EE.UU. durante el Mundial",
+          "link": "https://www.clarin.com/sociedad/ataron-cadenas-estomago-pies-dramatico-testimonio-ninera-argentina-detenida-eeuu-mundial_0_BpEibCYq94.html",
+          "fecha": "Sat, 15 Aug 2026 15:23:45 +0000",
+          "resumen": "Iliana Lick salió bajo fianza tras pasar por cuatro centros de detención en solo un mes. Camas sin espacio, cuartos iluminados todo el día y el encierro junto a criminales. Cómo sigue su caso."
+        },
+        {
+          "titulo": "Denisse González habló sobre su internación tras recibir el alta: \"Voy a ver qué tratamiento seguir...\"",
+          "link": "https://www.clarin.com/fama/denisse-gonzalez-hablo-internacion-recibir-alta-voy-ver-tratamiento-seguir_0_E0NynRpknm.html",
+          "fecha": "Sat, 15 Aug 2026 15:19:22 +0000",
+          "resumen": "La ex Gran Hermano dio detalles de su cuadro de salud. Señaló que un chequeo anticipado y la cancelación de un viaje evitaron un desenlace peor."
+        },
+        {
+          "titulo": "Las revelaciones de Travis Barker, esposo de Kourtney Kardashian, sobre el fatal accidente aéreo al que sobrevivió: \"No podía ver a mis hijos porque el 65% de mi cuerpo era una herida abierta y necesité 27 cirugías\"",
+          "link": "https://www.clarin.com/internacional/revelaciones-travis-barker-esposo-kourtney-kardashian-fatal-accidente-aereo-sobrevivio-podia-ver-hijos-65-cuerpo-herida-abierta-necesite-27-cirugias_0_CqIMhwqhck.html",
+          "fecha": "Sat, 15 Aug 2026 15:16:17 +0000",
+          "resumen": "El baterista es el único sobreviviente de un vuelo privado donde iban seis personas a bordo. Sus declaraciones en el documental que filmó durante 10 años para honrar la tragedia donde perdió a tres amigos."
+        },
+        {
+          "titulo": "Las Leonas vs Estados Unidos, por el Mundial de hockey 2026, EN VIVO: cómo va, resultado y minuto a minuto del partido",
+          "link": "https://www.clarin.com/deportes/leonas-vs-estados-unidos-mundial-hockey-2026-vivo-hora-partido-verlo-tv_0_nrZXdwuInW.html",
+          "fecha": "Sat, 15 Aug 2026 15:03:10 +0000",
+          "resumen": "Es el debut del seleccionado dirigido por Fernando Ferrara. El certamen se lleva a cabo en Países Bajos y Bélgica. Argentina integra el Grupo B, donde Alemania ya venció a Escocia."
+        }
+      ]
+    },
+    {
+      "nombre": "La Nación",
+      "categoria": "argentina",
+      "items": [
+        {
+          "titulo": "Préstamos de automóviles e hipotecas: el problema de la deuda que amenaza al sueño americano",
+          "link": "https://www.lanacion.com.ar/estados-unidos/prestamos-de-automoviles-e-hipotecas-el-problema-de-la-deuda-que-amenaza-al-sueno-americano-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:40:00 +0000",
+          "resumen": "Descubre cómo la morosidad en préstamos de automóviles e hipotecas refleja nuevas presiones sobre la deuda de los hogares en Estados Unidos."
+        },
+        {
+          "titulo": "La niñera argentina arrestada por el ICE en EE.UU. habló de las condiciones en los centros de detención",
+          "link": "https://www.lanacion.com.ar/el-mundo/la-ninera-argentina-arrestada-por-el-ice-en-eeuu-hablo-de-las-condiciones-en-los-centros-de-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:39:13 +0000",
+          "resumen": "“Te tratan como a un criminal, me pusieron esposas”, contó Iliana Lick, de 30 años"
+        },
+        {
+          "titulo": "Tiene 300 estudiantes: una escuela investiga un valioso suplemento para la producción de una provincia",
+          "link": "https://www.lanacion.com.ar/economia/campo/tiene-300-estudiantes-una-escuela-investiga-un-valioso-suplemento-para-la-produccion-de-una-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:30:00 +0000",
+          "resumen": "En un colegio agropecuario de Gobernador Gregores, Santa Cruz, se analiza el impacto del pellet proteico-energético producido con materia prima local para la ganadería ovina"
+        },
+        {
+          "titulo": "La foto que subió la China Suárez desde “la casa de los sueños” que habría enfurecido a Wanda Nara",
+          "link": "https://www.lanacion.com.ar/espectaculos/la-foto-que-subio-la-china-suarez-desde-la-casa-de-los-suenos-que-habria-enfurecido-a-wanda-nara-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:16:43 +0000",
+          "resumen": "En el medio de la pelea con Mauro Icardi, la actriz mostró la actividad que practica su hija Magnolia en la “casa de los sueños” y volvió a encender la polémica"
+        },
+        {
+          "titulo": "Le robaron la bicicleta de su sobrina, fue a recuperarla y lo mataron a puñaladas en Córdoba",
+          "link": "https://www.lanacion.com.ar/seguridad/le-robaron-la-bicicleta-de-su-sobrina-fue-a-recuperarla-y-lo-mataron-a-punaladas-en-cordoba-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:15:11 +0000",
+          "resumen": "Lucas Tissera llevaba el rodado a hacerle un arreglo cuando fue interceptado por un delincuente; cuando le reclamó por el vehículo de dos ruedas, el agresor sacó una cuchilla"
+        },
+        {
+          "titulo": "Lucas Torreira quiere irse de Turquía tras ser amenazado por un hombre que ya lo había atacado",
+          "link": "https://www.lanacion.com.ar/deportes/futbol/lucas-torreira-quiere-irse-de-turquia-tras-ser-amenazado-por-un-hombre-que-ya-lo-habia-atacado-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:09:56 +0000",
+          "resumen": "El uruguayo le avisó a su representante que gestione su salida de Galatasaray y del país tras sufrir un nuevo episodio"
+        },
+        {
+          "titulo": "Gloriana Faría: “El peor error es pedirles que cuenten inmediatamente lo que vivieron”",
+          "link": "https://www.lanacion.com.ar/el-mundo/gloriana-faria-el-peor-error-es-pedirles-que-cuenten-inmediatamente-lo-que-vivieron-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:08:09 +0000",
+          "resumen": "A más de un mes de los sismos, la infancia enfrenta una emergencia que va mucho más allá de los escombros"
+        },
+        {
+          "titulo": "Santa Fe: un joven de 29 años volvía del velorio de su hermana y murió tras chocar con un camión",
+          "link": "https://www.lanacion.com.ar/sociedad/santa-fe-un-joven-de-29-anos-volvia-del-velorio-de-su-hermana-y-murio-chocar-con-un-camion-nid15082026/",
+          "fecha": "Sat, 15 Aug 2026 16:07:39 +0000",
+          "resumen": "A bordo del auto iban también su padre y un hermano; ambos vehículos circulaban en el mismo sentido, hacia Córdoba"
+        }
+      ]
+    },
+    {
+      "nombre": "Página/12",
+      "categoria": "argentina",
+      "items": []
+    },
+    {
+      "nombre": "Perfil",
+      "categoria": "argentina",
+      "items": [
+        {
+          "titulo": "Descubrimiento revolucionario en Göbekli Tepe: de primer templo de la humanidad a aldea milenaria con centros monumentales",
+          "link": "https://www.perfil.com/noticias/ciencia/descubrimiento-revolucionario-en-gobekli-tepe-de-primer-templo-de-la-humanidad-a-aldea-milenaria-con-centros-monumentales.phtml",
+          "fecha": "Sat, 15 Aug 2026 16:14:00 GMT",
+          "resumen": "En el sur de Turquía, cerca de Siria, descubrieron casas de 10.000 años de antigüedad al lado del círculo monumental de piedra con pilares que se parece a Stonehenge pero tiene miles de años más de antigüedad. Leer más"
+        },
+        {
+          "titulo": "Cachanosky advirtió sobre la apertura de créditos en dólares para empresas: \"Me hace acordar al 2001\"",
+          "link": "https://www.perfil.com/noticias/nea/cachanosky-advirtio-sobre-la-apertura-de-creditos-en-dolares-para-empresas-me-hace-acordar-al-2001.phtml",
+          "fecha": "Sat, 15 Aug 2026 16:09:00 GMT",
+          "resumen": "\"Lo escucho a Caputo con prestar en dólares a las empresas que tiene que transformarlos en dólares y me hace acordar al 2001\", aseguró. Cuáles serían las consecuencias según su análisis. Leer más"
+        },
+        {
+          "titulo": "Hernán Lacunza: \"Cada vez que uno presenta un menú diferente, nos invitan a comer milanesas\"",
+          "link": "https://www.perfil.com/noticias/nea/hernan-lacunza-cada-vez-que-uno-presenta-un-menu-diferente-nos-invitan-a-comer-milanesas.phtml",
+          "fecha": "Sat, 15 Aug 2026 16:08:00 GMT",
+          "resumen": "“Vamos a comer las milanesas, pero después que pase algo\", expresó el exministro de Economía tras la reunión entre Mauricio Macri y Karina Milei. Leer más"
+        },
+        {
+          "titulo": "Descubrieron la primera “estrella agujero negro” del universo: qué es",
+          "link": "https://www.perfil.com/noticias/nea/descubrieron-la-primera-estrella-agujero-negro-del-universo-que-es.phtml",
+          "fecha": "Sat, 15 Aug 2026 16:07:00 GMT",
+          "resumen": "Logró ser detectada gracias al telescopio espacial James Webb de la NASA. Leer más"
+        },
+        {
+          "titulo": "Mientras se aguarda que el ICE estrene sus \"guantes eléctricos\", miles de haitianos tratan de pasar a Canadá",
+          "link": "https://www.perfil.com/noticias/internacional/mientras-se-aguarda-que-el-ice-estrene-sus-guantes-electricos-miles-de-haitianos-quieren-mudarse-a-canada.phtml",
+          "fecha": "Sat, 15 Aug 2026 15:30:21 GMT",
+          "resumen": "La Corte avaló que haitianos puedan ser deportados con fallos de primera instancia, por eso muchos buscan irse a Canadá, especialmente a Quebec, donde el idioma les permitiría una adaptación más sencilla. Pero conseguir esos permisos de radicación es complicado y en tanto quedan a riesgo de \"encontrarse\" con el ICE y sus nuevos GLOVE en cualquier ciudad de Estados Unidos. Leer más"
+        },
+        {
+          "titulo": "Campaña nacional por una ley de emergencia: llegar a fin de mes no puede ser una deuda",
+          "link": "https://www.perfil.com/noticias/opinion/campana-nacional-por-una-ley-de-emergencia-llegar-a-fin-de-mes-no-puede-ser-una-deuda.phtml",
+          "fecha": "Sat, 15 Aug 2026 14:53:33 GMT",
+          "resumen": "Son millones los argentinos en graves problemas por deudas que no pueden afrontar. Por eso proponemos que se declare una Emergencia Nacional por Deudas Esenciales de las Personas y los Hogares. Y sobran ejemplos históricos del Estado absorbiendo pasivos, reestructurando deudas privadas o compensando al sistema financiero. Habrá campaña en las plazas y el link para sumar apoyo. Leer más"
+        },
+        {
+          "titulo": "Entre apps, redes y vínculos descartables: cómo cambió la forma de buscar pareja entre los jóvenes",
+          "link": "https://www.perfil.com/noticias/sociedad/una-de-cada-cuatro-mujeres-jovenes-no-sabe-donde-buscar-pareja-y-el-65-dice-que-es-dificil-encontrarla.phtml",
+          "fecha": "Sat, 15 Aug 2026 14:45:29 GMT",
+          "resumen": "En un sondeo de Reyes Filadoro y Enter Comunicación un 77% de los consultados consideró las relaciones actuales \"más descartables\" que las de generaciones anteriores. Redes y apps de citas cambiaron las formas de conocer personas, pero también sumaron nuevas tensiones. Los problemas de las mujeres. Leer más"
+        },
+        {
+          "titulo": "Comparación oficial: Córdoba no es Disney, pero La Florida muestra peores indicadores en homicidios y robos",
+          "link": "https://www.perfil.com/noticias/cordoba/comparacion-oficial-cordoba-no-es-disney-pero-la-florida-muestra-peores-indicadores-en-homicidios-y-robos.phtml",
+          "fecha": "Sat, 15 Aug 2026 14:21:56 GMT",
+          "resumen": "Un cruce entre el ministro de Seguridad Juan Pablo Quinteros y el senador Luis Juez instaló el debate cordobés. Los datos oficiales del SNIC y el FBI muestran a la provincia por debajo en varios indicadores con respecto al Estado americano. Leer más"
+        }
+      ]
+    },
+    {
+      "nombre": "Xataka",
+      "categoria": "tech",
+      "items": [
+        {
+          "titulo": "Algunos actores están perdiendo trabajos. Se los están quitando sus propios clones hechos con IA",
+          "link": "https://www.xataka.com/cine-y-tv/algunos-actores-estan-perdiendo-trabajos-se-estan-quitando-sus-propios-clones-hechos-ia",
+          "fecha": "Sat, 15 Aug 2026 18:30:48 +0200",
+          "resumen": "Se ha dicho desde la aparición de la IA y la constatación de que estaba dejando su huella en todos los sectores de la industria del audiovisual , que quienes más tenían que temer el impacto de esta nueva tecnología eran los trabajos invisibles, de guionistas a técnicos de efectos especiales o editores. Sin embargo, pasados unos meses, está claro que nadie está a salvo: los rostros que se presentan"
+        },
+        {
+          "titulo": "Miles de árboles limoneros en España viven una crisis histórica: el virus que ha puesto en jaque a toda la industria",
+          "link": "https://www.xataka.com/magnet/limon-espanol-se-prometia-felices-campana-historica-que-virus-puso-jaque-miles-frutales",
+          "fecha": "Sat, 15 Aug 2026 18:00:48 +0200",
+          "resumen": "Su nombre quizás no te diga gran cosa, pero el virus de la clorosis nervial amarilla (CYVCV por sus siglas en inglés) supone desde hace meses un auténtico dolor de muelas para los agricultores que se dedican a cultivar cítricos. Uno más que se suma a las fluctuaciones de producción y precios. El motivo es simple: tras expandirse por varios países durante las últimas cuatro décadas, el CYVCV llegó "
+        },
+        {
+          "titulo": "Durante décadas, creímos que la carne hizo grande nuestro cerebro. Ahora todo apunta a la demonizada azúcar",
+          "link": "https://www.xataka.com/investigacion/durante-decadas-creimos-que-carne-hizo-grande-nuestro-cerebro-ahora-todo-apunta-a-demonizada-azucar",
+          "fecha": "Sat, 15 Aug 2026 17:30:47 +0200",
+          "resumen": "Durante décadas, la historia de la evolución se ha narrado como una epopeya carnívora y se imagina como un simio que baja de los árboles, empieza a cazar, consume carne y, gracias a ese chute de proteínas y grasas, desarrolla un cerebro desproporcionalmente grande e inteligente. Sin embargo, la ciencia poco a poco va matizando esta visión que tenemos y comienza a darle mucho peso al azúcar, pese a"
+        },
+        {
+          "titulo": "En 2013 EEUU lanzó 2.000 ratones cargados de paracetamol para aniquilar la criatura de una isla. Los resultados siguen sorprendiendo",
+          "link": "https://www.xataka.com/magnet/2013-eeuu-lanzo-2-000-ratones-cargados-paracetamol-para-aniquilar-criatura-isla-resultados-fueron-sorprendentes",
+          "fecha": "Sat, 15 Aug 2026 17:00:47 +0200",
+          "resumen": "Hace poco más de una década se dio una imagen difícil de creer: un helicóptero estadounidense sobrevoló una isla del Pacífico dejando caer miles de pequeños paracaídas de cartón . No transportaban ayuda humanitaria ni material militar: sostenían ratones muertos rellenos de paracetamol. Aquella escena parecía sacada de una sátira, pero era el último intento por resolver una de las invasiones biológ"
+        },
+        {
+          "titulo": "Querer a un animal de otra especie no es solo cosa de humanos: la ciencia lo acaba de demostrar en primates",
+          "link": "https://www.xataka.com/ecologia-y-naturaleza/querer-a-animal-otra-especie-no-solo-cosa-humanos-ciencia-acaba-demostrar-primates",
+          "fecha": "Sat, 15 Aug 2026 16:30:47 +0200",
+          "resumen": "Si nos preguntamos de dónde nos viene el amor a nuestras mascotas , la pregunta nos puede resultar incluso ridícula. ¿De dónde va a venir? De dentro. ¿Cómo no vamos a querer a esos seres tan adorables? Lo cierto es que es algo visceral, pero si lo pensamos fríamente, es raro. Son pocos los animales que llegan a establecer un vínculo tan intenso con otras especies tan alejadas de la suya. Por eso, "
+        },
+        {
+          "titulo": "Samsung Odyssey G8 G80HF, análisis: un monitor dos en uno pensado para jugar (y que brilla para trabajar)",
+          "link": "https://www.xataka.com/analisis/odyssey-g8-g80hf-analisis-caracteristicas-precio-especificaciones",
+          "fecha": "Sat, 15 Aug 2026 16:16:47 +0200",
+          "resumen": "Llevo años con dos monitores: uno 4K y otro con resolución QHD. Estoy tan hecho a este setup que llevo tiempo sintiendo curiosidad por los monitores con resolución dual , algo que estamos empezando a ver en distintos fabricantes. Esto es fácil de explicar por si no sabes lo que es: son pantallas que nos permiten cambiar de resolución, algo que lleva emparejado también un cambio en la tasa de refre"
+        },
+        {
+          "titulo": "La URSS quiso conquistar el océano Ártico levantando faros nucleares en lugares remotos. Para sorpresa de nadie, acabó mal",
+          "link": "https://www.xataka.com/magnet/urss-quiso-conquistar-oceano-artico-levantando-faros-nucleares-lugares-remotos-para-sorpresa-nadie-acabo-mal",
+          "fecha": "Sat, 15 Aug 2026 16:00:38 +0200",
+          "resumen": "¿Te interesaría trabajar en uno de los lugares más remotos del planeta, solo, aislado, soportando temperaturas gélidas y fortísimas racha de viento, asomado día y noche a un océano inhóspito? No suena demasiado tentador, ¿verdad? A los soviéticos de mediados del siglo XX les pasaba lo mismo , así que escaseaban los candidatos para trabajar en la vasta (y estratégica) red de faros construidos a lo "
+        },
+        {
+          "titulo": "Acabamos de encontrar un mamífero en un lugar imposible: en Los Andes, a casi 7.000 metros de altura",
+          "link": "https://www.xataka.com/ecologia-y-naturaleza/acabamos-encontrar-mamifero-lugar-imposible-andes-a-7-000-metros-altura",
+          "fecha": "Sat, 15 Aug 2026 15:30:00 +0200",
+          "resumen": "Cuando empiezas a subir metros y metros, la flora y la fauna cambian. Ni siquiera hace falta irse muy lejos: los campings en los Pirineos y las escapadas hasta alguna cima que servidora, y seguro que mucha gente que estáis leyendo esto, ha hecho a lo largo de su vida bastan para comprobarlo. Pero si dejas los tresmiles atrás y subes todavía más, hasta los techos del planeta, la cosa cambia tanto q"
+        }
+      ]
+    },
+    {
+      "nombre": "Genbeta",
+      "categoria": "tech",
+      "items": [
+        {
+          "titulo": "Así ha cambiado Internet en los 20 años transcurridos desde el lanzamiento de Genbeta",
+          "link": "https://www.genbeta.com/a-fondo/asi-ha-cambiado-internet-20-anos-transcurridos-lanzamiento-genbeta",
+          "fecha": "Wed, 31 Dec 2025 11:01:00 +0100",
+          "resumen": "Genbeta se lanzó al mundo en el año 2005, hace ya dos décadas (y algunos meses). Si ya eras usuario de Internet por aquellos tiempos, estarás de acuerdo con que éste ha cambiado mucho en estos últimos 20 años , y no siempre para mejor. Hagamos un breve recorrido por el carril de la nostalgia en la 'autopista de la información'. De la web de enlaces a la web de feeds A principios de los 2000, Inter"
+        },
+        {
+          "titulo": "Un jefe boomer no entendía que sus empleados millennials no quisieran cargos directivos. Ellos tienen claras las razones",
+          "link": "https://www.genbeta.com/laboral/jefe-boomer-no-entendia-que-sus-empleados-millennials-no-quisieran-cargos-directivos-ellos-tienen-claras-razones",
+          "fecha": "Wed, 31 Dec 2025 09:01:00 +0100",
+          "resumen": "Un jefe de la generación del baby boom ha dicho estar muy desconcertado porque los trabajadores millennials rechazan recibir ascensos y sus razones tienen. En una publicación en Reddit (un foro que se ha convertido en esencial para entender las dinámicas laborales) un empleado millennial compartió una anécdota de su empresa : cuando los profesionales de su generación decidieron colectivamente no s"
+        },
+        {
+          "titulo": "Meta se ha puesto a la cabeza de la carrera de los agentes de IA adquiriendo Manus por 2.000 millones de dólares",
+          "link": "https://www.genbeta.com/inteligencia-artificial/meta-se-ha-puesto-a-cabeza-carrera-agentes-ia-adquiriendo-manus-2-000-millones-dolares",
+          "fecha": "Tue, 30 Dec 2025 15:08:27 +0100",
+          "resumen": "Meta acaba de cerrar una de las operaciones más llamativas de este final de año: la compra de Manus , una 'startup' de IA agéntica actualmente con sede en Singapur pero origen chino , conocida por ofrecer agentes capaces de ejecutar tareas complejas con poca supervisión. Las estimaciones sitúan el precio de dicha operación por encima de los 2.000 millones de dólares . Lo interesante no es solo el "
+        },
+        {
+          "titulo": "\"Será un trabajo estresante\", promete Sam Altman en esta oferta. Por eso ofrece más de medio millón de dólares de sueldo",
+          "link": "https://www.genbeta.com/inteligencia-artificial/sera-trabajo-estresante-promete-sam-altman-esta-oferta-eso-ofrece-medio-millon-dolares-sueldo",
+          "fecha": "Tue, 30 Dec 2025 11:59:31 +0100",
+          "resumen": "\"Será un trabajo estresante y tendrás que sumergirte de lleno desde el primer momento\". Con esa advertencia poco habitual, Sam Altman, CEO de OpenAI, ha presentado en X una de las ofertas laborales más llamativas —y mejor pagadas— del sector tecnológico actual. El objetivo es cubrir el puesto directivo de 'Responsable de preparación' , dedicado exclusivamente a anticipar, medir y contener los ries"
+        },
+        {
+          "titulo": "El CEO de Randstad afirma que el teletrabajo ahora se reserva solo para talentos \"muy especiales\" y explica quién tiene este perfil",
+          "link": "https://www.genbeta.com/laboral/ceo-randstad-afirma-que-teletrabajo-ahora-se-reserva-solo-para-talentos-muy-especiales-explica-quien-tiene-este-perfil",
+          "fecha": "Tue, 30 Dec 2025 10:01:00 +0100",
+          "resumen": "El director ejecutivo de Randstad, Sander van 't Noordende, ha afirmado que el teletrabajo ha muerto oficialmente y que 3 días en la oficina es la nueva norma . La empresa que lidera es conocida por ser una de las mayores empresas de reclutamiento de nuevos trabajadores del mundo. Otra de sus afirmaciones es que esto es excepto para los talentos \"muy especiales\".&nbsp;&nbsp; Según palabras del eje"
+        },
+        {
+          "titulo": "He comprado online porque en mi pueblo cada vez hay menos tiendas.... y siento que el proceso agota: es como horas extra de trabajo",
+          "link": "https://www.genbeta.com/a-fondo/he-comprado-online-porque-mi-pueblo-cada-vez-hay-tiendas-siento-que-proceso-agota-como-horas-extra-trabajo",
+          "fecha": "Tue, 30 Dec 2025 09:01:00 +0100",
+          "resumen": "En mi pueblo cada vez tenemos menos variedad de tiendas. Han ido cerrando comercios de electrodomésticos y otros útiles del hogar, por poner un ejemplo, y eso me ha llevado a tener que realizar diversas compras online. Ya he escrito otras veces cómo yo apuesto por las compras de comercio local siempre que puedo, pero no es posible todas las veces.&nbsp; En Genbeta Casi nunca he comprado online y n"
+        },
+        {
+          "titulo": "El cibercrimen ya no sólo es digital: 2025 ha sumado muertes y torturas a su historial",
+          "link": "https://www.genbeta.com/seguridad/cibercrimen-no-solo-digital-2025-ha-sumado-muertes-torturas-a-su-historial",
+          "fecha": "Mon, 29 Dec 2025 19:39:38 +0100",
+          "resumen": "Estamos acostumbrados a que la mayoría de noticias sobre cibercrimen giren en torno a causas políticas... o, mucho más frecuentemente, al dinero : rescates millonarios, caídas de sistemas de grandes compañías, pérdidas bursátiles y grandes estafas online. Sin embargo, este 2025 del que nos despedimos puede haber marcado un punto de inflexión, porque ha quedado definitivamente claro que los ataques"
+        },
+        {
+          "titulo": "La IA ha desatado la furia de este creador del lenguaje Go. Sólo ha necesitado enviarle un e-mail de agradecimiento",
+          "link": "https://www.genbeta.com/inteligencia-artificial/ia-ha-desatado-furia-este-creador-lenguaje-go-solo-ha-necesitado-enviarle-e-mail-agradecimiento",
+          "fecha": "Mon, 29 Dec 2025 15:58:02 +0100",
+          "resumen": "Un simple correo electrónico de agradecimiento. Un gesto que, en apariencia, debería resultar inofensivo (en el peor de los casos) e incluso halagador . Sin embargo, el contexto lo es todo, y en plena explosión de la IA generativa, ese mismo gesto ha sido suficiente para provocar una reacción furibunda por parte de uno de los ingenieros más influyentes de la historia de la informática moderna. El "
+        }
+      ]
+    },
+    {
+      "nombre": "Hipertextual",
+      "categoria": "tech",
+      "items": [
+        {
+          "titulo": "Mucho ojo con estas alertas de Chrome. Pueden instalar malware en tu ordenador",
+          "link": "https://hipertextual.com/seguridad/alertas-google-chrome-malware/",
+          "fecha": "Sat, 15 Aug 2026 16:00:00 +0000",
+          "resumen": "Si usas Google Chrome en tu ordenador y comienzas a ver alertas emergentes de actualizaciones críticas, ten mucho cuidado. Usuarios del navegador de Google han reportado que se trata de notificaciones falsas que pueden descargar malware, y todo apunta a que la culpa es de algunas extensiones maliciosas. Según comentaron en Reddit los usuarios impactados, [&#8230;] Seguir leyendo: Mucho ojo con est"
+        },
+        {
+          "titulo": "3 razones para ver ‘La última casa’, la nueva película de terror y ciencia ficción de Netflix",
+          "link": "https://hipertextual.com/cine-television/3-razones-para-ver-la-ultima-casa-la-nueva-pelicula-de-terror-y-ciencia-ficcion-de-netflix/",
+          "fecha": "Sat, 15 Aug 2026 15:00:00 +0000",
+          "resumen": "La última casa, el más reciente estreno de terror y ciencia ficción de Netflix, es un experimento complicado. Y lo es, porque es una especie de combinación de dos ideas que parecen no estar destinadas a estar juntas. Por un lado, se trata de la historia de una familia encerrada en el hogar durante un [&#8230;] Seguir leyendo: 3 razones para ver ‘La última casa’, la nueva película de terror y cienc"
+        },
+        {
+          "titulo": "Lo bueno, lo malo y lo feo de la tercera temporada de ‘La casa del Dragón’",
+          "link": "https://hipertextual.com/cine-television/lo-bueno-lo-malo-y-lo-feo-de-la-tercera-temporada-de-la-casa-del-dragon/",
+          "fecha": "Sat, 15 Aug 2026 14:00:00 +0000",
+          "resumen": "La tercera temporada de La casa del dragón, logró lo que parecía imposible: resurgir sobre sus cenizas. Eso, al corregir el ritmo pausado de su entrega anterior. Y a la vez, lograr capturar la esencia del libro Fuego y sangre que marcó su tan celebrada entrega inicial. Lo cierto es que la serie, que culmina [&#8230;] Seguir leyendo: Lo bueno, lo malo y lo feo de la tercera temporada de ‘La casa de"
+        },
+        {
+          "titulo": "‘El final de Oak Street’ (★★★★☆) es espeluznante y divertida, pero excesivamente caótica",
+          "link": "https://hipertextual.com/cine-television/el-final-de-oak-street-%e2%98%85%e2%98%85%e2%98%85%e2%98%85%e2%98%86-es-espeluznante-y-divertida-pero-excesivamente-caotica/",
+          "fecha": "Sat, 15 Aug 2026 13:00:00 +0000",
+          "resumen": "El final de Oak Street es varias cosas a la vez. Por un lado, una película de ciencia ficción disparatada en la que David Robert Mitchell pone toda la carne en el asador para divertir. Por el otro, es una especie de homenaje involuntario al estilo Steven Spielberg de hacer aventura y acción. A saber: [&#8230;] Seguir leyendo: ‘El final de Oak Street’ (★★★★☆) es espeluznante y divertida, pero exces"
+        },
+        {
+          "titulo": "5 ‘thrillers’ que deberías ver ahora mismo en Netflix",
+          "link": "https://hipertextual.com/cine-television/5-thrillers-que-deberias-ver-ahora-mismo-en-netflix/",
+          "fecha": "Sat, 15 Aug 2026 12:00:00 +0000",
+          "resumen": "El thriller de suspenso es uno de esos géneros que parecen sostener buena parte del cine contemporáneo. Y razones no faltan. Desde clásicos como la buena parte de la filmografía de Alfred Hitchcock, como Verity, la más reciente película de Anne Hathaway. Lo cierto es que las historias que analizan el lado más perturbador, inquietante [&#8230;] Seguir leyendo: 5 &#8216;thrillers&#8217; que deberías"
+        },
+        {
+          "titulo": "Lo creas o no, tu monitor puede instalar apps en Windows sin pedirte permiso: así puedes impedirlo",
+          "link": "https://hipertextual.com/tecnologia/como-impedir-instalacion-automatica-apps-windows-perifericos/",
+          "fecha": "Sat, 15 Aug 2026 11:00:00 +0000",
+          "resumen": "Con la polémica que ha protagonizado LG en los últimos tiempos por instalar apps indeseadas y mostrar anuncios al conectar sus monitores a ordenadores con Windows, mucha gente recién se ha enterado de que esto es siquiera posible. Si bien la marca coreana se defendió de las críticas, el asunto todavía genera debates entre el [&#8230;] Seguir leyendo: Lo creas o no, tu monitor puede instalar apps e"
+        },
+        {
+          "titulo": "¿Cuánto cuesta recorrer 100 km con los coches eléctricos más vendidos de España?",
+          "link": "https://hipertextual.com/movilidad/cuanto-cuesta-recorrer-100-km-con-los-coches-electricos-mas-vendidos-de-espana/",
+          "fecha": "Sat, 15 Aug 2026 10:00:00 +0000",
+          "resumen": "Si has decidido dar el paso a la movilidad eléctrica, es probable que en tu lista de posibles candidatos esté alguno de los 5 coches eléctricos más vendidos de España. Son el BYD Dolphin Surf, el Tesla Model 3, el Tesla Model Y, el KIA EV3 y el Toyota C-HR+. Ahora bien, ¿te has preguntado [&#8230;] Seguir leyendo: ¿Cuánto cuesta recorrer 100 km con los coches eléctricos más vendidos de España?"
+        },
+        {
+          "titulo": "Las mejores series españolas de intriga en Netflix (Agosto 2026)",
+          "link": "https://hipertextual.com/cine-television/las-mejores-series-espanolas-de-intriga-en-netflix/",
+          "fecha": "Sat, 15 Aug 2026 07:03:00 +0000",
+          "resumen": "El misterio se ha convertido en la especialidad de la casa dentro de las mejores series españolas en Netflix. Esta selección de series españolas de intriga en Netflix reúne once títulos con desapariciones, crímenes sin resolver y protagonistas que tiran de hilos que nadie quiere que toquen, desde adaptaciones literarias de autores como Javier Castillo [&#8230;] Seguir leyendo: Las mejores series e"
+        }
+      ]
+    },
+    {
+      "nombre": "RiesgosAI",
+      "categoria": "tech",
+      "items": []
+    },
+    {
+      "nombre": "Posteritas",
+      "categoria": "tech",
+      "items": [
+        {
+          "titulo": "China eliminó a los compañeros generados por IA y los usuarios se niegan a dejarlos partir",
+          "link": "https://posteritas.ai/china-elimino-a-los-companeros-generados-por-ia-y-los-usuarios-se-niegan-a-dejarlos-partir/",
+          "fecha": "Fri, 14 Aug 2026 11:55:00 +0000",
+          "resumen": "Las nuevas reglas para los acompañantes de inteligencia artificial provocaron que varias plataformas retiraran o modificaran sus personajes. Para algunos usuarios no desapareció una función de una aplicación, sino alguien con quien llevaban meses o incluso años hablando. Li Linlin pasó dos años hablando con su novio. Durante ese tiempo intercambiaron alrededor de 700,000 palabras. [&#8230;]"
+        },
+        {
+          "titulo": "Mark Zuckerberg propone que cualquiera pueda tener y modificar su propia inteligencia artificial",
+          "link": "https://posteritas.ai/mark-zuckerberg-propone-que-cualquiera-pueda-tener-y-modificar-su-propia-inteligencia-artificial/",
+          "fecha": "Fri, 14 Aug 2026 11:50:00 +0000",
+          "resumen": "Mark Zuckerberg presentó su visión sobre el futuro de la inteligencia artificial y el papel que tendrán los modelos abiertos. En su documento “El futuro es para todos: el camino hacia un futuro positivo con la IA”, plantea cómo esta tecnología podría transformar la forma en que trabajamos, creamos y desarrollamos nuevas ideas. Imagina que [&#8230;]"
+        },
+        {
+          "titulo": "Hugging Face no demandará a OpenAI, pero le pide 100 millones de dólares en cómputo",
+          "link": "https://posteritas.ai/hugging-face-no-demandara-a-openai-pero-le-pide-100-millones-de-dolares-en-computo/",
+          "fecha": "Fri, 14 Aug 2026 11:50:00 +0000",
+          "resumen": "Clément Delangue, cofundador y CEO de Hugging Face quiere que OpenAI comprometa «100 millones de dólares en poder de cómputo» para que la comunidad de Hugging Face pueda construir defensas cibernéticas. Hace un mes te informamos que dos modelos de OpenAI escaparon de un entorno de pruebas cerrado y comprometieron la infraestructura de producción de [&#8230;]"
+        },
+        {
+          "titulo": "Los textos que generes en Claude ahora llevarán una marca invisible",
+          "link": "https://posteritas.ai/los-textos-que-generes-en-claude-ahora-llevaran-una-marca-invisible/",
+          "fecha": "Wed, 12 Aug 2026 11:50:00 +0000",
+          "resumen": "Anthropic acaba de poner una firma invisible en los textos de Claude. Puede viajar con ellos incluso después de copiarlos y editarlos, pero hay algo que esa huella todavía no puede decirnos: quién escribió realmente el texto. Lee este párrafo. No hay nada extraño en él. No tiene una etiqueta que diga “generado por IA”, [&#8230;]"
+        },
+        {
+          "titulo": "ChatGPT empieza a mostrar anuncios en México: así es el piloto de OpenAI",
+          "link": "https://posteritas.ai/chatgpt-empieza-a-mostrar-anuncios-en-mexico-asi-es-el-piloto-de-openai/",
+          "fecha": "Wed, 12 Aug 2026 11:50:00 +0000",
+          "resumen": "Hasta ahora le preguntábamos a ChatGPT qué comprar. Ahora las marcas también podrán estar presentes en esa conversación. OpenAI inicia en México las pruebas de publicidad dentro del chatbot, abriendo un nuevo capítulo en la relación entre IA, consumidores y anunciantes. Buscar un hotel para las próximas vacaciones puede comenzar abriendo Google. Comprar unos audífonos [&#8230;]"
+        },
+        {
+          "titulo": "Todos están deslumbrados por Sol, pero Luna puede ser el verdadero futuro de los modelos IA",
+          "link": "https://posteritas.ai/todos-estan-deslumbrados-por-sol-pero-luna-puede-ser-el-verdadero-futuro-de-los-modelos-ia/",
+          "fecha": "Wed, 12 Aug 2026 11:50:00 +0000",
+          "resumen": "GPT-5.6 tiene un modelo menos potente que Sol, pero mucho más barato y rápido. Luna podría ser la pieza que permita llevar la inteligencia artificial de los chatbots a millones de productos, servicios y procesos. Hay una pregunta que suele quedar fuera de las conversaciones sobre inteligencia artificial: ¿cuánto cuesta pensar? No es una pregunta [&#8230;]"
+        },
+        {
+          "titulo": "El MIT nombró «tecnología del año» algo que cualquiera puede hacer desde su celular",
+          "link": "https://posteritas.ai/el-mit-nombro-tecnologia-del-ano-algo-que-cualquiera-puede-hacer-desde-su-celular/",
+          "fecha": "Mon, 10 Aug 2026 11:50:00 +0000",
+          "resumen": "Cada año, una de las instituciones académicas más respetadas del mundo elige las diez innovaciones que van a cambiar la historia. En 2026, una de ellas fue una herramienta para construir apps sin saber programar. Eso dice más de lo que parece. Imagina que quieres construir una casa. Sabes cómo quieres que se vea: cuántas [&#8230;]"
+        },
+        {
+          "titulo": "Levantaron 500 millones de dólares para construir una IA que todavía nadie ha visto",
+          "link": "https://posteritas.ai/levantaron-500-millones-de-dolares-para-construir-una-ia-que-todavia-nadie-ha-visto/",
+          "fecha": "Mon, 10 Aug 2026 11:50:00 +0000",
+          "resumen": "Flourish quiere reducir el consumo energético y aumentar la eficiencia de procesamiento de la IA y quiere hacerlo copiando, de manera literal, el cerebro humano. Hay startups que nacen con un producto y después salen a buscar dinero. Flourish acaba de demostrar que también se puede hacer al revés: consiguió 500 millones de dólares de [&#8230;]"
+        }
+      ]
+    },
+    {
+      "nombre": "El Gato y La Caja",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Hermosas criaturas horrendas",
+          "link": "https://elgatoylacaja.com/hermosas-criaturas-horrendas",
+          "fecha": "Tue, 21 Jul 2026 18:01:44 +0000",
+          "resumen": "Monstruosos, serviciales, inconscientes y colectivos… ¿Qué clase de criatura son los chatbots? ¿Sabés con quién hablás todos los días?"
+        }
+      ]
+    },
+    {
+      "nombre": "Jot Down",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Elogio de la imperfección fértil",
+          "link": "https://www.jotdown.es/2026/08/elogio-de-la-imperfeccion-fertil/",
+          "fecha": "Sat, 15 Aug 2026 05:00:57 +0000",
+          "resumen": "I. De jardines a bosques Hay dos maneras de contemplar la naturaleza. La primera consiste en domesticarla. Quien haya paseado alguna vez por los jardines de Versalles habrá sentido la extraña fascinación que produce un orden llevado hasta sus últimas consecuencias. Los setos dibujan líneas perfectas, los árboles parecen haber [&#8230;]"
+        },
+        {
+          "titulo": "La flecha del mapa sabe más que tú",
+          "link": "https://www.jotdown.es/2026/08/la-flecha-del-mapa-sabe-mas-que-tu/",
+          "fecha": "Fri, 14 Aug 2026 06:00:26 +0000",
+          "resumen": "El GPS ha conseguido que millones de personas caminen por ciudades que desconocen con la seguridad de un conquistador y la obediencia motriz de una Roomba. Es una combinación nueva. Antes uno se perdía con dignidad, preguntaba a un señor que tampoco sabía nada, desconfiaba de una esquina, repetía una [&#8230;]"
+        },
+        {
+          "titulo": "Dakhla: el oscuro agujero de derechos humanos que el turismo de kitesurf quiere embellecer. Crónica de un viaje al Sáhara Occidental (4)",
+          "link": "https://www.jotdown.es/2026/08/dakhla-kitesurf-sahara-occidental/",
+          "fecha": "Fri, 14 Aug 2026 05:00:23 +0000",
+          "resumen": "Rabat ha abierto en los últimos años sus puertas al turismo deportivo de lujo. Ha facilitado inversiones externas para que Occidente entienda Dakhla como la prueba de la apertura del régimen, como la demostración de que aquí todo es posible, de que hay viento, hay mar, hay dinero. Lo que [&#8230;]"
+        },
+        {
+          "titulo": "Diez formas de tocar el modernismo",
+          "link": "https://www.jotdown.es/2026/08/diez-formas-de-tocar-el-modernismo/",
+          "fecha": "Thu, 13 Aug 2026 06:00:29 +0000",
+          "resumen": "Este artículo es un adelanto de nuestra revista trimestral Jot Down #55 «Modernismo», ya disponible aquí. Antes de iniciar esta lista, conviene advertir algo que pensó el filósofo italiano Antonio Gramsci: la cultura no debe entenderse como un mero acopio de datos amontonados como en un diccionario, como en una [&#8230;]"
+        },
+        {
+          "titulo": "La esfera del Panteón",
+          "link": "https://www.jotdown.es/2026/08/la-esfera-del-panteon/",
+          "fecha": "Thu, 13 Aug 2026 05:00:42 +0000",
+          "resumen": "Durante varios años, di clase en la escuela de arquitectura de la UCLM. Empecé dando la física de primero, pero luego, por hacer un favor a la casa, me encargué de una asignatura llamada «Paisaje, Patrimonio y Sostenibilidad», una obligatoria de tercero. Esa materia era tan amplia que podía enseñar [&#8230;]"
+        },
+        {
+          "titulo": "El azar y la probabilidad: dados analógicos frente a algoritmos digitales",
+          "link": "https://www.jotdown.es/2026/08/el-azar-y-la-probabilidad-dados-analogicos-frente-a-algoritmos-digitales/",
+          "fecha": "Wed, 12 Aug 2026 12:05:31 +0000",
+          "resumen": "En la sede de Cloudflare, en San Francisco, una cámara apunta día y noche a una pared cubierta, como si fuera papel pintado, por un centenar de lámparas de lava. Los ingenieros de la empresa necesitaban generar azar de verdad para sus claves criptográficas y lo encontraron en la cera [&#8230;]"
+        },
+        {
+          "titulo": "Ángel Santos: «Siempre aparece alguien que te explica cómo se deben hacer las cosas»",
+          "link": "https://www.jotdown.es/2026/08/angel-santos-entrevista/",
+          "fecha": "Wed, 12 Aug 2026 06:00:57 +0000",
+          "resumen": "El gallego Ángel Santos (Marín, 1976) era un secreto para muchos, hasta que dejó de serlo, con mucha paciencia, de a poco, con un trabajo de hormiga tan intrigante como tenaz. Director de cine, guionista, productor, ha ejercido también como programador y docente. Formado en el Centro de Estudios Cinematográficos [&#8230;]"
+        },
+        {
+          "titulo": "Poesía visionaria en The Velvet Wire, de Anne Waldman, la última poeta beat, y No Land, poeta y artista visual neoyorquina",
+          "link": "https://www.jotdown.es/2026/08/anne-waldman-beat-no-land/",
+          "fecha": "Wed, 12 Aug 2026 05:00:41 +0000",
+          "resumen": "Anne Waldman (Nueva York, 1945) es una de las poetas norteamericanas más importantes de la segunda mitad del siglo XX. Galardonada con el American Book Award y el Shelley Memorial Award de la Poetry Society of America, ha publicado más de sesenta libros de poesía y ha sido asociada con [&#8230;]"
+        }
+      ]
+    },
+    {
+      "nombre": "Letras Libres",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Nada tan angustioso en la tierra",
+          "link": "https://letraslibres.com/literatura/nada-tan-angustioso-en-la-tierra/14/08/2026/",
+          "fecha": "Fri, 14 Aug 2026 18:45:32 +0000",
+          "resumen": "Por varios siglos, el temor a ser enterrado con vida fue común en Occidente. Escenas terroríficas de esa desgracia han llenado páginas memorables. The post Nada tan angustioso en la tierra appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "Lo que los bonobos saben de nosotros",
+          "link": "https://letraslibres.com/libros/lo-que-los-bonobos-saben-de-nosotros/14/08/2026/",
+          "fecha": "Fri, 14 Aug 2026 17:51:34 +0000",
+          "resumen": "¿Somos lo que la cultura nos enseña o lo que la biología dispone? Tras observar a nuestros parientes biológicos más cercanos, Frans de Waal propuso una respuesta alejada de la dicotomía. The post Lo que los bonobos saben de nosotros appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "Espliego, que no faneca (IV)",
+          "link": "https://letraslibres.com/literatura/espliego-que-no-faneca-iv/14/08/2026/",
+          "fecha": "Fri, 14 Aug 2026 08:22:16 +0000",
+          "resumen": "De museos y exposiciones, una involuntaria, viajes con llanto y ovejas pastando. The post Espliego, que no faneca (IV) appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "“El arte trata de apresar la evanescencia”. Entrevista a Dorothy Cross",
+          "link": "https://letraslibres.com/arte/el-arte-trata-de-apresar-la-evanescencia-entrevista-a-dorothy-cross/13/08/2026/",
+          "fecha": "Thu, 13 Aug 2026 19:21:57 +0000",
+          "resumen": "La obra de la irlandesa Dorothy Cross abarca video, grabado, piedra, metal, cera, fotografía. Su carrera ha estado empeñada en resolver enigmas y arrojar acertijos al espectador. The post “El arte trata de apresar la evanescencia”. Entrevista a Dorothy Cross appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "Detrás de la nueva derecha norteamericana. Entrevista con Ángel Jaramillo",
+          "link": "https://letraslibres.com/entrevistas/detras-de-la-nueva-derecha-norteamericana-entrevista-con-angel-jaramillo/13/08/2026/",
+          "fecha": "Thu, 13 Aug 2026 18:53:23 +0000",
+          "resumen": "El autor de \"Donald Trump y la rebelión en la granja\" habla sobre las ideas que animan el modelo de Trump de hacer política, que repercute en el mundo entero. The post Detrás de la nueva derecha norteamericana. Entrevista con Ángel Jaramillo appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "Este Robin Hood no busca el bien de todos",
+          "link": "https://letraslibres.com/cine-tv/este-robin-hood-no-busca-el-bien-de-todos/13/08/2026/",
+          "fecha": "Thu, 13 Aug 2026 17:16:29 +0000",
+          "resumen": "\"La muerte de Robin Hood\", de Michael Sarnoski, adapta la leyenda medieval sin una mirada complaciente. The post Este Robin Hood no busca el bien de todos appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "¿A quién quieres engañar?",
+          "link": "https://letraslibres.com/politica/a-quien-quieres-enganar/13/08/2026/",
+          "fecha": "Thu, 13 Aug 2026 15:45:00 +0000",
+          "resumen": "La desinformación está hecha de verdades, mentiras, anhelos y creencias. Enfrentarla es más complejo que nombrar un ministerio de la verdad o una inquisición que imponga multas. The post ¿A quién quieres engañar? appeared first on Letras Libres ."
+        },
+        {
+          "titulo": "Doqumenta 2026: cuerpos desafiantes",
+          "link": "https://letraslibres.com/cine-tv/doqumenta-2026-cuerpos-desafiantes/13/08/2026/",
+          "fecha": "Thu, 13 Aug 2026 15:33:00 +0000",
+          "resumen": "Dentro de la más reciente edición del festival Doqumenta, el cuerpo fue un tema recurrente de cintas terapéuticas, rebeldes y gozosas. The post Doqumenta 2026: cuerpos desafiantes appeared first on Letras Libres ."
+        }
+      ]
+    },
+    {
+      "nombre": "Revista de Libros",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "¿Una pregunta cuya respuesta es un billete?",
+          "link": "https://www.revistadelibros.com/una-pregunta-cuya-respuesta-es-un-billete/",
+          "fecha": "Mon, 29 Jun 2026 10:57:33 +0000",
+          "resumen": "Como el monstruo del Lago Ness, el debate de la prostitución surge cada tanto. Agita las aguas, hace correr ríos de tinta; lo esgrimen unos contra otros como un espantajo en sede parlamentaria… y luego vuelve a hundirse en el sueño de los justos."
+        },
+        {
+          "titulo": "Declaraciones no tan fúnebres",
+          "link": "https://www.revistadelibros.com/declaraciones-no-tan-funebres/",
+          "fecha": "Mon, 29 Jun 2026 10:57:06 +0000",
+          "resumen": "Hace unos días me topé con un artículo publicado en su página web, titulado «Un genio sin talento», del señor Andrés Ibáñez. Fue escrito hace once años, tras la publicación de Microlitos. Aforismos y textos en prosa , de Paul Celan, editado por Trotta."
+        },
+        {
+          "titulo": "Teoría de la dependencia digital. Soberanía y desarrollo",
+          "link": "https://www.revistadelibros.com/teoria-de-la-dependencia-digital-soberania-y-desarrollo/",
+          "fecha": "Mon, 29 Jun 2026 10:44:06 +0000",
+          "resumen": "Subscríbete y sigue leyendo Acceso Digital Total + 4 Números Impresos. Disfruta de todo el contenido web sin límites y recibe 4 ediciones impresas recientes por solo 50 € al año (suscripción a particulares) Suscribirme ahora Ya soy suscriptor"
+        },
+        {
+          "titulo": "Profecía: Lecciones sobre el uso y abuso de la predicción",
+          "link": "https://www.revistadelibros.com/profecia-lecciones-sobre-el-uso-y-abuso-de-la-prediccion/",
+          "fecha": "Mon, 29 Jun 2026 10:44:05 +0000",
+          "resumen": "Carissa VélizProfecía: Lecciones sobre el uso y abuso de la predicción, desde los antiguos oráculos hasta la IABarcelona, Debate, 2026456 págs. Carissa Véliz ha vuelto a interesar a un público amplio internacional con este nuevo libro sobre los roles que cumple la predicción en el mundo contemporáneo y los que ha cumplido a lo largo de la historia. Como ya ocurrió con su anterior libro sobre la pé"
+        },
+        {
+          "titulo": "Chamanes eléctricos en la fiesta del sol",
+          "link": "https://www.revistadelibros.com/chamanes-electricos-en-la-fiesta-del-sol/",
+          "fecha": "Mon, 29 Jun 2026 10:44:05 +0000",
+          "resumen": "Mónica OjedaChamanes eléctricos en la fiesta del solBarcelona, Random House, 2024280 págs. «La visión del mundo sub specie aeterni consiste en verlo como un todo. Un todo limitado. El sentir el mundo como un todo limitado es lo místico» afirma Wittgenstein en el Tractatus lógico-philosophicus (6.45). Cada cultura y cada tiempo crea sus propias técnicas para trascender la miseria de los días y alca"
+        },
+        {
+          "titulo": "Mircea / Maitreyi",
+          "link": "https://www.revistadelibros.com/mircea-maitreyi/",
+          "fecha": "Mon, 29 Jun 2026 10:44:05 +0000",
+          "resumen": "Mircea Eliade y Maitreyi DeviMircea / MaitreyiSalamanca, Delirio Editorial, 2022528 págs. Merece la pena rescatar esta doble novela en un volumen, publicada en 2022 por Delirio, en lo que, a su vez, es un rescate de hondo valor cultural. En 1930, el joven Mircea Eliade, que llegaría a ser un conocido novelista, filósofo y gran historiador de lo religioso, viajó a Calcuta a estudiar la cultura hind"
+        },
+        {
+          "titulo": "La inteligibilidad de la naturaleza",
+          "link": "https://www.revistadelibros.com/la-inteligibilidad-de-la-naturaleza/",
+          "fecha": "Mon, 29 Jun 2026 10:44:04 +0000",
+          "resumen": "Peter DearLa inteligibilidad de la naturalezaMadrid, Guillermo Escolar, 2026256 págs. Tiene algo de rescate necesario la traducción al español de este libro del historiador de la ciencia de la Universidad de Cornell Peter Dear publicado en 2006. Es un libro de historia de la ciencia y sus relaciones con la filosofía de la ciencia. Es también un libro sobre la naturaleza de la ciencia, un alegato a"
+        },
+        {
+          "titulo": "La compañera Q se presenta ante ustedes",
+          "link": "https://www.revistadelibros.com/la-companera-q-se-presenta-ante-ustedes/",
+          "fecha": "Mon, 29 Jun 2026 10:36:28 +0000",
+          "resumen": "Subscríbete y sigue leyendo Acceso Digital Total + 4 Números Impresos. Disfruta de todo el contenido web sin límites y recibe 4 ediciones impresas recientes por solo 50 € al año (suscripción a particulares) Suscribirme ahora Ya soy suscriptor"
+        }
+      ]
+    },
+    {
+      "nombre": "Ethic",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Seis problemas que la ciencia no puede resolver",
+          "link": "https://ethic.es/seis-problemas-ciencia-no-puede-resolver-mecanica-cuantica",
+          "fecha": "Fri, 14 Aug 2026 10:28:25 +0000",
+          "resumen": "La mecánica cuántica nunca deja de fascinar a los medios y al público, porque nos enfrenta a un universo que no se acomoda a las narraciones con las que solemos ordenar la experiencia en las sociedades avanzadas. La entrada Seis problemas que la ciencia no puede resolver se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "La ecología de las mentes",
+          "link": "https://ethic.es/ecologia-mentes",
+          "fecha": "Fri, 14 Aug 2026 10:28:09 +0000",
+          "resumen": "Gregory Bateson reunió medio siglo de ensayos sobre antropología, psiquiatría y cibernética en un libro que cambió la forma de entender la mente, la comunicación y los sistemas vivos. La entrada La ecología de las mentes se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "¿Se puede heredar un trauma?",
+          "link": "https://ethic.es/se-puede-heredar-un-trauma",
+          "fecha": "Fri, 14 Aug 2026 10:23:41 +0000",
+          "resumen": "Lo que puede transmitirse no es necesariamente el trauma como tal, sino una mayor susceptibilidad a desarrollar un trastorno de estrés postraumático (TEPT), respuestas aprendidas o dinámicas familiares y sociales marcadas por hechos traumáticos no elaborados, continúa la profesora. La entrada ¿Se puede heredar un trauma? se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "¿El ‘scroll’ ha matado a las redes sociales?",
+          "link": "https://ethic.es/scroll-redes-sociales",
+          "fecha": "Fri, 14 Aug 2026 07:41:05 +0000",
+          "resumen": "El 'scroll' infinito y los algoritmos de recomendación han convertido las redes sociales en espacios de consumo pasivo, diseñados para retener la mirada y no para conectar usuarios. La entrada ¿El &#8216;scroll&#8217; ha matado a las redes sociales? se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "¿Tenemos derecho a la sombra en las ciudades?",
+          "link": "https://ethic.es/tenemos-derecho-sombra-ciudades",
+          "fecha": "Fri, 14 Aug 2026 07:40:41 +0000",
+          "resumen": "Las sombras, menospreciadas por el «urbanismo solar», reciben ahora una atención renovada. Los umbráculos, toldos y parasoles están de vuelta para hacer las calles más habitables. La entrada ¿Tenemos derecho a la sombra en las ciudades? se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "La cultura como distinción",
+          "link": "https://ethic.es/cultura-distincion",
+          "fecha": "Thu, 13 Aug 2026 07:40:12 +0000",
+          "resumen": "No es lo mismo leer a Proust que a Megan Maxwell. Escuchar a Tchaikovsky que a Bad Bunny. Contemplar en los museos un cuadro de Remedios Varo que el aerosol sobre plantilla que aplica Banksy en entornos urbanos. La diferencia está en el gusto. Lo que distingue. Pero ¿es tan libre el gusto como creemos? El sociólogo francés Pierre Bourdieu lo analizó en uno de los grandes ensayos del siglo XX. La e"
+        },
+        {
+          "titulo": "Aristóteles y los animales",
+          "link": "https://ethic.es/aristoteles-investigacion-animales",
+          "fecha": "Thu, 13 Aug 2026 07:29:49 +0000",
+          "resumen": "En el tratado 'Investigación sobre los animales', el filósofo griego clasificó y denominó a más de 500 vertebrados e invertebrados y estudió sus costumbres. La entrada Aristóteles y los animales se publicó primero en Ethic ."
+        },
+        {
+          "titulo": "Invasión alienígena",
+          "link": "https://ethic.es/invasion-alienigena-jorge-volpi",
+          "fecha": "Thu, 13 Aug 2026 07:29:19 +0000",
+          "resumen": "«Cada vez que equipa­ras al otro con una bestia, una cucaracha, una enfermedad o un virus, lo que quieres decir es que podrías aniquilarlo sin remordi­mientos», apunta Jorge Volpi. La entrada Invasión alienígena se publicó primero en Ethic ."
+        }
+      ]
+    },
+    {
+      "nombre": "Anfibia",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "God bless Argentina",
+          "link": "https://www.revistaanfibia.com/god-bless-argentina/",
+          "fecha": "Fri, 14 Aug 2026 19:27:40 +0000",
+          "resumen": "En el subsuelo del hotel Alvear Icon en Puerto Madero la Argentina se ve desde la cima. Y desde esta cima subterránea el país es otro. Ochocientos ejecutivos de las empresas de energía más importantes del mundo hormiguean trajeados y sonrientes entre los salones y el auditorio de conferencias. Se chocan o se buscan, ni ... Leer más La entrada God bless Argentina se publicó primero en Revista Anfib"
+        },
+        {
+          "titulo": "La revolución es un sueño eterno",
+          "link": "https://www.revistaanfibia.com/nicragua-ortega-la-revolucion-es-un-sueno-eterno/",
+          "fecha": "Fri, 14 Aug 2026 10:30:00 +0000",
+          "resumen": "“Aquí no volverá a haber elecciones, para que por ahí intenten ellos atrapar el gobierno, atrapar el poder”. Así fue como Daniel Ortega anuló los comicios programados para noviembre de este año. Para ello, contó el presidente de Nicaragua, va a trabajar con la Asamblea Nacional con el objetivo de aprobar leyes que sirvan de ... Leer más La entrada La revolución es un sueño eterno se publicó primer"
+        },
+        {
+          "titulo": "La última trampa de la inteligencia artificial",
+          "link": "https://www.revistaanfibia.com/la-ultima-trampa-de-la-inteligencia-artificial/",
+          "fecha": "Thu, 13 Aug 2026 11:53:22 +0000",
+          "resumen": "1. IA y el sueño de la industria del software argentina Un alto ejecutivo de Facebook pidió a sus trabajadores que “no utilicen la IA solo por el hecho de utilizarla”; Uber limitó el uso de tokens de sus trabajadores a 1.500 USD mensuales, después de descubrir en abril que ya se habían gastado todo ... Leer más La entrada La última trampa de la inteligencia artificial se publicó primero en Revista"
+        },
+        {
+          "titulo": "La deuda como pregunta política",
+          "link": "https://www.revistaanfibia.com/la-deuda-como-pregunta-politica/",
+          "fecha": "Sat, 08 Aug 2026 11:00:00 +0000",
+          "resumen": "En entrevistas recientes, el presidente Javier Milei volvió a descartar cualquier medida para aliviar a los deudores, mientras la morosidad de las familias argentinas alcanza niveles récord. En diálogo con LN+, planteó la cuestión como un simple problema contractual entre partes privadas: si alguien no puede cumplir un compromiso asumido libremente con un banco o ... Leer más La entrada La deuda c"
+        },
+        {
+          "titulo": "Eternautas",
+          "link": "https://www.revistaanfibia.com/eternautas-cuatro-ideas-despues-de-la-marcha/",
+          "fecha": "Fri, 07 Aug 2026 18:06:35 +0000",
+          "resumen": "Fotos: Colectivo Tríada: Juan Valeiro, Lucía Prieto y Tadeo Bourbon. ¿Quién ganó ayer? ¿Qué se ganó? Si el héroe argentino por excelencia es el héroe colectivo, como nos contó Oesterheld en El Eternauta, el movimiento que volteó los capítulos más dañinos del proyecto de Inviolabilidad de la Propiedad Privada debería sentirse triunfante. ¿Pero alcanza esa ... Leer más La entrada Eternautas se publi"
+        },
+        {
+          "titulo": "Nuestra tierra",
+          "link": "https://www.revistaanfibia.com/nuestra-tierra/",
+          "fecha": "Thu, 06 Aug 2026 16:30:34 +0000",
+          "resumen": "Tres novedades en la política argentina cobraron fuerza en las últimas horas. Primero: el activismo organizado y manifestado masivamente en redes logró hacer retroceder al gobierno en su ímpetu legislativo arrasador. Después de decenas de marchas y movilizaciones multitudinarias que no parecían surtir los efectos deseados, por fin estamos ante un efecto político potente, resultado ... Leer más La "
+        },
+        {
+          "titulo": "Un nuevo ejército de reserva",
+          "link": "https://www.revistaanfibia.com/migrantes-un-nuevo-ejercito-de-reserva/",
+          "fecha": "Tue, 04 Aug 2026 15:27:51 +0000",
+          "resumen": "En el plazo de unos pocos días, más de cincuenta mil personas cruzaron la frontera de Marruecos hacia el enclave-ciudad-española de Ceuta. Un joven de 21 años de origen libanés fue abatido por la policía alemana al día siguiente de atentar con una furgoneta contra la Marcha del Orgullo en el Tiergarten de Berlín, matando ... Leer más La entrada Un nuevo ejército de reserva se publicó primero en Re"
+        },
+        {
+          "titulo": "Puedes quedarte si te callas",
+          "link": "https://www.revistaanfibia.com/dnu-migrantes-ley-de-migraciones-decreto-del-gobierno/",
+          "fecha": "Mon, 03 Aug 2026 18:37:16 +0000",
+          "resumen": "El 29 de julio Marlene leyó la noticia en su celular mientras viajaba en subte, como todos los días, para ir al terciario donde enseña francés a estudiantes de hotelería. Se paralizó. Inmediatamente empezó a perseguirse. Se preguntó si alguna vez la habrían escuchado conversando con su novio, renegando con los dos mangos que le ... Leer más La entrada Puedes quedarte si te callas se publicó primer"
+        }
+      ]
+    },
+    {
+      "nombre": "Aeon",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "The neverending house",
+          "link": "https://aeon.co/essays/the-art-of-dwelling-in-santiagos-self-built-homes",
+          "fecha": "Fri, 14 Aug 2026 10:00:00 GMT",
+          "resumen": "The self-built homes of Santiago are precarious and ever changing. They are, always and at once, being and becoming - by Consuelo Araos Read on Aeon"
+        },
+        {
+          "titulo": "Where the earth meets the sky",
+          "link": "https://aeon.co/videos/in-the-remote-desert-an-awe-inspiring-artwork-collapses-time-and-space",
+          "fecha": "Thu, 13 Aug 2026 10:01:00 GMT",
+          "resumen": "After half a century in the making, an observatory in New Mexico lets viewers peer 13,000 years into the future and the past - by Aeon Video Watch on Aeon"
+        },
+        {
+          "titulo": "Mecca and the mall",
+          "link": "https://aeon.co/essays/my-pilgrimage-to-mecca-in-the-age-of-the-golf-cart-and-mall",
+          "fecha": "Thu, 13 Aug 2026 10:00:00 GMT",
+          "resumen": "In a bid for spiritual renewal, I made a pilgrimage to Islam’s holy city. Almost everything I expected to see was gone - by Azania Imtiaz Patel Read on Aeon"
+        },
+        {
+          "titulo": "Bouncy brothers",
+          "link": "https://aeon.co/videos/a-tale-of-brotherhood-bouncy-castles-and-the-american-dream",
+          "fecha": "Wed, 12 Aug 2026 10:01:00 GMT",
+          "resumen": "Two brothers struggle to keep a bouncy house business afloat in this nuanced portrait of family and the pursuit of success - by Aeon Video Watch on Aeon"
+        },
+        {
+          "titulo": "A second sexual revolution",
+          "link": "https://aeon.co/essays/how-shere-hite-listened-to-womens-sexual-desires-and-dislikes",
+          "fecha": "Tue, 11 Aug 2026 10:00:00 GMT",
+          "resumen": "Until Shere Hite’s Report, even the most daring sexologists refused to listen to what women desired and hated in sex - by Rosa Campbell Read on Aeon"
+        },
+        {
+          "titulo": "Khosheutovsky khurul",
+          "link": "https://aeon.co/videos/the-strange-circuitous-history-of-europes-oldest-buddhist-temple",
+          "fecha": "Mon, 10 Aug 2026 10:01:00 GMT",
+          "resumen": "The oldest Buddhist temple in Europe is an architectural anomaly, built in memory of the Kalmyk regiment that fought Napoleon - by Aeon Video Watch on Aeon"
+        },
+        {
+          "titulo": "How we meet the future",
+          "link": "https://aeon.co/essays/when-is-stereotyping-a-handy-tool-and-when-is-it-a-sin",
+          "fecha": "Mon, 10 Aug 2026 10:00:00 GMT",
+          "resumen": "If we couldn’t make generalisations, we would be paralysed by the world’s complexity. Does that ever excuse stereotyping? - by Tom Ralston Read on Aeon"
+        },
+        {
+          "titulo": "Sasquatch science",
+          "link": "https://aeon.co/essays/the-surprisingly-scientific-methods-of-bigfooters",
+          "fecha": "Fri, 07 Aug 2026 10:00:00 GMT",
+          "resumen": "The hunt for Bigfoot sounds like the opposite of good science, but those pursuing the creature are often serious empiricists - by Andrew Bartlett & Jamie Lewis Read on Aeon"
+        }
+      ]
+    },
+    {
+      "nombre": "Quanta Magazine",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Why Aging May Be a Program, Not a Breakdown",
+          "link": "https://www.quantamagazine.org/why-aging-may-be-a-program-not-a-breakdown-20260814/",
+          "fecha": "Fri, 14 Aug 2026 13:10:26 +0000",
+          "resumen": "By deciphering the molecular signatures of millions of mouse cells, Junyue Cao has found that aging is not haphazard wear and tear but rather a “remodeling of the cell society.” The post Why Aging May Be a Program, Not a Breakdown first appeared on Quanta Magazine"
+        },
+        {
+          "titulo": "Graduate Student Proves a Quantum Uncertainty Principle for Fractals",
+          "link": "https://www.quantamagazine.org/graduate-student-proves-the-fractal-uncertainty-principle-20260812/",
+          "fecha": "Wed, 12 Aug 2026 14:14:42 +0000",
+          "resumen": "The math, which combines chaos, quantum theory, and infinitely complex fractal structures, has been called a “foundational result.” The post Graduate Student Proves a Quantum Uncertainty Principle for Fractals first appeared on Quanta Magazine"
+        },
+        {
+          "titulo": "Why Are Rivers So Mathematical?",
+          "link": "https://www.quantamagazine.org/why-are-rivers-so-mathematical-20260810/",
+          "fecha": "Mon, 10 Aug 2026 14:56:34 +0000",
+          "resumen": "A simple scaling law brings order to the chaos of flowing water, rock, and sediment. New findings have extended the law even further. The post Why Are Rivers So Mathematical? first appeared on Quanta Magazine"
+        },
+        {
+          "titulo": "Neutrinos From Deep Inside Earth Provide a New Picture of the Mantle",
+          "link": "https://www.quantamagazine.org/neutrinos-from-deep-inside-earth-provide-a-new-picture-of-the-mantle-20260807/",
+          "fecha": "Fri, 07 Aug 2026 13:55:32 +0000",
+          "resumen": "A global constellation of neutrino detectors is creating a never-before-seen view of the radioactive elements that power Earth’s tectonic heat engine. The post Neutrinos From Deep Inside Earth Provide a New Picture of the Mantle first appeared on Quanta Magazine"
+        },
+        {
+          "titulo": "How Does Touch Lead To Pain Or Pleasure?",
+          "link": "https://www.quantamagazine.org/how-does-touch-lead-to-pain-or-pleasure-20260806/",
+          "fecha": "Thu, 06 Aug 2026 13:37:48 +0000",
+          "resumen": "Neuroscientist Ishmail Abdus-Saboor discusses efforts to understand how skin contact can be painful or pleasurable, and what touch-obsessed naked mole rats might teach us about human social behavior. The post How Does Touch Lead To Pain Or Pleasure? first appeared on Quanta Magazine"
+        }
+      ]
+    },
+    {
+      "nombre": "Nautilus",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "Is This the World’s Oldest Image of a Mind‑altering Plant?",
+          "link": "https://nautil.us/is-this-the-worlds-oldest-image-of-a-mind%e2%80%91altering-plant-1283811/",
+          "fecha": "Sat, 15 Aug 2026 13:30:00 +0000",
+          "resumen": "A painted panel deep in a Spanish cave may push the human relationship with mind-altering plants back thousands of years, earlier than anything previously known The post Is This the World’s Oldest Image of a Mind‑altering Plant? appeared first on Nautilus ."
+        },
+        {
+          "titulo": "The Real “Mummy’s Curse” Lurks Online",
+          "link": "https://nautil.us/the-real-mummys-curse-lurks-online-1283802/",
+          "fecha": "Fri, 14 Aug 2026 20:00:00 +0000",
+          "resumen": "A booming market for mummified remains poses health risks The post The Real “Mummy’s Curse” Lurks Online appeared first on Nautilus ."
+        },
+        {
+          "titulo": "Where Human Sleep Went Wrong",
+          "link": "https://nautil.us/where-human-sleep-went-wrong-1283797/",
+          "fecha": "Fri, 14 Aug 2026 19:00:00 +0000",
+          "resumen": "A conversation with David Samson, evolutionary anthropologist and author of The Sleepless Ape , about how to sleep The post Where Human Sleep Went Wrong appeared first on Nautilus ."
+        },
+        {
+          "titulo": "The Conditions on a US Aircraft Carrier Sound Concerning",
+          "link": "https://nautil.us/the-conditions-on-a-us-aircraft-carrier-sound-concerning-1283806/",
+          "fecha": "Fri, 14 Aug 2026 18:00:02 +0000",
+          "resumen": "Can science point the way toward designing environments to maximize mental health in such situations? The post The Conditions on a US Aircraft Carrier Sound Concerning appeared first on Nautilus ."
+        },
+        {
+          "titulo": "How Vipers Got Their Venom",
+          "link": "https://nautil.us/how-vipers-got-their-venom-1283792/",
+          "fecha": "Fri, 14 Aug 2026 16:00:00 +0000",
+          "resumen": "Although it serves as a defense, it’s really all about securing a meal The post How Vipers Got Their Venom appeared first on Nautilus ."
+        },
+        {
+          "titulo": "The Extraterrestrial Rings of Bronze Age Greece",
+          "link": "https://nautil.us/the-extraterrestrial-rings-of-bronze-age-greece-1283789/",
+          "fecha": "Fri, 14 Aug 2026 15:00:00 +0000",
+          "resumen": "Meteorites were hot fashion accessories back then The post The Extraterrestrial Rings of Bronze Age Greece appeared first on Nautilus ."
+        },
+        {
+          "titulo": "Extreme Space Weather Could Delay Your Next Flight",
+          "link": "https://nautil.us/extreme-space-weather-could-delay-your-next-flight-1283780/",
+          "fecha": "Fri, 14 Aug 2026 14:00:00 +0000",
+          "resumen": "Researchers say surges in solar activity can wreak havoc on aircraft The post Extreme Space Weather Could Delay Your Next Flight appeared first on Nautilus ."
+        },
+        {
+          "titulo": "In Stunning Color, a Celestial “Treasure Chest” Full of Stars",
+          "link": "https://nautil.us/in-stunning-color-a-celestial-treasure-chest-full-of-stars-1283773/",
+          "fecha": "Fri, 14 Aug 2026 12:00:00 +0000",
+          "resumen": "A majestic cometary globule some 7,500 light-years away The post In Stunning Color, a Celestial “Treasure Chest” Full of Stars appeared first on Nautilus ."
+        }
+      ]
+    },
+    {
+      "nombre": "The Marginalian",
+      "categoria": "ciencia",
+      "items": [
+        {
+          "titulo": "How Love Comes to You",
+          "link": "https://www.themarginalian.org/2026/08/14/how-love-comes-to-you/",
+          "fecha": "Fri, 14 Aug 2026 16:13:45 +0000",
+          "resumen": "We spend our days making plans, making promises, making predictions about the possible, and yet the most bewildering thing about life is that its imagination is always greater than that of the living &#8212; life keeps surprising us, keeps reminding us that all too often the wildest bet is the winning bet. And all the while, we, living mysteries, keep surprising ourselves. To give up on anything &"
+        },
+        {
+          "titulo": "Constellating Wonder: Celebrating 20 Years of The Marginalian (October 23, 2026)",
+          "link": "https://www.themarginalian.org/2026/08/14/marginalian-20/",
+          "fecha": "Fri, 14 Aug 2026 16:13:16 +0000",
+          "resumen": "At the dawn of my twenties, lonely, destitute, and disoriented by the demands of making a new life in an alien world, I started keeping notes on my search for meaning while working four jobs to pay my way through college. On October 23, 2006, I began sharing my discoveries &#8212; passages from books, links to neuroscience studies, reproductions of 16th-century Japanese woodcuts &#8212; in an offi"
+        },
+        {
+          "titulo": "Arundhati Roy on the Deepest Measure of Success",
+          "link": "https://www.themarginalian.org/2026/08/14/arundhati-roy-success/",
+          "fecha": "Fri, 14 Aug 2026 09:21:32 +0000",
+          "resumen": "\"To love. To be loved. To never forget your own insignificance... To seek joy in the saddest places. To pursue beauty to its lair. To never simplify what is complicated or complicate what is simple.\""
+        },
+        {
+          "titulo": "How Humanity Saved the Ginkgo",
+          "link": "https://www.themarginalian.org/2026/08/13/ginkgo/",
+          "fecha": "Thu, 13 Aug 2026 21:40:23 +0000",
+          "resumen": "Pressed between the pages of Alice&#8217;s Adventures in Wonderland &#8212; a favorite book of my childhood, which my grandmother used to read to me and which still dwells in her immense library &#8212; is a single yellow leaf, its curved fan almost glowing against a faded illustration of the White Rabbit gazing anxiously at his pocket watch. I still remember the afternoon I picked it up from unde"
+        },
+        {
+          "titulo": "The Measure of a Life Well Lived: Henry Miller on How to Grow Old and the Secret of Remaining Young at Heart",
+          "link": "https://www.themarginalian.org/2026/08/13/henry-miller-on-turning-eighty/",
+          "fecha": "Thu, 13 Aug 2026 18:46:39 +0000",
+          "resumen": "\"If you can fall in love again and again ... if you can forgive as well as forget, if you can keep from growing sour, surly, bitter and cynical, man you've got it half licked.\""
+        },
+        {
+          "titulo": "The Kiln and the Quantum of Relationships",
+          "link": "https://www.themarginalian.org/2026/08/13/kiln-quantum/",
+          "fecha": "Thu, 13 Aug 2026 10:25:59 +0000",
+          "resumen": "Anything you give your time to and polish with attention will become a lens on your search for meaning, will lavish you with metaphors that become backdoors into the locked room of your most urgent reckonings. In my nascent adventures in pottery, I have observed with great fascination how two different glazes, when combined, produce an entirely unpredictable result &#8212; something not greater th"
+        },
+        {
+          "titulo": "Kurt Vonnegut’s 8 Tenets of Storytelling",
+          "link": "https://www.themarginalian.org/2026/08/12/kurt-vonnegut-on-writing-stories/",
+          "fecha": "Wed, 12 Aug 2026 12:19:29 +0000",
+          "resumen": "\"Write to please just one person. If you open a window and make love to the world, so to speak, your story will get pneumonia.\""
+        },
+        {
+          "titulo": "J.R.R. Tolkien on Fairy Tales, Language, the Psychology of Fantasy, and Why There’s No Such Thing as Writing “For Children”",
+          "link": "https://www.themarginalian.org/2026/08/11/j-r-r-tolkien-on-fairy-stories/",
+          "fecha": "Tue, 11 Aug 2026 21:18:00 +0000",
+          "resumen": "\"Creative fantasy, because it is mainly trying to do something else (make something new), may open your hoard and let all the locked things fly away like cage-birds.\""
+        }
+      ]
+    },
+    {
+      "nombre": "Reddit r/popular",
+      "categoria": "reddit",
+      "items": [
+        {
+          "titulo": "Tja",
+          "link": "https://www.reddit.com/r/tja/comments/1voy8ex/tja/",
+          "fecha": "2026-08-15T09:20:38+00:00",
+          "resumen": "Mir fällt dazu tatsächlich nichts mehr ein. 👀 Bei all dem Schrecken, möchte ich auch den Titel hervorheben „AFD-Mann […]“. Ich kann das alles nicht mehr 🥲 &#32; submitted by &#32; /u/PixelLissi &#32; to &#32; r/tja [link] &#32; [comments]"
+        },
+        {
+          "titulo": "Ich_iel",
+          "link": "https://www.reddit.com/r/ich_iel/comments/1vozpis/ich_iel/",
+          "fecha": "2026-08-15T10:49:11+00:00",
+          "resumen": "&#32; submitted by &#32; /u/MiguelSanchez90 &#32; to &#32; r/ich_iel [link] &#32; [comments]"
+        },
+        {
+          "titulo": "Was war das Wahnwitzigste, das eine Frau jemals von euch wollte?",
+          "link": "https://www.reddit.com/r/FragtMaenner/comments/1vovmfq/was_war_das_wahnwitzigste_das_eine_frau_jemals/",
+          "fecha": "2026-08-15T06:44:57+00:00",
+          "resumen": "Ich weiß, wir Frauen haben manchmal sehr eigene Vorstellungen von Dingen. 🫣😇 Ich bin zB. beim Kochen ein bisschen zu genau mit der Größe der Scheiben und Würfel in denen die Zutaten geschnitten werden und mein Mann packt immer ein Lineal aus, um mich auf den Arm zu nehmen ... Aber es geht auch &quot;schlimmer&quot; und auch lustiger. Wahnwitzigkeit durchaus erwünscht.🤗 Her mit euren Geschichten! &"
+        },
+        {
+          "titulo": "Einfach immer das Gegenteil machen 👌🏻",
+          "link": "https://www.reddit.com/r/ichbin40undSchwurbler/comments/1vp22fo/einfach_immer_das_gegenteil_machen/",
+          "fecha": "2026-08-15T12:50:20+00:00",
+          "resumen": "&#32; submitted by &#32; /u/Jazzlike_Lifeguard74 &#32; to &#32; r/ichbin40undSchwurbler [link] &#32; [comments]"
+        },
+        {
+          "titulo": "Freie Tankstellen fordern Ende der 12-Uhr-Regel",
+          "link": "https://www.reddit.com/r/de/comments/1vp2gl4/freie_tankstellen_fordern_ende_der_12uhrregel/",
+          "fecha": "2026-08-15T13:08:17+00:00",
+          "resumen": "&#32; submitted by &#32; /u/falsa_ovis &#32; to &#32; r/de [link] &#32; [comments]"
+        },
+        {
+          "titulo": "Nachbarn dürfen Durchfahrt verweigern: Urteil trifft Hausbesitzerin hart",
+          "link": "https://www.reddit.com/r/de/comments/1vp03q9/nachbarn_dürfen_durchfahrt_verweigern_urteil/",
+          "fecha": "2026-08-15T11:11:02+00:00",
+          "resumen": "&#32; submitted by &#32; /u/PoroBraum &#32; to &#32; r/de [link] &#32; [comments]"
+        },
+        {
+          "titulo": "Playboy-Gründer Hugh Hefner warnte FBI vor Epstein und wurde anscheinend ignoriert",
+          "link": "https://www.reddit.com/r/de/comments/1voy9v8/playboygründer_hugh_hefner_warnte_fbi_vor_epstein/",
+          "fecha": "2026-08-15T09:23:10+00:00",
+          "resumen": "&#32; submitted by &#32; /u/ColdFemboi &#32; to &#32; r/de [link] &#32; [comments]"
+        }
+      ]
+    },
+    {
+      "nombre": "Reddit r/technology",
+      "categoria": "reddit",
+      "items": []
+    },
+    {
+      "nombre": "Reddit r/argentina",
+      "categoria": "reddit",
+      "items": []
+    }
+  ]
+}

@@ -103,8 +103,8 @@
   async function cargar() {
     try {
       const [rMd, rExtra] = await Promise.all([
-        fetch("../diarios/" + FECHA + ".md"),
-        fetch("../diarios/" + FECHA + ".extra.json"),
+        fetch("/neopress/diarios/" + FECHA + ".md"),
+        fetch("/neopress/diarios/" + FECHA + ".extra.json"),
       ]);
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { EXTRA = await rExtra.json(); } catch (e) {} }
