@@ -1,11 +1,11 @@
 #!/bin/bash
-# Neopress — recolección + redacción (corre en el VPS, cron 9 AM).
+# Neopress — recolección + clima + redacción (corre en el VPS, cron 9 AM).
 set -euo pipefail
 
 NEOPRESS="$HOME/neopress"
 PIPELINE="$NEOPRESS/pipeline"
 DIARIOS="$NEOPRESS/diarios"
-EDITOR="$HOME/brain/neopress/editor.md"   # sombrero: vive en el vault (conceptual)
+EDITOR="$HOME/brain/neopress/editor.md"
 HOY=$(date +%F)
 PI="$HOME/.npm-global/bin/pi"
 
@@ -14,7 +14,10 @@ log() { echo "[neopress] $*"; }
 cd "$PIPELINE"
 
 log "recolección ($HOY)"
-python3 collect.py --extraer
+python3 collect.py
+
+log "clima"
+curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid&forecast_days=1" | python3 -c 'import sys,json; d=json.load(sys.stdin); print(json.dumps({"temp": round(d["current"]["temperature_2m"]), "code": d["current"]["weather_code"], "max": round(d["daily"]["temperature_2m_max"][0]), "min": round(d["daily"]["temperature_2m_min"][0])}))' > "$DIARIOS/$HOY.clima.json"
 
 log "redacción"
 "$PI" -p "

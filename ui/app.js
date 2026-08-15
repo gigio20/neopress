@@ -1,9 +1,10 @@
-// Neopress — vista del diario. Lectura limpia vía .extra.json.
+// Neopress — vista del diario. Lectura limpia vía .extra.json + clima.
 (() => {
   const params = new URLSearchParams(location.search);
   const FECHA = params.get("fecha") || hoyISO();
   const contenedor = document.getElementById("diario");
   let EXTRA = {}; // link -> {titulo, medio, imagen, texto}
+  let CLIMA = null; // {temp, code, max, min}
 
   function hoyISO() {
     const d = new Date();
@@ -30,6 +31,23 @@
     return { titulo: s.replace(/^\[|\]$/g,""), medio: "", url: "" };
   }
 
+  function climaDesc(code) {
+    if (code === 0) return "Despejado";
+    if (code <= 3) return "Parcialmente nublado";
+    if (code === 45 || code === 48) return "Niebla";
+    if (code >= 51 && code <= 67) return "Lluvia";
+    if (code >= 71 && code <= 77) return "Nieve";
+    if (code >= 80 && code <= 82) return "Chubascos";
+    if (code >= 95) return "Tormenta";
+    return "—";
+  }
+  function climaHTML() {
+    if (!CLIMA) return "";
+    return "<div class=\"clima\"><span class=\"clima-temp\">" + CLIMA.temp + "°</span>" +
+      "<span class=\"clima-desc\">" + climaDesc(CLIMA.code) + "</span>" +
+      "<span class=\"clima-minmax\">" + CLIMA.min + "° / " + CLIMA.max + "°</span></div>";
+  }
+
   function tarjetaHTML(t) {
     const datos = EXTRA[t.url] || {};
     const img = datos.imagen ? "<img class=\"tarjeta-img\" src=\"" + esc(datos.imagen) + "\" alt=\"\" loading=\"lazy\">" : "";
@@ -52,7 +70,7 @@
     let carruselOpen = false, enPanorama = false;
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
 
-    html.push("<header class=\"header\"><div class=\"marca\">Neopress</div><div class=\"fecha\">" + fechaLarga(fecha) + "</div></header>");
+    html.push("<header class=\"header\"><div class=\"marca\">Neopress</div>" + climaHTML() + "<div class=\"fecha\">" + fechaLarga(fecha) + "</div></header>");
 
     for (const raw of md.split("\n")) {
       const line = raw.trim();
@@ -102,12 +120,14 @@
 
   async function cargar() {
     try {
-      const [rMd, rExtra] = await Promise.all([
+      const [rMd, rExtra, rClima] = await Promise.all([
         fetch("/neopress/diarios/" + FECHA + ".md"),
         fetch("/neopress/diarios/" + FECHA + ".extra.json"),
+        fetch("/neopress/diarios/" + FECHA + ".clima.json"),
       ]);
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { EXTRA = await rExtra.json(); } catch (e) {} }
+      if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
       contenedor.innerHTML = render(await rMd.text());
     } catch (e) {
       contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario del " + fechaLarga(FECHA) + ".</p><p class=\"detalle\">" + esc(String(e.message)) + "</p></div>";

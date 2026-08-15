@@ -119,7 +119,6 @@ a { color: var(--tinta); }
   height: 84px;
   object-fit: cover;
   margin: -14px -13px 8px;
-  filter: grayscale(1);
 }
 .tarjeta--leible::after {
   content: "leer";
@@ -161,3 +160,9 @@ a { color: var(--tinta); }
 .lectura-titulo { font-family: sans-serif; font-size: 24px; line-height: 1.2; margin: 0 0 8px; }
 .lectura-medio { font-size: 13px; color: var(--gris); margin-bottom: 18px; }
 .lectura-texto p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; }
+
+/* Widget clima */
+.clima { display: flex; align-items: baseline; gap: 6px; font-size: 14px; }
+.clima-temp { font-weight: 700; font-size: 18px; }
+.clima-desc { font-size: 13px; }
+.clima-minmax { color: var(--gris); font-size: 12px; }
