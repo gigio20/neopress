@@ -108,17 +108,16 @@ def main():
                 "resumen": resumen,
             })
 
-            if extraer and link and cat not in EXTRACCION_SKIP and extraidas < TOP_EXTRACCION:
-                texto = extraer_articulo(link)
+            if extraer:
                 img = imagen_de(it, summary_html)
-                if texto or img:
-                    extra_salida[link] = {
-                        "titulo": titulo,
-                        "medio": nombre,
-                        "imagen": img,
-                        "texto": texto[:15000],
-                    }
-                    extraidas += 1
+                if img:
+                    extra_salida.setdefault(link, {"titulo": titulo, "medio": nombre, "imagen": img, "texto": ""})
+                if link and cat not in EXTRACCION_SKIP and extraidas < TOP_EXTRACCION:
+                    texto = extraer_articulo(link)
+                    if texto:
+                        extra_salida.setdefault(link, {"titulo": titulo, "medio": nombre, "imagen": img, "texto": ""})
+                        extra_salida[link]["texto"] = texto[:15000]
+                        extraidas += 1
 
         n = len(entry["items"])
         print(f"  [ok] {nombre} ({cat}): {n} items")

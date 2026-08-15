@@ -1,10 +1,10 @@
-// Neopress — vista del diario. Lectura limpia vía .extra.json + clima.
+// Neopress — vista del diario. Hero + lectura limpia + clima.
 (() => {
   const params = new URLSearchParams(location.search);
   const FECHA = params.get("fecha") || hoyISO();
   const contenedor = document.getElementById("diario");
-  let EXTRA = {}; // link -> {titulo, medio, imagen, texto}
-  let CLIMA = null; // {temp, code, max, min}
+  let EXTRA = {};
+  let CLIMA = null;
 
   function hoyISO() {
     const d = new Date();
@@ -61,16 +61,23 @@
   }
 
   function render(md) {
-    let fecha = FECHA;
-    const fm = md.match(/^---\s*\nfecha:\s*([\d-]+)/);
-    if (fm) fecha = fm[1];
+    let fecha = FECHA, titulo = "";
+    const fm = md.match(/^---\s*([\s\S]*?)\s*---/);
+    if (fm) {
+      const f = fm[1].match(/fecha:\s*([\d-]+)/); if (f) fecha = f[1];
+      const t = fm[1].match(/titulo:\s*(.+)/); if (t) titulo = t[1].trim().replace(/^["']|["']$/g, "");
+    }
     md = md.replace(/^---[\s\S]*?---\s*/, "");
 
     const html = [];
-    let carruselOpen = false, enPanorama = false;
+    let carruselOpen = false, enPanorama = false, heroAbierto = true;
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
+    const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
-    html.push("<header class=\"header\"><div class=\"marca\">Neopress</div>" + climaHTML() + "<div class=\"fecha\">" + fechaLarga(fecha) + "</div></header>");
+    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div>" + climaHTML() + "</div>");
+    html.push("<header class=\"hero\">");
+    html.push("<h1 class=\"hero-fecha\">" + fechaLarga(fecha) + "</h1>");
+    if (titulo) html.push("<h2 class=\"hero-titulo\">" + esc(titulo) + "</h2>");
 
     for (const raw of md.split("\n")) {
       const line = raw.trim();
@@ -79,8 +86,8 @@
       else if (line.startsWith("## ")) {
         cerrar();
         const t = line.slice(3).trim();
-        if (t.toLowerCase() === "panorama") enPanorama = true;
-        else { enPanorama = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
+        if (t.toLowerCase() === "panorama") { enPanorama = true; }
+        else { cerrarHero(); enPanorama = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
       } else if (line.startsWith("### ")) { cerrar(); html.push("<h3>" + inline(line.slice(4)) + "</h3>"); }
       else if (line.startsWith("> ")) { cerrar(); html.push("<blockquote class=\"cita\">" + inline(line.slice(2)) + "</blockquote>"); }
       else if (line.startsWith("- ")) {
@@ -88,7 +95,7 @@
         html.push(tarjetaHTML(parseTarjeta(line.slice(2))));
       } else { cerrar(); html.push("<p class=\"" + (enPanorama ? "panorama" : "parrafo") + "\">" + inline(line) + "</p>"); }
     }
-    cerrar();
+    cerrar(); cerrarHero();
     return html.join("\n");
   }
 

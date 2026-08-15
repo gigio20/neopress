@@ -26,7 +26,7 @@ Tu trabajo: convertir el material crudo del día en el diario.
 1. Leé el archivo $EDITOR — es tu sombrero: voz, formato exacto de salida y criterio.
 2. Leé el archivo $DIARIOS/${HOY}.json — el material crudo recolectado por collect.py.
 3. Escribí dos archivos, siguiendo estrictamente el formato del sombrero:
-   - $DIARIOS/${HOY}.md            (el diario)
+   - $DIARIOS/${HOY}.md            (el diario, con `titulo:` en el frontmatter: una frase corta y generalista que resuma el día)
    - $DIARIOS/${HOY}.briefing.md   (el briefing)
 Reglas duras:
 - Solo material que esté en el JSON. No inventes noticias, datos ni links.
