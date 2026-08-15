@@ -62,6 +62,7 @@
     const ext = datos.texto ? "" : " target=\"_blank\" rel=\"noopener\"";
     return "<a class=\"tarjeta" + leible + "\" href=\"" + esc(t.url) + "\" data-link=\"" + esc(t.url) + "\"" + ext + ">" +
       img +
+      "<span class=\"tarjeta-bookmark\" data-url=\"" + esc(t.url) + "\" data-titulo=\"" + esc(t.titulo) + "\" data-medio=\"" + esc(t.medio) + "\" role=\"button\" aria-label=\"Guardar\">&#128278;</span>" +
       "<span class=\"tarjeta-titulo\">" + esc(t.titulo) + "</span>" +
       (t.medio ? "<span class=\"tarjeta-medio\">" + esc(t.medio) + "</span>" : "") +
       "</a>";
@@ -213,7 +214,7 @@
         fetch("/neopress/diarios/" + FECHA + ".clima.json"),
       ]);
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
-      if (rExtra.ok) { try { EXTRA = await rExtra.json(); } catch (e) {} }
+      if (rExtra.ok) { try { const raw = await rExtra.json(); EXTRA = {}; for (const u in raw) { EXTRA[u] = Object.assign({}, raw[u], { url: u }); } } catch (e) {} }
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
       contenedor.innerHTML = renderDiario(await rMd.text());
     } catch (e) {
