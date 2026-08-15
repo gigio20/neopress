@@ -7,6 +7,8 @@
   let EXTRA = {};
   let CLIMA = null;
   let GUARDADOS = [];
+  const SVG_VACIO = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
+  const SVG_LLENO = '<svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
 
   function hoyISO() {
     const d = new Date();
@@ -55,6 +57,11 @@
       "<span class=\"clima-minmax\">" + CLIMA.min + "° / " + CLIMA.max + "°</span></div>";
   }
 
+  function bookmarkHTML(t) {
+    const g = GUARDADOS.some(a => a.url === t.url);
+    return '<span class="tarjeta-bookmark' + (g ? " tarjeta-bookmark--on" : "") + '" data-url="' + esc(t.url) + '" data-titulo="' + esc(t.titulo) + '" data-medio="' + esc(t.medio) + '" role="button" aria-label="Guardar">' + (g ? SVG_LLENO : SVG_VACIO) + '</span>';
+  }
+
   function tarjetaHTML(t) {
     const datos = EXTRA[t.url] || {};
     const img = datos.imagen ? "<img class=\"tarjeta-img\" src=\"" + esc(datos.imagen) + "\" alt=\"\" loading=\"lazy\">" : "";
@@ -62,7 +69,7 @@
     const ext = datos.texto ? "" : " target=\"_blank\" rel=\"noopener\"";
     return "<a class=\"tarjeta" + leible + "\" href=\"" + esc(t.url) + "\" data-link=\"" + esc(t.url) + "\"" + ext + ">" +
       img +
-      "<span class=\"tarjeta-bookmark\" data-url=\"" + esc(t.url) + "\" data-titulo=\"" + esc(t.titulo) + "\" data-medio=\"" + esc(t.medio) + "\" role=\"button\" aria-label=\"Guardar\">&#128278;</span>" +
+      bookmarkHTML(t) +
       "<span class=\"tarjeta-titulo\">" + esc(t.titulo) + "</span>" +
       (t.medio ? "<span class=\"tarjeta-medio\">" + esc(t.medio) + "</span>" : "") +
       "</a>";
@@ -149,8 +156,7 @@
     overlay.querySelector(".lectura-cerrar").addEventListener("click", cerrarLectura);
     const btnGuardar = overlay.querySelector(".lectura-guardar");
     btnGuardar.addEventListener("click", () => {
-      const g = GUARDADOS.some(a => a.url === datos.url);
-      if (g) {
+      if (GUARDADOS.some(a => a.url === datos.url)) {
         quitarArticulo(datos.url).then(() => { recargarGuardados(); btnGuardar.textContent = "Guardar para más tarde"; });
       } else {
         guardarArticulo(datos).then(() => { recargarGuardados(); btnGuardar.textContent = "✓ Guardado — tocar para quitar"; });
@@ -185,29 +191,35 @@
     if (bookmark) {
       e.preventDefault(); e.stopPropagation();
       const url = bookmark.getAttribute("data-url");
-      const titulo = bookmark.getAttribute("data-titulo");
-      const medio = bookmark.getAttribute("data-medio");
-      const datos = (EXTRA[url] && EXTRA[url].texto) ? EXTRA[url] : { url: url, titulo: titulo, medio: medio, imagen: (EXTRA[url] ? EXTRA[url].imagen : ""), texto: (EXTRA[url] ? EXTRA[url].texto : "") };
-      guardarArticulo(datos).then(() => recargarGuardados());
+      const yaGuardado = GUARDADOS.some(a => a.url === url);
+      const pintar = (on) => { bookmark.innerHTML = on ? SVG_LLENO : SVG_VACIO; bookmark.classList.toggle("tarjeta-bookmark--on", on); };
+      if (yaGuardado) {
+        quitarArticulo(url).then(() => recargarGuardados().then(() => pintar(false)));
+      } else {
+        const titulo = bookmark.getAttribute("data-titulo");
+        const medio = bookmark.getAttribute("data-medio");
+        const datos = (EXTRA[url] && EXTRA[url].texto) ? EXTRA[url] : { url: url, titulo: titulo, medio: medio, imagen: (EXTRA[url] ? EXTRA[url].imagen : ""), texto: (EXTRA[url] ? EXTRA[url].texto : "") };
+        guardarArticulo(datos).then(() => recargarGuardados().then(() => pintar(true)));
+      }
       return;
     }
-    const tarjeta = e.target.closest(".tarjeta[data-link]");
-    if (tarjeta) {
-      const link = tarjeta.getAttribute("data-link");
-      if (EXTRA[link] && EXTRA[link].texto) { e.preventDefault(); abrirLectura(EXTRA[link]); }
+    const quitar = e.target.closest(".guardado-quitar");
+    if (quitar) {
+      const url = quitar.getAttribute("data-url");
+      quitarArticulo(url).then(() => recargarGuardados().then(() => { contenedor.innerHTML = renderGuardados(); }));
       return;
     }
     const guardado = e.target.closest(".guardado[data-url]");
     if (guardado) {
       const url = guardado.getAttribute("data-url");
       const a = GUARDADOS.find(x => x.url === url);
-      if (a && !e.target.closest(".guardado-quitar")) { abrirLectura(a); }
+      if (a) abrirLectura(a);
       return;
     }
-    const quitar = e.target.closest(".guardado-quitar");
-    if (quitar) {
-      const url = quitar.getAttribute("data-url");
-      quitarArticulo(url).then(() => { recargarGuardados().then(() => { contenedor.innerHTML = renderGuardados(); }); });
+    const tarjeta = e.target.closest(".tarjeta[data-link]");
+    if (tarjeta) {
+      const link = tarjeta.getAttribute("data-link");
+      if (EXTRA[link] && EXTRA[link].texto) { e.preventDefault(); abrirLectura(EXTRA[link]); }
     }
   });
 
