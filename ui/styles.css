@@ -110,3 +110,54 @@ a { color: var(--tinta); }
 @media (min-width: 720px) {
   .tarjeta { flex-basis: 190px; }
 }
+
+/* Tarjetas con imagen */
+.tarjeta { position: relative; overflow: hidden; }
+.tarjeta-img {
+  display: block;
+  width: calc(100% + 26px);
+  height: 84px;
+  object-fit: cover;
+  margin: -14px -13px 8px;
+  filter: grayscale(1);
+}
+.tarjeta--leible::after {
+  content: "leer";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-family: sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 2px 6px;
+}
+
+/* Lectura limpia */
+.lectura-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  overflow-y: auto;
+  z-index: 50;
+  padding: 24px 20px;
+}
+.lectura { max-width: 620px; margin: 0 auto; }
+.lectura-cerrar {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  background: var(--tinta);
+  color: var(--papel);
+  border: none;
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.lectura-img { width: 100%; max-height: 280px; object-fit: cover; filter: grayscale(1); margin-bottom: 16px; }
+.lectura-titulo { font-family: sans-serif; font-size: 24px; line-height: 1.2; margin: 0 0 8px; }
+.lectura-medio { font-size: 13px; color: var(--gris); margin-bottom: 18px; }
+.lectura-texto p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; }
