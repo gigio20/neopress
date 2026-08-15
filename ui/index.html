@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neopress</title>
+  <link rel="manifest" href="/neopress/manifest.json">
+  <link rel="icon" href="/neopress/ui/icon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="/neopress/ui/styles.css">
 </head>
 <body>
@@ -11,5 +14,10 @@
     <p class="cargando">Cargando…</p>
   </main>
   <script src="/neopress/ui/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/neopress/sw.js", { scope: "/neopress/" });
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+  "name": "Neopress",
+  "short_name": "Neopress",
+  "description": "Diario personal — un recorte diario de la actualidad",
+  "start_url": "/neopress/",
+  "scope": "/neopress/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "es",
+  "icons": [
+    { "src": "/neopress/ui/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
