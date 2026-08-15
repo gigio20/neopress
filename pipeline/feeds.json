@@ -1,0 +1,35 @@
+{
+  "fuentes": [
+    { "nombre": "El País", "categoria": "espana", "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada" },
+    { "nombre": "El Mundo", "categoria": "espana", "url": "https://www.elmundo.es/rss/portada.xml" },
+    { "nombre": "La Vanguardia", "categoria": "espana", "url": "https://www.lavanguardia.com/rss/home.xml" },
+    { "nombre": "ElDiario.es", "categoria": "espana", "url": "https://www.eldiario.es/rss/" },
+    { "nombre": "Levante-EMV", "categoria": "espana", "url": "https://www.levante-emv.com/rss/" },
+
+    { "nombre": "Clarín", "categoria": "argentina", "url": "https://www.clarin.com/rss/lo-ultimo/" },
+    { "nombre": "La Nación", "categoria": "argentina", "url": "https://www.lanacion.com.ar/arcio/rss/" },
+    { "nombre": "Página/12", "categoria": "argentina", "url": "https://www.pagina12.com.ar/rss/" },
+    { "nombre": "Perfil", "categoria": "argentina", "url": "https://www.perfil.com/rss/" },
+
+    { "nombre": "Xataka", "categoria": "tech", "url": "https://www.xataka.com/index.xml" },
+    { "nombre": "Genbeta", "categoria": "tech", "url": "https://www.genbeta.com/index.xml" },
+    { "nombre": "Hipertextual", "categoria": "tech", "url": "https://hipertextual.com/feed/" },
+    { "nombre": "RiesgosAI", "categoria": "tech", "url": "https://riesgosai.com/feed/" },
+    { "nombre": "Posteritas", "categoria": "tech", "url": "https://posteritas.ai/feed/" },
+
+    { "nombre": "El Gato y La Caja", "categoria": "ciencia", "url": "https://elgatoylacaja.com/feed" },
+    { "nombre": "Jot Down", "categoria": "ciencia", "url": "https://www.jotdown.es/feed/" },
+    { "nombre": "Letras Libres", "categoria": "ciencia", "url": "https://letraslibres.com/feed/" },
+    { "nombre": "Revista de Libros", "categoria": "ciencia", "url": "https://www.revistadelibros.com/feed/" },
+    { "nombre": "Ethic", "categoria": "ciencia", "url": "https://ethic.es/feed/" },
+    { "nombre": "Anfibia", "categoria": "ciencia", "url": "https://www.revistaanfibia.com/feed/" },
+    { "nombre": "Aeon", "categoria": "ciencia", "url": "https://aeon.co/feed.rss" },
+    { "nombre": "Quanta Magazine", "categoria": "ciencia", "url": "https://www.quantamagazine.org/feed/" },
+    { "nombre": "Nautilus", "categoria": "ciencia", "url": "https://nautil.us/feed/" },
+    { "nombre": "The Marginalian", "categoria": "ciencia", "url": "https://www.themarginalian.org/feed/" },
+
+    { "nombre": "Reddit r/popular", "categoria": "reddit", "url": "https://www.reddit.com/r/popular/.rss" },
+    { "nombre": "Reddit r/technology", "categoria": "reddit", "url": "https://www.reddit.com/r/technology/.rss" },
+    { "nombre": "Reddit r/argentina", "categoria": "reddit", "url": "https://www.reddit.com/r/argentina/.rss" }
+  ]
+}
