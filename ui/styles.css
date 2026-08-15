@@ -53,3 +53,18 @@ a { color: var(--tinta); }
 @media (min-width: 720px) {
   .tarjeta { flex-basis: 190px; }
 }
+
+/* Leer más tarde */
+.link-guardados { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; text-decoration: none; color: var(--tinta); border: 1px solid var(--tinta); padding: 4px 10px; }
+.guardados-head { margin: 8vh 0 32px; }
+.guardados-titulo { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(30px, 7vw, 44px); font-weight: 700; line-height: 1.05; }
+.guardados-sub { color: var(--gris); font-size: 14px; margin-top: 8px; }
+.guardados-vacio { color: var(--gris); font-size: 16px; }
+.guardados-lista { display: flex; flex-direction: column; }
+.guardado { display: flex; align-items: center; gap: 14px; border-bottom: 1px solid #ddd; padding: 14px 0; cursor: pointer; }
+.guardado-img { width: 64px; height: 64px; object-fit: cover; flex: 0 0 64px; }
+.guardado-cuerpo { flex: 1; min-width: 0; }
+.guardado-titulo { font-size: 16px; line-height: 1.3; }
+.guardado-medio { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: var(--gris); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.guardado-quitar { background: none; border: none; font-size: 18px; color: var(--gris); cursor: pointer; padding: 8px; }
+.lectura-guardar { display: block; margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; background: var(--tinta); color: var(--papel); border: none; padding: 9px 14px; cursor: pointer; }

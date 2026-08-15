@@ -1,10 +1,12 @@
-// Neopress — vista del diario. Hero + lectura limpia + clima.
+// Neopress — vista del diario + leer más tarde.
 (() => {
   const params = new URLSearchParams(location.search);
   const FECHA = params.get("fecha") || hoyISO();
+  const VISTA = params.get("vista") || "diario";
   const contenedor = document.getElementById("diario");
   let EXTRA = {};
   let CLIMA = null;
+  let GUARDADOS = [];
 
   function hoyISO() {
     const d = new Date();
@@ -17,7 +19,12 @@
     const meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
     return dias[d.getDay()] + " " + d.getDate() + " de " + meses[d.getMonth()] + " de " + d.getFullYear();
   }
-  function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function fechaCorta(iso) {
+    const d = new Date(iso);
+    if (isNaN(d)) return "";
+    return d.getDate() + "/" + (d.getMonth()+1);
+  }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
   function inline(s) {
     return esc(s)
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
@@ -60,7 +67,7 @@
       "</a>";
   }
 
-  function render(md) {
+  function renderDiario(md) {
     let fecha = FECHA, titulo = "";
     const fm = md.match(/^---\s*([\s\S]*?)\s*---/);
     if (fm) {
@@ -74,7 +81,7 @@
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
-    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div>" + climaHTML() + "</div>");
+    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div>" + climaHTML() + "<a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>");
     html.push("<header class=\"hero\">");
     html.push("<h1 class=\"hero-fecha\">" + fechaLarga(fecha) + "</h1>");
     if (titulo) html.push("<h2 class=\"hero-titulo\">" + esc(titulo) + "</h2>");
@@ -86,7 +93,7 @@
       else if (line.startsWith("## ")) {
         cerrar();
         const t = line.slice(3).trim();
-        if (t.toLowerCase() === "panorama") { enPanorama = true; }
+        if (t.toLowerCase() === "panorama") enPanorama = true;
         else { cerrarHero(); enPanorama = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
       } else if (line.startsWith("### ")) { cerrar(); html.push("<h3>" + inline(line.slice(4)) + "</h3>"); }
       else if (line.startsWith("> ")) { cerrar(); html.push("<blockquote class=\"cita\">" + inline(line.slice(2)) + "</blockquote>"); }
@@ -99,9 +106,32 @@
     return html.join("\n");
   }
 
-  function abrirLectura(link) {
-    const datos = EXTRA[link];
-    if (!datos || !datos.texto) { window.open(link, "_blank"); return; }
+  function renderGuardados() {
+    const html = [];
+    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div>");
+    html.push("<header class=\"guardados-head\"><h1 class=\"guardados-titulo\">Leer más tarde</h1><p class=\"guardados-sub\">Lo que guardás acá no se borra con el diario del día.</p></header>");
+    if (!GUARDADOS.length) {
+      html.push("<p class=\"guardados-vacio\">Nada guardado todavía.</p>");
+    } else {
+      html.push("<div class=\"guardados-lista\">");
+      for (const a of GUARDADOS) {
+        html.push("<div class=\"guardado\" data-url=\"" + esc(a.url) + "\">" +
+          (a.imagen ? "<img class=\"guardado-img\" src=\"" + esc(a.imagen) + "\" alt=\"\" loading=\"lazy\">" : "") +
+          "<div class=\"guardado-cuerpo\">" +
+            "<div class=\"guardado-titulo\">" + esc(a.titulo) + "</div>" +
+            "<div class=\"guardado-medio\">" + esc(a.medio || "") + (a.guardado ? " · guardado el " + fechaCorta(a.guardado) : "") + "</div>" +
+          "</div>" +
+          "<button class=\"guardado-quitar\" data-url=\"" + esc(a.url) + "\" aria-label=\"Quitar\">✕</button>" +
+        "</div>");
+      }
+      html.push("</div>");
+    }
+    return html.join("\n");
+  }
+
+  function abrirLectura(datos) {
+    if (!datos || !datos.texto) { if (datos && datos.url) window.open(datos.url, "_blank"); return; }
+    const guardado = GUARDADOS.some(a => a.url === datos.url);
     const overlay = document.createElement("div");
     overlay.className = "lectura-overlay";
     overlay.innerHTML =
@@ -109,23 +139,73 @@
         "<button class=\"lectura-cerrar\" aria-label=\"Cerrar\">✕</button>" +
         (datos.imagen ? "<img class=\"lectura-img\" src=\"" + esc(datos.imagen) + "\" alt=\"\">" : "") +
         "<h1 class=\"lectura-titulo\">" + esc(datos.titulo) + "</h1>" +
-        "<div class=\"lectura-medio\">" + esc(datos.medio) + " · <a href=\"" + esc(link) + "\" target=\"_blank\" rel=\"noopener\">ver original</a></div>" +
+        "<div class=\"lectura-medio\">" + esc(datos.medio || "") + " · <a href=\"" + esc(datos.url) + "\" target=\"_blank\" rel=\"noopener\">ver original</a></div>" +
+        "<button class=\"lectura-guardar\">" + (guardado ? "✓ Guardado — tocar para quitar" : "Guardar para más tarde") + "</button>" +
         "<div class=\"lectura-texto\">" + datos.texto.split("\n").filter(p => p.trim()).map(p => "<p>" + esc(p) + "</p>").join("") + "</div>" +
       "</article>";
     const cerrarLectura = () => overlay.remove();
     overlay.addEventListener("click", (e) => { if (e.target === overlay) cerrarLectura(); });
     overlay.querySelector(".lectura-cerrar").addEventListener("click", cerrarLectura);
+    const btnGuardar = overlay.querySelector(".lectura-guardar");
+    btnGuardar.addEventListener("click", () => {
+      const g = GUARDADOS.some(a => a.url === datos.url);
+      if (g) {
+        quitarArticulo(datos.url).then(() => { recargarGuardados(); btnGuardar.textContent = "Guardar para más tarde"; });
+      } else {
+        guardarArticulo(datos).then(() => { recargarGuardados(); btnGuardar.textContent = "✓ Guardado — tocar para quitar"; });
+      }
+    });
     document.body.appendChild(overlay);
+  }
+
+  function guardarArticulo(datos) {
+    return fetch("/neopress/api/guardados", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ articulo: datos })
+    }).then(r => r.json());
+  }
+  function quitarArticulo(url) {
+    return fetch("/neopress/api/guardados/quitar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url })
+    }).then(r => r.json());
+  }
+  async function recargarGuardados() {
+    try {
+      const r = await fetch("/neopress/api/guardados");
+      if (r.ok) GUARDADOS = await r.json();
+    } catch (e) {}
   }
 
   contenedor.addEventListener("click", (e) => {
     const tarjeta = e.target.closest(".tarjeta[data-link]");
-    if (!tarjeta) return;
-    const link = tarjeta.getAttribute("data-link");
-    if (EXTRA[link] && EXTRA[link].texto) { e.preventDefault(); abrirLectura(link); }
+    if (tarjeta) {
+      const link = tarjeta.getAttribute("data-link");
+      if (EXTRA[link] && EXTRA[link].texto) { e.preventDefault(); abrirLectura(EXTRA[link]); }
+      return;
+    }
+    const guardado = e.target.closest(".guardado[data-url]");
+    if (guardado) {
+      const url = guardado.getAttribute("data-url");
+      const a = GUARDADOS.find(x => x.url === url);
+      if (a && !e.target.closest(".guardado-quitar")) { abrirLectura(a); }
+      return;
+    }
+    const quitar = e.target.closest(".guardado-quitar");
+    if (quitar) {
+      const url = quitar.getAttribute("data-url");
+      quitarArticulo(url).then(() => { recargarGuardados().then(() => { contenedor.innerHTML = renderGuardados(); }); });
+    }
   });
 
   async function cargar() {
+    await recargarGuardados();
+    if (VISTA === "guardados") {
+      contenedor.innerHTML = renderGuardados();
+      return;
+    }
     try {
       const [rMd, rExtra, rClima] = await Promise.all([
         fetch("/neopress/diarios/" + FECHA + ".md"),
@@ -135,7 +215,7 @@
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { EXTRA = await rExtra.json(); } catch (e) {} }
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
-      contenedor.innerHTML = render(await rMd.text());
+      contenedor.innerHTML = renderDiario(await rMd.text());
     } catch (e) {
       contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario del " + fechaLarga(FECHA) + ".</p><p class=\"detalle\">" + esc(String(e.message)) + "</p></div>";
     }
