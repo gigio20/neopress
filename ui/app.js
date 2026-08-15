@@ -181,6 +181,16 @@
   }
 
   contenedor.addEventListener("click", (e) => {
+    const bookmark = e.target.closest(".tarjeta-bookmark");
+    if (bookmark) {
+      e.preventDefault(); e.stopPropagation();
+      const url = bookmark.getAttribute("data-url");
+      const titulo = bookmark.getAttribute("data-titulo");
+      const medio = bookmark.getAttribute("data-medio");
+      const datos = (EXTRA[url] && EXTRA[url].texto) ? EXTRA[url] : { url: url, titulo: titulo, medio: medio, imagen: (EXTRA[url] ? EXTRA[url].imagen : ""), texto: (EXTRA[url] ? EXTRA[url].texto : "") };
+      guardarArticulo(datos).then(() => recargarGuardados());
+      return;
+    }
     const tarjeta = e.target.closest(".tarjeta[data-link]");
     if (tarjeta) {
       const link = tarjeta.getAttribute("data-link");
