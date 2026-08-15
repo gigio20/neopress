@@ -4,11 +4,6 @@
 Fetch de feeds RSS/Atom → parseo → dedupe por título → guarda el material del día.
 Con --extraer: además genera diarios/<fecha>.extra.json con texto limpio + imagen
 de los artículos top (para la lectura limpia de la UI).
-
-Uso:
-  python collect.py               # rápido: resúmenes del feed
-  python collect.py --extraer     # + texto limpio e imágenes (lectura limpia)
-  python collect.py --dias 10
 """
 import json
 import re
@@ -27,7 +22,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36")
 
 EXTRACCION_SKIP = {"reddit"}
-TOP_EXTRACCION = 4  # cuántos items por fuente extraemos para lectura limpia
+TOP_EXTRACCION = 4
 
 
 def load_feeds():
@@ -46,7 +41,6 @@ def norm(s):
 
 
 def imagen_de(it, summary_html=""):
-    """Saca la URL de imagen de un entry de feedparser."""
     mc = it.get("media_content") or it.get("media_thumbnail")
     if mc:
         for m in mc:
@@ -61,7 +55,6 @@ def imagen_de(it, summary_html=""):
 
 
 def extraer_articulo(link):
-    """Texto limpio del artículo. Devuelve \"\" si no se puede."""
     try:
         return (trafilatura.extract(fetch(link)) or "").strip()
     except Exception:
@@ -127,7 +120,8 @@ def main():
                     }
                     extraidas += 1
 
-        print(f"  [ok] {nombre} ({cat}): {len(entry[\"items\"])} items")
+        n = len(entry["items"])
+        print(f"  [ok] {nombre} ({cat}): {n} items")
         salida["fuentes"].append(entry)
         time.sleep(0.2)
 
@@ -138,7 +132,7 @@ def main():
     if extraer:
         extra_out = DIARIOS / f"{hoy}.extra.json"
         extra_out.write_text(json.dumps(extra_salida, ensure_ascii=False, indent=2), encoding="utf-8")
-        print(f"\n-> {out}  |  {total} items · {len(extra_salida)} artículos extraídos -> {extra_out}")
+        print(f"\n-> {out}  |  {total} items · {len(extra_salida)} extraídos -> {extra_out}")
     else:
         print(f"\n-> {out}  |  {total} items de {len(fuentes)} fuentes")
 

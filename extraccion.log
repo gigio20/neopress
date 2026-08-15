@@ -1,0 +1,4 @@
+  File "/home/gian/neopress/pipeline/collect.py", line 130
+    print(f"  [ok] {nombre} ({cat}): {len(entry[\"items\"])} items")
+                                                 ^
+SyntaxError: unexpected character after line continuation character
