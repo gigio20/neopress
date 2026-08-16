@@ -95,9 +95,16 @@
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
-    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div>" + climaHTML() + "<a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>");
+    html.push("<header class=\"masthead\">" +
+      "<div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span>" + climaHTML() + "<a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>" +
+      "<div class=\"marca\">Neopress</div>" +
+      "<div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span></div>" +
+      "</header>");
     html.push("<header class=\"hero\">");
-    html.push("<h1 class=\"hero-fecha\">" + fechaLarga(fecha) + "</h1>");
+    const partesFecha = fechaLarga(fecha).split(" ");
+    const diaSemana = partesFecha.shift();
+    html.push("<p class=\"hero-dia\">" + esc(diaSemana) + "</p>");
+    html.push("<h1 class=\"hero-fecha\">" + esc(partesFecha.join(" ")) + "</h1>");
     if (titulo) html.push("<h2 class=\"hero-titulo\">" + esc(titulo) + "</h2>");
 
     for (const raw of md.split("\n")) {
@@ -108,9 +115,15 @@
         cerrar();
         const t = line.slice(3).trim();
         if (t.toLowerCase() === "panorama") { enPanorama = true; enCierre = false; }
-        else if (t.toLowerCase() === "cierre") { cerrarHero(); enPanorama = false; enCierre = true; }
-        else { cerrarHero(); enPanorama = false; enCierre = false; html.push("<h2 class=\"seccion\">" + inline(t) + "</h2>"); }
+        else if (t.toLowerCase() === "cierre") { cerrarHero(); enPanorama = false; enCierre = true; html.push("<div class=\"cierre-sep\" aria-hidden=\"true\">■ ■ ■</div>"); }
+        else {
+          cerrarHero(); enPanorama = false; enCierre = false;
+          const num = t.match(/^(\d+)\.\s*(.+)$/);
+          if (num) html.push("<h2 class=\"seccion\"><span class=\"seccion-num\">" + num[1].padStart(2, "0") + "</span><span class=\"seccion-nombre\">" + inline(num[2]) + "</span></h2>");
+          else html.push("<h2 class=\"seccion\"><span class=\"seccion-nombre\">" + inline(t) + "</span></h2>");
+        }
       } else if (line.startsWith("### ")) { cerrar(); html.push("<h3>" + inline(line.slice(4)) + "</h3>"); }
+      else if (/^\*\*(.+?)\*\*$/.test(line)) { cerrar(); html.push("<h3 class=\"label\">" + inline(line.replace(/^\*\*|\*\*$/g, "")) + "</h3>"); }
       else if (line.startsWith("> ")) { cerrar(); html.push("<blockquote class=\"cita\">" + inline(line.slice(2)) + "</blockquote>"); }
       else if (line.startsWith("- ")) {
         if (!carruselOpen) { html.push("<div class=\"carrusel\">"); carruselOpen = true; }
@@ -118,12 +131,14 @@
       } else { cerrar(); const clase = enPanorama ? "panorama" : (enCierre ? "cierre" : "parrafo"); html.push("<p class=\"" + clase + "\">" + inline(line) + "</p>"); }
     }
     cerrar(); cerrarHero();
+    html.push("</div>");
+    html.push("<footer class=\"colofon\">Neopress · Edición del " + fechaCorta(fecha) + " · Escrito por tu editor</footer>");
     return html.join("\n");
   }
 
   function renderGuardados() {
     const html = [];
-    html.push("<div class=\"hero-top\"><div class=\"marca\">Neopress</div><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div>");
+    html.push("<header class=\"masthead\"><div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div><div class=\"marca\">Neopress</div></header>");
     html.push("<header class=\"guardados-head\"><h1 class=\"guardados-titulo\">Leer más tarde</h1><p class=\"guardados-sub\">Lo que guardás acá no se borra con el diario del día.</p></header>");
     if (!GUARDADOS.length) {
       html.push("<p class=\"guardados-vacio\">Nada guardado todavía.</p>");
@@ -150,12 +165,12 @@
     const overlay = document.createElement("div");
     overlay.className = "lectura-overlay";
     overlay.innerHTML =
+      "<div class=\"lectura-topbar\"><span>Neopress — Lectura</span><button class=\"lectura-cerrar\" aria-label=\"Cerrar\">✕</button></div>" +
       "<article class=\"lectura\">" +
-        "<button class=\"lectura-cerrar\" aria-label=\"Cerrar\">✕</button>" +
         (datos.imagen ? "<img class=\"lectura-img\" src=\"" + esc(datos.imagen) + "\" alt=\"\">" : "") +
         "<h1 class=\"lectura-titulo\">" + esc(datos.titulo) + "</h1>" +
         "<div class=\"lectura-medio\">" + esc(datos.medio || "") + " · <a href=\"" + esc(datos.url) + "\" target=\"_blank\" rel=\"noopener\">ver original</a></div>" +
-        "<button class=\"lectura-guardar\">" + (guardado ? "✓ Guardado — tocar para quitar" : "Guardar para más tarde") + "</button>" +
+        "<button class=\"lectura-guardar" + (guardado ? " is-on" : "") + "\">" + (guardado ? "✓ Guardado — tocar para quitar" : "Guardar para más tarde") + "</button>" +
         "<div class=\"lectura-texto\">" + datos.texto.split("\n").filter(p => p.trim()).map(p => "<p>" + esc(p) + "</p>").join("") + "</div>" +
       "</article>";
     const cerrarLectura = () => overlay.remove();
@@ -164,9 +179,9 @@
     const btnGuardar = overlay.querySelector(".lectura-guardar");
     btnGuardar.addEventListener("click", () => {
       if (GUARDADOS.some(a => a.url === datos.url)) {
-        quitarArticulo(datos.url).then(() => { recargarGuardados(); btnGuardar.textContent = "Guardar para más tarde"; });
+        quitarArticulo(datos.url).then(() => { recargarGuardados(); btnGuardar.textContent = "Guardar para más tarde"; btnGuardar.classList.remove("is-on"); });
       } else {
-        guardarArticulo(datos).then(() => { recargarGuardados(); btnGuardar.textContent = "✓ Guardado — tocar para quitar"; });
+        guardarArticulo(datos).then(() => { recargarGuardados(); btnGuardar.textContent = "✓ Guardado — tocar para quitar"; btnGuardar.classList.add("is-on"); });
       }
     });
     document.body.appendChild(overlay);

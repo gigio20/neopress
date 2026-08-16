@@ -1,78 +1,271 @@
-:root { --tinta: #000; --papel: #fff; --gris: #666; }
+/* Neopress — UI v2 "NEO"
+   Diario universal blanco y negro, lenguaje neoperiódico:
+   tipografía display pesada, reglas duras, bloques invertidos, sombras offset.
+   Sin animaciones (e-ink safe). */
+
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/archivo-black-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/archivo-black-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --tinta: #0a0a0a;
+  --papel: #fff;
+  --gris: #555;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+  --display: 'Archivo Black', 'Arial Black', sans-serif;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; }
-body { background: var(--papel); color: var(--tinta); font-family: Georgia, 'Times New Roman', serif; line-height: 1.6; }
-.diario { max-width: 680px; margin: 0 auto; padding: 24px 20px 48px; }
+body { background: var(--papel); color: var(--tinta); font-family: var(--serif); line-height: 1.6; }
+::selection { background: var(--tinta); color: var(--papel); }
+a { color: var(--tinta); }
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible { outline: 2px solid var(--tinta); outline-offset: 2px; }
 
-/* Hero */
-.hero-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14vh; }
-.marca { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase; }
-.hero { min-height: 76vh; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
-.hero-fecha { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(40px, 10vw, 64px); font-weight: 700; line-height: 1.02; letter-spacing: -0.02em; }
-.hero-titulo { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 21px; font-weight: 500; line-height: 1.25; }
-.panorama { font-size: 18px; line-height: 1.55; max-width: 34em; }
+.diario { max-width: 680px; margin: 0 auto; padding: 0 20px 48px; }
 
-/* Clima */
-.clima { display: flex; align-items: baseline; gap: 6px; font-size: 14px; }
-.clima-temp { font-weight: 700; font-size: 18px; }
-.clima-minmax { color: var(--gris); font-size: 12px; }
+/* ── Masthead ─────────────────────────────── */
+.masthead { padding-top: 16px; border-bottom: 4px solid var(--tinta); }
+.masthead-linea {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  padding-bottom: 10px;
+}
+.marca {
+  font-family: var(--display);
+  font-size: clamp(46px, 12vw, 88px);
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  padding: 12px 0 10px;
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+}
+.masthead-meta {
+  display: flex; justify-content: center; gap: 12px;
+  font-family: var(--sans); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--gris);
+  padding: 8px 0;
+}
 
-/* Contenido */
-.contenido { padding-top: 10vh; }
-.seccion { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(24px, 5vw, 32px); font-weight: 700; line-height: 1.15; margin: 64px 0 18px; padding-top: 20px; border-top: 2px solid var(--tinta); }
-.parrafo { margin: 0 0 16px; font-size: 17px; line-height: 1.65; }
+/* Clima — píldora invertida */
+.clima { display: inline-flex; align-items: baseline; gap: 7px; background: var(--tinta); color: var(--papel); font-family: var(--sans); font-size: 11px; font-weight: 600; padding: 5px 11px; white-space: nowrap; }
+.clima-temp { font-family: var(--display); font-size: 14px; }
+.clima-minmax { opacity: 0.6; font-size: 10px; }
+
+/* Link guardados — botón de regla */
+.link-guardados {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  text-decoration: none; color: var(--tinta);
+  border: 2px solid var(--tinta); padding: 5px 10px; white-space: nowrap;
+}
+@media (hover: hover) { .link-guardados:hover { background: var(--tinta); color: var(--papel); } }
+
+/* ── Hero (tapa) ──────────────────────────── */
+.hero { min-height: 58vh; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 6vh 0; }
+.hero-dia {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--sans); font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.34em;
+}
+.hero-dia::before, .hero-dia::after { content: ""; flex: 1; height: 1px; background: var(--tinta); }
+.hero-fecha {
+  font-family: var(--display);
+  font-size: clamp(42px, 10vw, 76px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+.hero-titulo {
+  display: inline;
+  font-family: var(--sans); font-size: 19px; font-weight: 600; line-height: 1.45;
+  background: var(--tinta); color: var(--papel);
+  padding: 3px 10px;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+
+/* Panorama con capitular */
+.panorama { font-size: 19px; line-height: 1.62; max-width: 34em; margin-top: 8px; }
+.panorama::first-letter {
+  font-family: var(--display);
+  font-size: 3.1em; line-height: 0.82;
+  float: left; padding: 4px 10px 0 0;
+}
+
+/* ── Contenido ────────────────────────────── */
+.contenido { padding-top: 4vh; }
+
+.seccion {
+  display: flex; align-items: center; gap: 14px;
+  margin: 72px 0 22px; padding-bottom: 12px;
+  border-bottom: 3px solid var(--tinta);
+}
+.seccion-num {
+  font-family: var(--display); font-size: 17px; line-height: 1;
+  background: var(--tinta); color: var(--papel);
+  padding: 7px 10px;
+}
+.seccion-nombre {
+  font-family: var(--display);
+  font-size: clamp(25px, 5.4vw, 34px);
+  line-height: 1; text-transform: uppercase; letter-spacing: -0.01em;
+}
+
+.parrafo { margin: 0 0 16px; font-size: 17px; line-height: 1.7; }
 .parrafo strong { font-weight: 700; }
 
+/* Rótulos tipo "Titulares del día" */
+.label {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  margin: 26px 0 12px;
+}
+.label::before { content: ""; width: 9px; height: 9px; background: var(--tinta); flex: 0 0 9px; }
+
 /* Citas */
-.cita { border-left: 3px solid var(--tinta); padding: 4px 0 4px 14px; margin: 0 0 14px; font-size: 15px; color: #222; }
-.cita a { color: var(--tinta); }
+.cita { border-left: 4px solid var(--tinta); padding: 6px 0 6px 16px; margin: 0 0 14px; font-size: 16px; line-height: 1.55; color: #1a1a1a; }
+.cita a { font-family: var(--sans); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
 
-h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; margin: 22px 0 10px; }
-a { color: var(--tinta); }
+h3 { font-family: var(--sans); font-size: 15px; margin: 22px 0 10px; }
 
-/* Carrusel */
-.carrusel { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 6px 20px 18px; margin: 6px -20px 0; -webkit-overflow-scrolling: touch; }
-.tarjeta { flex: 0 0 152px; scroll-snap-align: start; border: 1px solid var(--tinta); padding: 14px 13px; text-decoration: none; color: var(--tinta); display: flex; flex-direction: column; gap: 8px; min-height: 110px; position: relative; overflow: hidden; }
-.tarjeta-img { display: block; width: calc(100% + 26px); height: 84px; object-fit: cover; margin: -14px -13px 8px; }
-.tarjeta--leible::after { content: "leer"; position: absolute; top: 8px; right: 8px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; background: var(--tinta); color: var(--papel); padding: 2px 6px; }
-.tarjeta-titulo { font-size: 14px; line-height: 1.35; }
-.tarjeta-medio { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gris); margin-top: auto; }
+/* ── Carrusel — cards neo-brut ────────────── */
+.carrusel {
+  display: flex; gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 10px 20px 28px; margin: 6px -20px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+.tarjeta {
+  flex: 0 0 168px; scroll-snap-align: start;
+  border: 2px solid var(--tinta); background: var(--papel);
+  box-shadow: 5px 5px 0 var(--tinta);
+  padding: 14px 13px; text-decoration: none; color: var(--tinta);
+  display: flex; flex-direction: column; gap: 8px; min-height: 120px;
+  position: relative; overflow: hidden;
+}
+@media (hover: hover) {
+  .tarjeta:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--tinta); }
+}
+.tarjeta:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--tinta); }
+.tarjeta-img { display: block; width: calc(100% + 26px); height: 92px; object-fit: cover; margin: -14px -13px 8px; filter: grayscale(1) contrast(1.05); border-bottom: 2px solid var(--tinta); }
+.tarjeta--leible::after {
+  content: "leer";
+  position: absolute; top: 0; left: 0;
+  font-family: var(--sans); font-size: 9px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  background: var(--tinta); color: var(--papel); padding: 4px 8px;
+}
+.tarjeta-titulo { font-size: 14.5px; line-height: 1.35; }
+.tarjeta-medio {
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--gris);
+  margin-top: auto; padding-top: 7px; border-top: 1px solid var(--tinta);
+}
+.tarjeta--sin-foto .tarjeta-titulo { font-size: 17px; line-height: 1.35; }
 
-/* Lectura limpia */
-.lectura-overlay { position: fixed; inset: 0; background: rgba(255,255,255,0.96); overflow-y: auto; z-index: 50; padding: 24px 20px; }
-.lectura { max-width: 620px; margin: 0 auto; }
-.lectura-cerrar { position: fixed; top: 14px; right: 18px; background: var(--tinta); color: var(--papel); border: none; width: 34px; height: 34px; font-size: 16px; cursor: pointer; }
-.lectura-img { width: 100%; max-height: 280px; object-fit: cover; margin-bottom: 16px; }
-.lectura-titulo { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 24px; line-height: 1.2; margin: 0 0 8px; }
-.lectura-medio { font-size: 13px; color: var(--gris); margin-bottom: 18px; }
-.lectura-texto p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; }
+/* Bookmark en tarjeta — cuadrado de regla */
+.tarjeta-bookmark {
+  position: absolute; bottom: 10px; right: 10px; z-index: 2;
+  cursor: pointer; line-height: 0;
+  background: var(--papel); color: var(--tinta);
+  border: 1.5px solid var(--tinta); padding: 4px;
+}
+.tarjeta-bookmark--on { background: var(--tinta); color: var(--papel); }
 
-.error, .cargando { padding: 40px 0; text-align: center; }
+/* ── Lectura limpia ───────────────────────── */
+.lectura-overlay { position: fixed; inset: 0; background: var(--papel); overflow-y: auto; z-index: 50; }
+.lectura-topbar {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--tinta); color: var(--papel);
+  font-family: var(--sans); font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  padding: 12px 18px;
+}
+.lectura-cerrar {
+  background: none; border: 1.5px solid var(--papel); color: var(--papel);
+  width: 30px; height: 30px; font-size: 13px; cursor: pointer; line-height: 1;
+}
+@media (hover: hover) { .lectura-cerrar:hover { background: var(--papel); color: var(--tinta); } }
+.lectura { max-width: 640px; margin: 0 auto; padding: 34px 20px 60px; }
+.lectura-img { width: 100%; max-height: 300px; object-fit: cover; margin-bottom: 18px; filter: grayscale(1) contrast(1.05); border: 2px solid var(--tinta); }
+.lectura-titulo { font-size: 27px; font-weight: 700; line-height: 1.18; margin: 0 0 10px; }
+.lectura-medio {
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; color: var(--gris);
+  margin-bottom: 20px;
+}
+.lectura-guardar {
+  display: block; margin: 0 0 26px;
+  font-family: var(--sans); font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  background: var(--papel); color: var(--tinta);
+  border: 2px solid var(--tinta); padding: 10px 16px; cursor: pointer;
+}
+.lectura-guardar.is-on { background: var(--tinta); color: var(--papel); }
+@media (hover: hover) { .lectura-guardar:hover { background: var(--tinta); color: var(--papel); } }
+.lectura-texto p { margin: 0 0 17px; font-size: 17px; line-height: 1.7; }
+.lectura-texto > p:first-of-type::first-letter {
+  font-family: var(--display);
+  font-size: 3em; line-height: 0.82;
+  float: left; padding: 4px 10px 0 0;
+}
+
+/* ── Guardados ────────────────────────────── */
+.guardados-head { margin: 7vh 0 34px; }
+.guardados-titulo {
+  font-family: var(--display);
+  font-size: clamp(32px, 7.5vw, 48px);
+  line-height: 1; text-transform: uppercase; letter-spacing: -0.01em;
+}
+.guardados-sub { color: var(--gris); font-size: 14px; margin-top: 10px; }
+.guardados-vacio { color: var(--gris); font-size: 16px; }
+.guardados-lista { display: flex; flex-direction: column; }
+.guardado { display: flex; align-items: center; gap: 14px; border-bottom: 1.5px solid var(--tinta); padding: 14px 4px; cursor: pointer; }
+@media (hover: hover) { .guardado:hover { background: #f0f0f0; } }
+.guardado-img { width: 64px; height: 64px; object-fit: cover; flex: 0 0 64px; filter: grayscale(1) contrast(1.05); border: 1.5px solid var(--tinta); }
+.guardado-cuerpo { flex: 1; min-width: 0; }
+.guardado-titulo { font-size: 16px; line-height: 1.3; }
+.guardado-medio { font-family: var(--sans); font-size: 10px; font-weight: 700; color: var(--gris); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.08em; }
+.guardado-quitar {
+  background: none; border: 1.5px solid var(--tinta); color: var(--tinta);
+  width: 30px; height: 30px; font-size: 13px; cursor: pointer; flex: 0 0 30px;
+}
+@media (hover: hover) { .guardado-quitar:hover { background: var(--tinta); color: var(--papel); } }
+
+/* ── Cierre y colofón ─────────────────────── */
+.cierre-sep { text-align: center; font-size: 13px; letter-spacing: 1.2em; padding-left: 1.2em; margin: 64px 0 34px; }
+.cierre { text-align: center; font-size: 18px; line-height: 1.7; color: #1a1a1a; max-width: 36em; margin: 0 auto 18px; }
+.colofon {
+  margin-top: 70px; padding: 16px 0 26px;
+  border-top: 1px solid var(--tinta);
+  font-family: var(--sans); font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  text-align: center; color: var(--gris);
+}
+
+/* ── Estados ──────────────────────────────── */
+.error, .cargando { padding: 40px 0; text-align: center; font-family: var(--sans); }
 .error .detalle { color: var(--gris); font-size: 14px; }
 
 @media (min-width: 720px) {
-  .tarjeta { flex-basis: 190px; }
+  .tarjeta { flex-basis: 196px; }
 }
-
-/* Leer más tarde */
-.link-guardados { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; text-decoration: none; color: var(--tinta); border: 1px solid var(--tinta); padding: 4px 10px; }
-.guardados-head { margin: 8vh 0 32px; }
-.guardados-titulo { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: clamp(30px, 7vw, 44px); font-weight: 700; line-height: 1.05; }
-.guardados-sub { color: var(--gris); font-size: 14px; margin-top: 8px; }
-.guardados-vacio { color: var(--gris); font-size: 16px; }
-.guardados-lista { display: flex; flex-direction: column; }
-.guardado { display: flex; align-items: center; gap: 14px; border-bottom: 1px solid #ddd; padding: 14px 0; cursor: pointer; }
-.guardado-img { width: 64px; height: 64px; object-fit: cover; flex: 0 0 64px; }
-.guardado-cuerpo { flex: 1; min-width: 0; }
-.guardado-titulo { font-size: 16px; line-height: 1.3; }
-.guardado-medio { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: var(--gris); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
-.guardado-quitar { background: none; border: none; font-size: 18px; color: var(--gris); cursor: pointer; padding: 8px; }
-.lectura-guardar { display: block; margin: 0 0 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; background: var(--tinta); color: var(--papel); border: none; padding: 9px 14px; cursor: pointer; }
-
-/* Bookmark en tarjeta */
-.tarjeta-bookmark { position: absolute; bottom: 8px; right: 8px; cursor: pointer; z-index: 2; background: rgba(255,255,255,0.9); padding: 3px; line-height: 0; color: var(--tinta); border-radius: 2px; }
-.tarjeta-bookmark--on { color: #000; }
-
-.tarjeta--sin-foto .tarjeta-titulo { font-size: 16px; line-height: 1.35; }
-
-.cierre { text-align: center; font-size: 17px; line-height: 1.6; color: #222; max-width: 40em; margin: 0 auto 16px; }
