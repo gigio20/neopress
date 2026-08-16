@@ -14,7 +14,7 @@ log() { echo "[neopress] $*"; }
 cd "$PIPELINE"
 
 log "recolección ($HOY)"
-python3 collect.py
+python3 collect.py --extraer
 
 log "clima"
 curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&hourly=weather_code,precipitation_probability&timezone=Europe%2FMadrid&forecast_days=1" | python3 -c '
