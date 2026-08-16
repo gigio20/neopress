@@ -14,10 +14,21 @@ log() { echo "[neopress] $*"; }
 cd "$PIPELINE"
 
 log "recolección ($HOY)"
-python3 collect.py --extraer
+python3 collect.py
 
 log "clima"
-curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=Europe%2FMadrid&forecast_days=1" | python3 -c 'import sys,json; d=json.load(sys.stdin); print(json.dumps({"temp": round(d["current"]["temperature_2m"]), "code": d["current"]["weather_code"], "max": round(d["daily"]["temperature_2m_max"][0]), "min": round(d["daily"]["temperature_2m_min"][0])}))' > "$DIARIOS/$HOY.clima.json"
+curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&hourly=weather_code,precipitation_probability&timezone=Europe%2FMadrid&forecast_days=1" | python3 -c '
+import sys, json
+d = json.load(sys.stdin)
+out = {
+  "temp": round(d["current"]["temperature_2m"]),
+  "code": d["current"]["weather_code"],
+  "max": round(d["daily"]["temperature_2m_max"][0]),
+  "min": round(d["daily"]["temperature_2m_min"][0]),
+  "horas": [{"h": h, "code": d["hourly"]["weather_code"][h], "pp": d["hourly"]["precipitation_probability"][h] or 0} for h in (9, 15, 21)]
+}
+print(json.dumps(out))
+' > "$DIARIOS/$HOY.clima.json"
 
 log "redacción"
 "$PI" -p "

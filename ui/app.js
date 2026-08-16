@@ -55,11 +55,36 @@
     if (code >= 95) return "Tormenta";
     return "—";
   }
+  function climaIcono(code) {
+    const s = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
+    const sol = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+    const solNube = '<circle cx="8" cy="8" r="2.5"/><path d="M8 2.5v1M2.5 8h1M4 4l.8.8"/><path d="M10 19h8a3.5 3.5 0 0 0 .5-6.97A5 5 0 0 0 9 10.5 3.8 3.8 0 0 0 10 19z"/>';
+    const nube = '<path d="M6 18.5h11a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 6.8 9.1 4.3 4.3 0 0 0 6 18.5z"/>';
+    const niebla = '<path d="M4 10h16M6 14h12M8 18h8"/>';
+    const lluvia = '<path d="M6 14h11a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 6.8 4.6 4.3 4.3 0 0 0 6 14z"/><path d="M8 17.5v2M12 18v2.5M16 17.5v2"/>';
+    const nieve = '<path d="M6 14h11a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 6.8 4.6 4.3 4.3 0 0 0 6 14z"/><path d="M8 18h.01M12 19h.01M16 18h.01"/>';
+    const tormenta = '<path d="M6 13h11a4 4 0 0 0 .6-7.96A5.5 5.5 0 0 0 6.8 3.6 4.3 4.3 0 0 0 6 13z"/><path d="M12.5 13l-2.5 4h3l-2 4"/>';
+    let g = nube;
+    if (code === 0 || code === 1) g = sol;
+    else if (code === 2) g = solNube;
+    else if (code === 45 || code === 48) g = niebla;
+    else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) g = lluvia;
+    else if ((code >= 71 && code <= 77) || code === 85 || code === 86) g = nieve;
+    else if (code >= 95) g = tormenta;
+    return s + g + "</svg>";
+  }
   function climaHTML() {
     if (!CLIMA) return "";
-    return "<div class=\"clima\"><span class=\"clima-temp\">" + CLIMA.temp + "°</span>" +
+    let h = "<div class=\"clima\"><span class=\"clima-temp\">" + CLIMA.temp + "°</span>" +
       "<span class=\"clima-desc\">" + climaDesc(CLIMA.code) + "</span>" +
-      "<span class=\"clima-minmax\">" + CLIMA.min + "° / " + CLIMA.max + "°</span></div>";
+      "<span class=\"clima-minmax\">" + CLIMA.min + "° / " + CLIMA.max + "°</span>";
+    if (CLIMA.horas && CLIMA.horas.length) {
+      h += "<span class=\"clima-sep\"></span>";
+      for (const s of CLIMA.horas) {
+        h += "<span class=\"clima-h\">" + s.h + "h" + climaIcono(s.code) + (s.pp >= 30 ? " " + s.pp + "%" : "") + "</span>";
+      }
+    }
+    return h + "</div>";
   }
 
   function bookmarkHTML(t) {
@@ -96,9 +121,9 @@
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
     html.push("<header class=\"masthead\">" +
-      "<div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span>" + climaHTML() + "<a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>" +
+      "<div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>" +
       "<div class=\"marca\">Neopress</div>" +
-      "<div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span></div>" +
+      "<div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span>" + climaHTML() + "</div>" +
       "</header>");
     html.push("<header class=\"hero\">");
     const partesFecha = fechaLarga(fecha).split(" ");
@@ -132,13 +157,13 @@
     }
     cerrar(); cerrarHero();
     html.push("</div>");
-    html.push("<footer class=\"colofon\">Neopress · Edición del " + fechaCorta(fecha) + " · Escrito por tu editor</footer>");
+    html.push("<footer class=\"colofon\">Neopress · Edición del " + fechaCorta(fecha) + " · Escrito por Boty Editor</footer>");
     return html.join("\n");
   }
 
   function renderGuardados() {
     const html = [];
-    html.push("<header class=\"masthead\"><div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div><div class=\"marca\">Neopress</div></header>");
+    html.push("<header class=\"masthead\"><div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div><div class=\"marca\">Neopress</div><div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span></div></header>");
     html.push("<header class=\"guardados-head\"><h1 class=\"guardados-titulo\">Leer más tarde</h1><p class=\"guardados-sub\">Lo que guardás acá no se borra con el diario del día.</p></header>");
     if (!GUARDADOS.length) {
       html.push("<p class=\"guardados-vacio\">Nada guardado todavía.</p>");
