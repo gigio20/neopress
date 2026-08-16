@@ -116,7 +116,7 @@
     md = md.replace(/^---[\s\S]*?---\s*/, "");
 
     const html = [];
-    let carruselOpen = false, enPanorama = false, enCierre = false, heroAbierto = true;
+    let carruselOpen = false, enPanorama = true, enCierre = false, heroAbierto = true;
     const cerrar = () => { if (carruselOpen) { html.push("</div>"); carruselOpen = false; } };
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
