@@ -236,16 +236,25 @@
       contenedor.innerHTML = renderGuardados();
       return;
     }
+    // encontrar el diario más reciente disponible (hoy o días atrás)
+    let fechaEf = null;
+    const dd = new Date(FECHA + "T12:00:00");
+    for (let i = 0; i < 8; i++) {
+      const iso = dd.getFullYear() + "-" + String(dd.getMonth()+1).padStart(2,"0") + "-" + String(dd.getDate()).padStart(2,"0");
+      const pr = await fetch("/neopress/diarios/" + iso + ".md");
+      if (pr.ok) { fechaEf = iso; break; }
+      dd.setDate(dd.getDate() - 1);
+    }
+    if (!fechaEf) {
+      contenedor.innerHTML = "<div class=\"error\"><h2 class=\"error-fecha\">" + fechaLarga(FECHA) + "</h2><p>No hay diario disponible todavía.</p></div>";
+      return;
+    }
     try {
       const [rMd, rExtra, rClima] = await Promise.all([
-        fetch("/neopress/diarios/" + FECHA + ".md"),
-        fetch("/neopress/diarios/" + FECHA + ".extra.json"),
-        fetch("/neopress/diarios/" + FECHA + ".clima.json"),
+        fetch("/neopress/diarios/" + fechaEf + ".md"),
+        fetch("/neopress/diarios/" + fechaEf + ".extra.json"),
+        fetch("/neopress/diarios/" + fechaEf + ".clima.json"),
       ]);
-      if (rMd.status === 404) {
-        contenedor.innerHTML = "<div class=\"error\"><h2 class=\"error-fecha\">" + fechaLarga(FECHA) + "</h2><p>El diario de hoy todavía no se generó — llega a las 9 AM.</p></div>";
-        return;
-      }
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { const raw = await rExtra.json(); EXTRA = {}; for (const u in raw) { EXTRA[u] = Object.assign({}, raw[u], { url: u }); } } catch (e) {} }
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
