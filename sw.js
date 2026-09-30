@@ -1,10 +1,12 @@
-const CACHE = "neopress-v2";
+const CACHE = "neopress-v3";
 const ASSETS = [
   "/neopress/ui/",
   "/neopress/ui/index.html",
   "/neopress/ui/styles.css",
   "/neopress/ui/app.js",
-  "/neopress/ui/icon.svg"
+  "/neopress/ui/icon.svg",
+  "/neopress/ui/icon-192.png",
+  "/neopress/ui/icon-512.png"
 ];
 
 self.addEventListener("install", (e) => {
@@ -19,7 +21,6 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
-  // network-first para todo: fresco cuando hay red, cache como fallback offline
   e.respondWith(
     fetch(e.request)
       .then((res) => {

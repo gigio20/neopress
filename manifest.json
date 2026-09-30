@@ -4,11 +4,15 @@
   "description": "Diario personal — un recorte diario de la actualidad",
   "start_url": "/neopress/",
   "scope": "/neopress/",
+  "id": "/neopress/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "lang": "es",
   "icons": [
+    { "src": "/neopress/ui/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/neopress/ui/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/neopress/ui/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "/neopress/ui/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

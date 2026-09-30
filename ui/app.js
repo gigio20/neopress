@@ -276,20 +276,27 @@
       contenedor.innerHTML = renderGuardados();
       return;
     }
-    // encontrar el diario más reciente disponible (hoy o días atrás)
-    let fechaEf = null;
-    const dd = new Date(FECHA + "T12:00:00");
-    for (let i = 0; i < 8; i++) {
-      const iso = dd.getFullYear() + "-" + String(dd.getMonth()+1).padStart(2,"0") + "-" + String(dd.getDate()).padStart(2,"0");
-      const pr = await fetch("/neopress/diarios/" + iso + ".md");
-      if (pr.ok) { fechaEf = iso; break; }
-      dd.setDate(dd.getDate() - 1);
-    }
-    if (!fechaEf) {
-      contenedor.innerHTML = "<div class=\"error\"><h2 class=\"error-fecha\">" + fechaLarga(FECHA) + "</h2><p>No hay diario disponible todavía.</p></div>";
+    if (navigator.onLine === false) {
+      contenedor.innerHTML = "<div class=\"error\"><p>Sin conexión.</p><p class=\"detalle\">Neopress necesita la red para cargar el diario del día.</p></div>";
       return;
     }
     try {
+      // encontrar el diario más reciente disponible (hoy o días atrás)
+      let fechaEf = null, errorRed = false;
+      const dd = new Date(FECHA + "T12:00:00");
+      for (let i = 0; i < 8; i++) {
+        const iso = dd.getFullYear() + "-" + String(dd.getMonth()+1).padStart(2,"0") + "-" + String(dd.getDate()).padStart(2,"0");
+        let pr;
+        try { pr = await fetch("/neopress/diarios/" + iso + ".md"); } catch (err) { pr = null; errorRed = true; }
+        if (pr && pr.ok) { fechaEf = iso; break; }
+        dd.setDate(dd.getDate() - 1);
+      }
+      if (!fechaEf) {
+        contenedor.innerHTML = errorRed
+          ? "<div class=\"error\"><p>No se pudo conectar.</p><p class=\"detalle\">Revisá la conexión e intentá de nuevo.</p></div>"
+          : "<div class=\"error\"><h2 class=\"error-fecha\">" + fechaLarga(FECHA) + "</h2><p>No hay diario disponible todavía.</p></div>";
+        return;
+      }
       const [rMd, rExtra, rClima] = await Promise.all([
         fetch("/neopress/diarios/" + fechaEf + ".md"),
         fetch("/neopress/diarios/" + fechaEf + ".extra.json"),
@@ -300,7 +307,7 @@
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
       contenedor.innerHTML = renderDiario(await rMd.text());
     } catch (e) {
-      contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario del " + fechaLarga(FECHA) + ".</p><p class=\"detalle\">" + esc(String(e.message)) + "</p></div>";
+      contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario del " + fechaLarga(FECHA) + ".</p><p class=\"detalle\">" + esc(String(e.message || e)) + "</p></div>";
     }
   }
 
