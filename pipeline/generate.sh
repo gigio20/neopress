@@ -11,10 +11,15 @@ PI="$HOME/.npm-global/bin/pi"
 
 log() { echo "[neopress] $*"; }
 
+PROG="$NEOPRESS/.neopress-progress.json"
+prog() { printf '{"etapa":"%s","pct":%s}\n' "$1" "$2" > "$PROG"; }
+
 cd "$PIPELINE"
 
+prog "recolección" 10
 log "recolección ($HOY)"
 python3 collect.py --extraer
+prog "clima" 55
 
 log "clima"
 curl -s "https://api.open-meteo.com/v1/forecast?latitude=39.47&longitude=-0.38&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&hourly=weather_code,precipitation_probability&timezone=Europe%2FMadrid&forecast_days=1" | python3 -c '
@@ -30,6 +35,7 @@ out = {
 print(json.dumps(out))
 ' > "$DIARIOS/$HOY.clima.json"
 
+prog "redacción" 65
 log "redacción"
 "$PI" -p "
 Sos el editor de Neopress, el diario personal de Gian (anti-FOMO: aislado pero informado).
@@ -51,4 +57,5 @@ Reglas duras:
   --thinking high \
   --no-context-files
 
+prog "listo" 100
 log "listo: $DIARIOS/${HOY}.md + .briefing.md"

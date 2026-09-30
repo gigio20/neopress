@@ -353,27 +353,87 @@
   function avisoHTML(fecha) {
     return '<div class="aviso-viejo"><span class="aviso-texto">Diario del ' + esc(fechaLarga(fecha)) + '</span><button id="generar-hoy" class="aviso-btn" type="button">Generar el de hoy</button></div>';
   }
-  let creandoOverlay = null;
-  function mostrarCreando() {
-    if (creandoOverlay) return;
-    creandoOverlay = document.createElement("div");
-    creandoOverlay.className = "creando-overlay";
-    creandoOverlay.innerHTML = '<div class="creando-caja"><div class="creando-marca">Neopress</div><p class="creando-msg">Creando el diario de hoy…</p><p class="creando-sub">Recolectando fuentes, leyendo y escribiendo. Puede tardar unos minutos.</p></div>';
-    document.body.appendChild(creandoOverlay);
+  let creando = null;
+  function fmtTiempo(ms) { const s = Math.max(0, Math.floor(ms / 1000)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  function mostrarCreando(inicio) {
+    if (creando && creando.overlay) return;
+    const overlay = document.createElement("div");
+    overlay.className = "creando-overlay";
+    overlay.innerHTML = '<div class="creando-caja">' +
+      '<div class="creando-marca">Neopress</div>' +
+      '<div class="creando-spin" aria-hidden="true"></div>' +
+      '<p class="creando-msg" id="np-msg">Creando el diario de hoy…</p>' +
+      '<p class="creando-etapa" id="np-etapa">Preparando…</p>' +
+      '<div class="creando-barra"><span id="np-fill"></span></div>' +
+      '<p class="creando-tiempo" id="np-tiempo">0:00</p>' +
+    '</div>';
+    document.body.appendChild(overlay);
+    creando = { overlay: overlay, etapa: "", pct: 5, inicio: inicio || Date.now() };
+    creando.tick = setInterval(tickCreando, 1000);
+    tickCreando();
   }
-  function quitarCreando() { if (creandoOverlay) { creandoOverlay.remove(); creandoOverlay = null; } }
-  async function generarDiario() {
-    try { await fetch("/neopress/api/generar", { method: "POST" }); } catch (e) { alert("No se pudo lanzar la generación."); return; }
-    mostrarCreando();
-    const t = setInterval(async () => {
+  function tickCreando() {
+    if (!creando) return;
+    const t = document.getElementById("np-tiempo");
+    if (t) t.textContent = fmtTiempo(Date.now() - (creando.inicio || Date.now()));
+    // durante la redacción (etapa larga y sin hitos) la barra avanza lento para mostrar vida
+    if (creando.etapa === "redacción" && creando.pct < 92) creando.pct = Math.min(92, creando.pct + 0.12);
+    const f = document.getElementById("np-fill");
+    if (f) f.style.width = Math.max(5, creando.pct).toFixed(1) + "%";
+  }
+  function setEtapa(etapa, pct) {
+    if (!creando) return;
+    if (etapa) { creando.etapa = etapa; const e = document.getElementById("np-etapa"); if (e) e.textContent = etapa; }
+    if (typeof pct === "number" && pct > creando.pct) creando.pct = pct;
+  }
+  function pararCreando() { if (creando) { clearInterval(creando.tick); clearInterval(creando.poll); } }
+  function cerrarCreando() { pararCreando(); if (creando && creando.overlay) creando.overlay.remove(); creando = null; }
+  async function vigilarGeneracion() {
+    if (!creando) return;
+    creando.poll = setInterval(async () => {
+      if (!creando) return;
       let est;
       try { est = await (await fetch("/neopress/api/estado")).json(); } catch (e) { return; }
-      if (!est.corriendo) {
-        clearInterval(t); quitarCreando();
-        if (est.ok) { location.href = "/neopress/"; } else { alert("La generación terminó con error. Revisá logs/generate.log en el VPS."); }
+      if (est.corriendo) {
+        if (est.inicio) creando.inicio = est.inicio;
+        setEtapa(est.etapa, est.pct);
+        return;
       }
-    }, 5000);
+      pararCreando();
+      if (est.ok) {
+        creando.pct = 100;
+        const f = document.getElementById("np-fill"); if (f) f.style.width = "100%";
+        const m = document.getElementById("np-msg"); if (m) m.textContent = "Diario listo";
+        const e = document.getElementById("np-etapa"); if (e) e.textContent = "";
+        const spin = creando.overlay.querySelector(".creando-spin");
+        if (spin) { spin.textContent = "✓"; spin.classList.add("creando-spin--ok"); }
+        creando.overlay.querySelector(".creando-caja").classList.add("creando-hecho");
+        setTimeout(() => { location.href = "/neopress/?nuevo=1"; }, 1200);
+      } else {
+        const m = document.getElementById("np-msg"); if (m) m.textContent = "No se pudo generar el diario";
+        const spin = creando.overlay.querySelector(".creando-spin"); if (spin) spin.style.display = "none";
+        const f = document.getElementById("np-fill"); if (f) f.style.width = "0%";
+        const e = document.getElementById("np-etapa");
+        if (e) e.innerHTML = '<button class="creando-accion" id="np-reintentar" type="button">Reintentar</button><button class="creando-accion" id="np-cerrar" type="button">Cerrar</button>';
+      }
+    }, 3000);
   }
+  async function generarDiario() {
+    try { await fetch("/neopress/api/generar", { method: "POST" }); } catch (e) { alert("No se pudo lanzar la generación."); return; }
+    cerrarCreando();
+    mostrarCreando(Date.now());
+    vigilarGeneracion();
+  }
+  async function chequearEstado() {
+    try {
+      const est = await (await fetch("/neopress/api/estado")).json();
+      if (est.corriendo) { mostrarCreando(est.inicio); setEtapa(est.etapa, est.pct); vigilarGeneracion(); }
+    } catch (e) {}
+  }
+  document.body.addEventListener("click", (e) => {
+    if (e.target.id === "np-cerrar") cerrarCreando();
+    if (e.target.id === "np-reintentar") { cerrarCreando(); generarDiario(); }
+  });
 
   async function cargar() {
     await recargarGuardados();
@@ -423,10 +483,15 @@
       let html = renderDiario(await rMd.text());
       if (fechaEf !== hoyISO()) html = html.replace("</header>", "</header>" + avisoHTML(fechaEf));
       contenedor.innerHTML = html;
+      if (params.get("nuevo")) {
+        contenedor.classList.remove("entra"); void contenedor.offsetWidth; contenedor.classList.add("entra");
+        try { history.replaceState(null, "", "/neopress/"); } catch (e) {}
+      }
     } catch (e) {
       contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario.</p><p class=\"detalle\">" + esc(String(e.message || e)) + "</p></div>";
     }
   }
 
   cargar();
+  chequearEstado();
 })();
