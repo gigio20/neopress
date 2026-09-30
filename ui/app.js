@@ -121,7 +121,7 @@
     const cerrarHero = () => { if (heroAbierto) { html.push("</header>"); html.push("<div class=\"contenido\">"); heroAbierto = false; } };
 
     html.push("<header class=\"masthead\">" +
-      "<div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a></div>" +
+      "<div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><span class=\"masthead-nav\"><a class=\"link-guardados\" href=\"/neopress/?vista=guardados\">Leer más tarde" + (GUARDADOS.length ? " (" + GUARDADOS.length + ")" : "") + "</a><a class=\"link-guardados\" href=\"/neopress/?vista=feed\">Feed</a></span></div>" +
       "<div class=\"marca\">Neopress</div>" +
       "<div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span>" + climaHTML() + "</div>" +
       "</header>");
@@ -163,7 +163,7 @@
 
   function renderGuardados() {
     const html = [];
-    html.push("<header class=\"masthead\"><div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><a class=\"link-guardados\" href=\"/neopress/\">← diario de hoy</a></div><div class=\"marca\">Neopress</div><div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span></div></header>");
+    html.push("<header class=\"masthead\"><div class=\"masthead-linea\"><span class=\"masthead-tag\">Diario personal</span><span class=\"masthead-nav\"><a class=\"link-guardados\" href=\"/neopress/\">← diario</a><a class=\"link-guardados\" href=\"/neopress/?vista=feed\">Feed</a></span></div><div class=\"marca\">Neopress</div><div class=\"masthead-meta\"><span>Edición diaria</span><span>·</span><span>Valencia</span></div></header>");
     html.push("<header class=\"guardados-head\"><h1 class=\"guardados-titulo\">Leer más tarde</h1><p class=\"guardados-sub\">Lo que guardás acá no se borra con el diario del día.</p></header>");
     if (!GUARDADOS.length) {
       html.push("<p class=\"guardados-vacio\">Nada guardado todavía.</p>");
@@ -270,21 +270,136 @@
     }
   });
 
+  // ── Feed (config on-demand) ──────────────────────────────
+  let FEED = null, CATALOGO = [], TAGS_DISP = [], feedDebounce = null;
+
+  async function cargarFeed() {
+    try {
+      const j = await (await fetch("/neopress/api/feed")).json();
+      FEED = { fuentes: j.fuentes || [], tags: j.tags || [], secciones: j.secciones || [] };
+      CATALOGO = j.catalogo || [];
+    } catch (e) { if (!FEED) FEED = { fuentes: [], tags: [], secciones: [] }; }
+  }
+  async function cargarTagsDisp() {
+    try { TAGS_DISP = (await (await fetch("/neopress/api/tags")).json()) || []; } catch (e) { TAGS_DISP = []; }
+  }
+  function guardarFeed() {
+    clearTimeout(feedDebounce);
+    feedDebounce = setTimeout(() => {
+      fetch("/neopress/api/feed", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(FEED) }).catch(() => {});
+    }, 400);
+  }
+  function chipHTML(valor, tipo) {
+    return '<span class="chip" data-tipo="' + tipo + '" data-valor="' + esc(valor) + '"><span class="chip-txt">' + esc(valor) + '</span><button class="chip-x" type="button" aria-label="Quitar">✕</button></span>';
+  }
+  function renderFeed() {
+    const h = [];
+    h.push('<header class="masthead"><div class="masthead-linea"><span class="masthead-tag">Diario personal</span><span class="masthead-nav"><a class="link-guardados" href="/neopress/">← diario</a><a class="link-guardados" href="/neopress/?vista=guardados">Leer más tarde</a></span></div><div class="marca">Neopress</div><div class="masthead-meta"><span>Feed</span><span>·</span><span>Configuración</span></div></header>');
+    h.push('<header class="feed-head"><h1 class="feed-titulo">Feed</h1><p class="feed-sub">Lo que dejes acá arma la próxima lanzada. Se guarda solo.</p></header>');
+    h.push('<section class="cajon"><div class="cajon-head"><h2 class="cajon-titulo">Fuentes</h2><span class="cajon-hint">' + FEED.fuentes.length + ' activas</span></div>');
+    h.push('<div class="chips">' + FEED.fuentes.map(f => chipHTML(f, "fuentes")).join("") + '</div>');
+    h.push('<div class="cajon-add"><input id="in-fuente" list="dl-catalogo" placeholder="Nombre del catálogo o URL…" autocomplete="off"><button class="cajon-add-btn" data-add="fuentes" type="button">+</button><datalist id="dl-catalogo">' + CATALOGO.map(c => '<option value="' + esc(c) + '">').join("") + '</datalist></div></section>');
+    h.push('<section class="cajon"><div class="cajon-head"><h2 class="cajon-titulo">Tags</h2><span class="cajon-hint">foco extra</span></div>');
+    h.push('<div class="chips">' + FEED.tags.map(f => chipHTML(f, "tags")).join("") + '</div>');
+    h.push('<div class="cajon-add"><input id="in-tag" list="dl-tags" placeholder="Tag…" autocomplete="off"><button class="cajon-add-btn" data-add="tags" type="button">+</button><datalist id="dl-tags">' + TAGS_DISP.map(t => '<option value="' + esc(t) + '">').join("") + '</datalist></div></section>');
+    h.push('<section class="cajon"><div class="cajon-head"><h2 class="cajon-titulo">Secciones</h2><span class="cajon-hint">orden del diario</span></div>');
+    h.push('<div class="secciones-edit">' + FEED.secciones.map((s, i) => '<div class="seccion-edit" data-idx="' + i + '"><span class="seccion-pos">' + String(i + 1).padStart(2, "0") + '</span><input class="seccion-in" value="' + esc(s) + '"><button class="chip-x" data-del-seccion="' + i + '" type="button" aria-label="Quitar">✕</button></div>').join("") + '</div>');
+    h.push('<div class="cajon-add"><input id="in-seccion" placeholder="Nueva sección…" autocomplete="off"><button class="cajon-add-btn" data-add="secciones" type="button">+</button></div></section>');
+    h.push('<section class="feed-acciones"><button id="btn-generar" class="btn-generar" type="button">Generar diario de hoy</button><span id="feed-estado" class="feed-estado"></span></section>');
+    return h.join("\n");
+  }
+  function agregarFeed(tipo, valor) {
+    valor = (valor || "").trim();
+    if (!valor || !FEED) return;
+    if (FEED[tipo].indexOf(valor) === -1) FEED[tipo].push(valor);
+    guardarFeed();
+    contenedor.innerHTML = renderFeed();
+  }
+  function feedClick(e) {
+    if (e.target.closest("#generar-hoy") || e.target.closest("#btn-generar")) { generarDiario(); return; }
+    if (!FEED) return;
+    const x = e.target.closest(".chip-x[data-tipo]");
+    if (x) {
+      const chip = x.closest(".chip");
+      const tipo = chip.getAttribute("data-tipo");
+      FEED[tipo] = FEED[tipo].filter(v => v !== chip.getAttribute("data-valor"));
+      guardarFeed(); contenedor.innerHTML = renderFeed(); return;
+    }
+    const del = e.target.closest(".chip-x[data-del-seccion]");
+    if (del) {
+      FEED.secciones.splice(parseInt(del.getAttribute("data-del-seccion"), 10), 1);
+      guardarFeed(); contenedor.innerHTML = renderFeed(); return;
+    }
+    const add = e.target.closest(".cajon-add-btn[data-add]");
+    if (add) { const input = add.parentElement.querySelector("input"); agregarFeed(add.getAttribute("data-add"), input ? input.value : ""); return; }
+  }
+  function feedInput(e) {
+    if (!FEED || !e.target.classList.contains("seccion-in")) return;
+    const row = e.target.closest(".seccion-edit");
+    FEED.secciones[parseInt(row.getAttribute("data-idx"), 10)] = e.target.value;
+    guardarFeed();
+  }
+  function feedKey(e) {
+    if (e.key !== "Enter" || !FEED) return;
+    if (e.target.id === "in-fuente") { agregarFeed("fuentes", e.target.value); e.preventDefault(); }
+    else if (e.target.id === "in-tag") { agregarFeed("tags", e.target.value); e.preventDefault(); }
+    else if (e.target.id === "in-seccion") { agregarFeed("secciones", e.target.value); e.preventDefault(); }
+    else if (e.target.classList.contains("seccion-in")) { e.target.blur(); }
+  }
+  contenedor.addEventListener("click", feedClick);
+  contenedor.addEventListener("input", feedInput);
+  contenedor.addEventListener("keydown", feedKey);
+
+  function avisoHTML(fecha) {
+    return '<div class="aviso-viejo"><span class="aviso-texto">Diario del ' + esc(fechaLarga(fecha)) + '</span><button id="generar-hoy" class="aviso-btn" type="button">Generar el de hoy</button></div>';
+  }
+  let creandoOverlay = null;
+  function mostrarCreando() {
+    if (creandoOverlay) return;
+    creandoOverlay = document.createElement("div");
+    creandoOverlay.className = "creando-overlay";
+    creandoOverlay.innerHTML = '<div class="creando-caja"><div class="creando-marca">Neopress</div><p class="creando-msg">Creando el diario de hoy…</p><p class="creando-sub">Recolectando fuentes, leyendo y escribiendo. Puede tardar unos minutos.</p></div>';
+    document.body.appendChild(creandoOverlay);
+  }
+  function quitarCreando() { if (creandoOverlay) { creandoOverlay.remove(); creandoOverlay = null; } }
+  async function generarDiario() {
+    try { await fetch("/neopress/api/generar", { method: "POST" }); } catch (e) { alert("No se pudo lanzar la generación."); return; }
+    mostrarCreando();
+    const t = setInterval(async () => {
+      let est;
+      try { est = await (await fetch("/neopress/api/estado")).json(); } catch (e) { return; }
+      if (!est.corriendo) {
+        clearInterval(t); quitarCreando();
+        if (est.ok) { location.href = "/neopress/"; } else { alert("La generación terminó con error. Revisá logs/generate.log en el VPS."); }
+      }
+    }, 5000);
+  }
+
   async function cargar() {
     await recargarGuardados();
     if (VISTA === "guardados") {
       contenedor.innerHTML = renderGuardados();
       return;
     }
+    if (VISTA === "feed") {
+      await Promise.all([cargarFeed(), cargarTagsDisp()]);
+      contenedor.innerHTML = renderFeed();
+      return;
+    }
     if (navigator.onLine === false) {
-      contenedor.innerHTML = "<div class=\"error\"><p>Sin conexión.</p><p class=\"detalle\">Neopress necesita la red para cargar el diario del día.</p></div>";
+      contenedor.innerHTML = "<div class=\"error\"><p>Sin conexión.</p><p class=\"detalle\">Neopress necesita la red para cargar el diario.</p></div>";
       return;
     }
     try {
-      // encontrar el diario más reciente disponible (hoy o días atrás)
-      let fechaEf = null, errorRed = false;
+      let fechaEf = params.get("fecha") || null, errorRed = false;
+      if (!fechaEf) {
+        try {
+          const ru = await fetch("/neopress/api/ultimo");
+          if (ru.ok) { const ju = await ru.json(); if (ju.fecha) fechaEf = ju.fecha; }
+        } catch (err) { errorRed = true; }
+      }
       const dd = new Date(FECHA + "T12:00:00");
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; !fechaEf && i < 30; i++) {
         const iso = dd.getFullYear() + "-" + String(dd.getMonth()+1).padStart(2,"0") + "-" + String(dd.getDate()).padStart(2,"0");
         let pr;
         try { pr = await fetch("/neopress/diarios/" + iso + ".md"); } catch (err) { pr = null; errorRed = true; }
@@ -305,9 +420,11 @@
       if (!rMd.ok) throw new Error("HTTP " + rMd.status);
       if (rExtra.ok) { try { const raw = await rExtra.json(); EXTRA = {}; for (const u in raw) { EXTRA[u] = Object.assign({}, raw[u], { url: u }); } } catch (e) {} }
       if (rClima.ok) { try { CLIMA = await rClima.json(); } catch (e) {} }
-      contenedor.innerHTML = renderDiario(await rMd.text());
+      let html = renderDiario(await rMd.text());
+      if (fechaEf !== hoyISO()) html = html.replace("</header>", "</header>" + avisoHTML(fechaEf));
+      contenedor.innerHTML = html;
     } catch (e) {
-      contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario del " + fechaLarga(FECHA) + ".</p><p class=\"detalle\">" + esc(String(e.message || e)) + "</p></div>";
+      contenedor.innerHTML = "<div class=\"error\"><p>No se pudo cargar el diario.</p><p class=\"detalle\">" + esc(String(e.message || e)) + "</p></div>";
     }
   }
 

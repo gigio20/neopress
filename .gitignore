@@ -2,3 +2,7 @@
 diarios/
 leer-mas-tarde.json
 *.apk
+feed.json
+.neopress-run.json
+tags-disponibles.json
+logs/
