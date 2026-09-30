@@ -11,13 +11,17 @@ import sys
 import time
 import datetime
 import urllib.request
+from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 import feedparser
 import trafilatura
 
 BASE = Path(__file__).resolve().parent
-DIARIOS = BASE.parent / "diarios"
+NEOPRESS = BASE.parent
+DIARIOS = NEOPRESS / "diarios"
+FEED_PATH = NEOPRESS / "feed.json"
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
       "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36")
 
@@ -28,6 +32,39 @@ TOP_EXTRACCION = 4
 def load_feeds():
     data = json.loads((BASE / "feeds.json").read_text(encoding="utf-8"))
     return data["fuentes"]
+
+
+def load_config():
+    try:
+        return json.loads(FEED_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def resolver_fuentes(catalogo, cfg):
+    """La config del Feed lista nombres del catálogo y/o URLs crudas.
+    Vacío (o sin nada resoluble) = todas las del catálogo."""
+    seleccion = cfg.get("fuentes") or []
+    if not seleccion:
+        return catalogo
+    por_nombre = {f["nombre"]: f for f in catalogo}
+    out, urls = [], set()
+    for item in seleccion:
+        if not isinstance(item, str):
+            continue
+        item = item.strip()
+        if item in por_nombre:
+            f = por_nombre[item]
+        elif item.startswith(("http://", "https://")):
+            f = {"nombre": urlparse(item).netloc or item, "categoria": "custom", "url": item}
+        else:
+            print(f"  [warn] fuente no reconocida (ni del catálogo ni URL): {item}")
+            continue
+        if f["url"] in urls:
+            continue
+        urls.add(f["url"])
+        out.append(f)
+    return out or catalogo
 
 
 def fetch(url, timeout=15):
@@ -67,11 +104,13 @@ def main():
     if "--dias" in sys.argv:
         dias = int(sys.argv[sys.argv.index("--dias") + 1])
 
-    fuentes = load_feeds()
+    catalogo = load_feeds()
+    fuentes = resolver_fuentes(catalogo, load_config())
     hoy = datetime.date.today().isoformat()
     salida = {"fecha": hoy, "fuentes": []}
     extra_salida = {}
     vistos = set()
+    tags_contador = Counter()
 
     DIARIOS.mkdir(exist_ok=True)
 
@@ -101,11 +140,20 @@ def main():
             resumen = re.sub(r"<[^>]+>", " ", summary_html)
             resumen = re.sub(r"\s+", " ", resumen).strip()[:400]
 
+            tags_item = []
+            for t in (it.get("tags") or []):
+                term = (t.get("term") or "").strip()
+                if term and term not in tags_item:
+                    tags_item.append(term)
+            for t in tags_item:
+                tags_contador[t] += 1
+
             entry["items"].append({
                 "titulo": titulo,
                 "link": link,
                 "fecha": it.get("published") or it.get("updated") or "",
                 "resumen": resumen,
+                "tags": tags_item,
             })
 
             if extraer:
@@ -127,6 +175,11 @@ def main():
     out = DIARIOS / f"{hoy}.json"
     out.write_text(json.dumps(salida, ensure_ascii=False, indent=2), encoding="utf-8")
     total = sum(len(x["items"]) for x in salida["fuentes"])
+
+    tags_out = [t for t, _ in tags_contador.most_common(200)]
+    (NEOPRESS / "tags-disponibles.json").write_text(
+        json.dumps(tags_out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  tags disponibles: {len(tags_out)}")
 
     if extraer:
         extra_out = DIARIOS / f"{hoy}.extra.json"

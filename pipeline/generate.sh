@@ -37,6 +37,16 @@ print(json.dumps(out))
 
 prog "redacción" 65
 log "redacción"
+
+FEED="$NEOPRESS/feed.json"
+SECCIONES="$(python3 -c "import json;d=json.load(open('$FEED'));print(', '.join(d.get('secciones') or []))" 2>/dev/null || true)"
+TAGS="$(python3 -c "import json;d=json.load(open('$FEED'));print(', '.join(d.get('tags') or []))" 2>/dev/null || true)"
+EXTRA=""
+[ -n "$SECCIONES" ] && EXTRA="$EXTRA
+- Usá EXACTAMENTE estas secciones, en este orden y con estos nombres: $SECCIONES. No agregues, renombres ni reordenes secciones."
+[ -n "$TAGS" ] && EXTRA="$EXTRA
+- Foco extra (no filtro): buscá estos temas en TODO el material y dedicales atención aunque no sean la noticia principal del día: $TAGS. La edición sigue completa."
+
 "$PI" -p "
 Sos el editor de Neopress, el diario personal de Gian (anti-FOMO: aislado pero informado).
 Tu trabajo: convertir el material crudo del día en el diario.
@@ -51,6 +61,7 @@ Reglas duras:
 - Filtrá ruido: horóscopos, relleno, deportes irrelevantes, notas repetidas.
 - Objetividad activa: en temas polémicos mostrá las dos (o tres) caras reales.
 - Voz: español rioplatense, directo, sin clickbait.
+$EXTRA
 " \
   --provider opencode-go \
   --model kimi-k2.7-code \
